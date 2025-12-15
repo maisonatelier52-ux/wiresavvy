@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Apply background & text color + horizontal padding */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* @media (min-width: 580px) {
+  body {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+} */
+
+/* ===== Newspaper Title Style from layout.js ===== */
+.newspaper-title {
+  font-family: "Times New Roman", Georgia, serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+  margin: 0; /* Ensures no vertical spacing */
+}
+
+@media (max-width: 640px) {
+  .newspaper-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+}
+
+/* ===== Horizontal marquee ticker ===== */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee__inner {
+  display: inline-block;
+  will-change: transform;
+  animation: marquee 18s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===== Vertical title ticker (no pagination needed) ===== */
+.ticker-scroll {
+  display: flex;
+  flex-direction: column;
+  animation: tickerSmoothScroll 18s linear infinite;
+}
+
+.ticker-item {
+  height: 1.75rem;
+  line-height: 1.75rem;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Smooth scroll with pause for readability */
+@keyframes tickerSmoothScroll {
+  0% { transform: translateY(0); }
+  15% { transform: translateY(-1.75rem); }
+  40% { transform: translateY(-1.75rem); } /* pause */
+  55% { transform: translateY(-3.5rem); }
+  80% { transform: translateY(-3.5rem); } /* pause */
+  95% { transform: translateY(-5.25rem); }
+  100% { transform: translateY(0); } /* seamless loop reset */
+}
