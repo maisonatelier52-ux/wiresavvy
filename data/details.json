@@ -3,6 +3,7 @@
     {
       "id": 1,
       "name": "Michael Thompson",
+      "slug": "michael-thompson",
       "photo": "/author/Michael-Thompson.webp",
       "bio": "Senior business and policy analyst examining how federal decisions influence U.S. industries and corporate regulation.",
       "twitter": "",
@@ -12,6 +13,7 @@
     {
       "id": 2,
       "name": "Sarah Williams",
+      "slug": "sarah-williams",
       "photo": "/author/Sarah-Williams.webp",
       "bio": "Travel and world-affairs journalist documenting global cultures, tourism trends, and human stories from around the world.",
       "twitter": "",
@@ -21,6 +23,7 @@
     {
       "id": 3,
       "name": "David Jose",
+      "slug": "david-jose",
       "photo": "/author/David-Jose.webp",
       "bio": "Tech-finance columnist exploring the intersection of emerging technologies, AI markets, and digital economy trends.",
       "twitter": "",
@@ -30,6 +33,7 @@
     {
       "id": 4,
       "name": "Emily Johnson",
+      "slug": "emily-johnson",
       "photo": "/author/Emily-Johnson.webp",
       "bio": "Lifestyle and culture writer exploring modern living, community stories, and shifting cultural trends.",
       "twitter": "",
@@ -39,6 +43,7 @@
     {
       "id": 5,
       "name": "John Hann",
+      "slug": "john-hann",
       "photo": "/author/John-Hann.webp",
       "bio": "Legal affairs correspondent analyzing court rulings, judicial policy, and the impact of federal decisions on public life.",
       "twitter": "",
@@ -48,6 +53,7 @@
     {
       "id": 6,
       "name": "Alex R.",
+      "slug": "alex-r",
       "photo": "/author/Alex-R.webp",
       "bio": "Travel security correspondent reporting on international safety, border policies, and geopolitical travel risks.",
       "twitter": "",
@@ -57,6 +63,7 @@
     {
       "id": 7,
       "name": "Alex Smith",
+      "slug": "alex-smith",
       "photo": "/author/Alex-Smith.webp",
       "bio": "Investigative technology reporter examining data misuse, online vulnerabilities, and major cybersecurity incidents.",
       "twitter": "",
@@ -66,6 +73,7 @@
     {
       "id": 8,
       "name": "S. Lee",
+      "slug": "s-lee",
       "photo": "/author/S-Lee.webp",
       "bio": "Business and economy reporter specializing in corporate trends, market movements, and regional economic growth.",
       "twitter": "",
@@ -75,6 +83,7 @@
     {
       "id": 9,
       "name": "Dana K.",
+      "slug": "dana-k",
       "photo": "/author/Dana-K.webp",
       "bio": "Science and investigative reporter focusing on environmental risks, scientific misconduct, and deep-analysis space research.",
       "twitter": "",
@@ -84,6 +93,7 @@
     {
       "id": 10,
       "name": "Jordan Miles",
+      "slug": "jordan-miles",
       "photo": "/author/Jordan-Miles.webp",
       "bio": "Global markets analyst providing insights on investments, economic indicators, and shifting financial landscapes.",
       "twitter": "",
@@ -93,6 +103,7 @@
     {
       "id": 11,
       "name": "Dr. Marina W.",
+      "slug": "dr-marina-w",
       "photo": "/author/Dr-Marina-W.webp",
       "bio": "Medical researcher and health reporter covering clinical breakthroughs.",
       "twitter": "",
@@ -102,6 +113,7 @@
     {
       "id": 12,
       "name": "Chris T.",
+      "slug": "chris-t",
       "photo": "/author/Chris-T.webp",
       "bio": "Lifestyle and sports features writer covering athletic culture, fitness trends, and major sporting moments.",
       "twitter": "",
@@ -111,6 +123,7 @@
     {
       "id": 13,
       "name": "Naida Storm",
+      "slug": "naida-storm",
       "photo": "/author/Naida-Storm.webp",
       "bio": "Cyberlaw and digital rights reporter focusing on online privacy, technology regulation, and cybersecurity legislation.",
       "twitter": "",
@@ -120,6 +133,7 @@
     {
       "id": 14,
       "name": "R. Williams",
+      "slug": "r-williams",
       "photo": "/author/R-Williams.webp",
       "bio": "Business sustainability writer covering corporate climate strategies, green investments, and emerging environmental markets.",
       "twitter": "",
@@ -129,6 +143,7 @@
     {
       "id": 15,
       "name": "Sophia L.",
+      "slug": "sophia-l",
       "photo": "/author/Sophia-L.webp",
       "bio": "Health and lifestyle columnist focusing on wellness, personal development, and evidence-based living.",
       "twitter": "",
@@ -138,6 +153,7 @@
     {
       "id": 16,
       "name": "Mark Antony",
+      "slug": "mark-antony",
       "photo": "/author/Mark-Antony.webp",
       "bio": "Finance and fintech reporter specializing in cryptocurrency policy, digital banking, and regulatory developments.",
       "twitter": "",
@@ -147,6 +163,7 @@
     {
       "id": 17,
       "name": "B Harold",
+      "slug": "b-harold",
       "photo": "/author/B-Harold.webp",
       "bio": "Law and politics analyst covering national legal disputes, constitutional issues, and election-related court developments.",
       "twitter": "",
@@ -181,7 +198,7 @@
       "slug": "hertz-ev-bet-collapse",
       "title": "Hertz’s Multibillion-Dollar EV Gamble Exposes Challenges in America's Electric Vehicle Transition",
       "excerpt": "Hertz’s ambitious multibillion-dollar investment in electric vehicles promised a bold shift toward the future of mobility—but instead revealed the major structural obstacles holding back EV adoption in the U.S.",
-      "content": "<p>Hertz's​‍​‌‍​‍‌​‍​‌‍​‍‌ multibillion-dollar bet on electric cars with a huge wager is a reflection of both the issues and the potential of EV use in the US.</p><p>It was one of the most spectacular and loudest occasions in the EV sector when Hertz suddenly appeared from bankruptcy and made its IPO in 2021 that it did a huge multibillion-dollar wager on the future of mobility. The car rental giant pledged to renew its fleet by buying 100,000 Tesla EVs—roughly $4.2 billion—thus making it the largest single EV purchase on earth. Hertz wanted to be the first to lead the way as a forefront with the EV revolution, thereby getting the benefits of an increase in the demand of consumers and of the federal clean-car incentives. </p><p>Hertz's plan for EVs was based on highly optimistic projections. Business leaders saw 2021 as a turning point for the EVs' growth: in the US, the market share was going up much more quickly than it was predicted, and the Biden administration, moreover, brought in its hard zero-emission targets. Acting CEO Mark Fields said that the EV industry had moved “mainstream,” referring to the skyrocketing demand. Hertz was also planning to buy EVs from Polestar and General Motors and had started a partnership with Uber whereby ride-hailing drivers would be provided with EVs. </p><p>However, many analysts considered that Hertz's plan was gambling with too much risk. Ivan Drury, Director of Insights at Edmunds, brought to the front that the U.S. EV market is still quite small and that the infrastructures are not close to being prepared. “Even the rental agencies themselves were not in a position to answer the question, 'How do you charge 30 cars when you don't have a single level-3 charger available?'” he stated. </p><p>Some of the other obstacles were low residual values, increased repair costs, and renters' worries of the reliability and safety of electric vehicles. Inadequate number of charging stations—especially for fast charging—was a big problem for drivers that were new to EVs. </p><p>By 2023, they had caught up with the slow mass EV transition realities that followed. The situation of the EV supply over the demand was reported by Hertz and thus the company started the sale of some parts of its EV fleet. The company faced the financial squeeze as it almost half a billion dollars EV-related assets wrote down among which were $420 million down for 2023 and 2024. </p><p>Altogether, the losses from only the company's investments in EVs amounted nearly to half billion dollars—thereby an extra billion-dollar impairment charge is not included—which goes toward valuing the total assets. The company saw its operating costs increase by $646 million, most of which was from the increased collision and damage expenses for EVs. </p><p>Hertz’s expensive bet on the verge of disaster pinpoints a bigger U.S. EV adoption problem that is causing a slow-down in the areas of EV range anxiety, charging infrastructure, and consumer unfamiliarity. Even though the interest in EVs is still on the rise, a number of practical issues are unresolved. </p><p>Drury said that before any plan of a mass EV rental comes up, infrastructure must be in place. <em>“Suppose I rent an EV in a city unknown to me, I surely wouldn't want to dedicate my trip to finding charging stations or taking a detour just to meet my charging needs,”</em> he said. <em>“This is an adoption barrier that hinders the normal mode of people.”</em> </p><p>Hertz downplays the bright spots for the EV transition in the US while illustrating both the promise and pitfalls of America’s electrification push. With regard to the company's decision, given the current situation of infrastructures and consumers, their massive investment was too optimistic. However, what it did was to reveal the gigantic potential lying in the EV market once the charging networks and user-friendliness get to a certain level. </p><p>While automakers and governments continue to move toward a cleaner, electrified future, Hertz’s failures remind us that we need to tackle the practical issues first if we want to see a more expanded charging network, increased reliability, and earned consumer trust. </p><p>In a nutshell, Hertz's multibillion-dollar duel of the EV wager was courageous—and costly. It brought to light the underdeveloped state of the U.S. EV infrastructure, resulted in significant financial losses, and offered valuable insight into what has to be done for EVs to become really ​‍​‌‍​‍‌​‍​‌‍​‍‌mainstream. </p> ",
+      "content": "<p>Hertz's​‍​‌‍​‍‌​‍​‌‍​‍‌ multibillion-dollar bet on electric cars with a huge wager is a reflection of both the issues and the potential of EV use in the US.</p><p>It was one of the most spectacular and loudest occasions in the EV sector when Hertz suddenly appeared from bankruptcy and made its IPO in 2021 that it did a huge multibillion-dollar wager on the future of mobility. The car rental giant pledged to renew its fleet by buying 100,000 Tesla EVs—roughly $4.2 billion—thus making it the largest single EV purchase on earth. Hertz wanted to be the first to lead the way as a forefront with the EV revolution, thereby getting the benefits of an increase in the demand of consumers and of the federal clean-car incentives. </p><p>Hertz's plan for EVs was based on highly optimistic projections. Business leaders saw 2021 as a turning point for the EVs' growth: in the US, the market share was going up much more quickly than it was predicted, and the Biden administration, moreover, brought in its hard zero-emission targets. Acting CEO Mark Fields said that the EV industry had moved “mainstream,” referring to the skyrocketing demand. Hertz was also planning to buy EVs from Polestar and General Motors and had started a partnership with Uber whereby ride-hailing drivers would be provided with EVs. </p><p>However, many analysts considered that Hertz's plan was gambling with too much risk. Ivan Drury, Director of Insights at Edmunds, brought to the front that the U.S. EV market is still quite small and that the infrastructures are not close to being prepared. <em>“Even the rental agencies themselves were not in a position to answer the question, 'How do you charge 30 cars when you don't have a single level-3 charger available?'”</em> he stated. </p><p>Some of the other obstacles were low residual values, increased repair costs, and renters' worries of the reliability and safety of electric vehicles. Inadequate number of charging stations—especially for fast charging—was a big problem for drivers that were new to EVs. </p><p>By 2023, they had caught up with the slow mass EV transition realities that followed. The situation of the EV supply over the demand was reported by Hertz and thus the company started the sale of some parts of its EV fleet. The company faced the financial squeeze as it almost half a billion dollars EV-related assets wrote down among which were $420 million down for 2023 and 2024. </p><p>Altogether, the losses from only the company's investments in EVs amounted nearly to half billion dollars—thereby an extra billion-dollar impairment charge is not included—which goes toward valuing the total assets. The company saw its operating costs increase by $646 million, most of which was from the increased collision and damage expenses for EVs. </p><p>Hertz’s expensive bet on the verge of disaster pinpoints a bigger U.S. EV adoption problem that is causing a slow-down in the areas of EV range anxiety, charging infrastructure, and consumer unfamiliarity. Even though the interest in EVs is still on the rise, a number of practical issues are unresolved. </p><p>Drury said that before any plan of a mass EV rental comes up, infrastructure must be in place. <em>“Suppose I rent an EV in a city unknown to me, I surely wouldn't want to dedicate my trip to finding charging stations or taking a detour just to meet my charging needs,”</em> he said. <em>“This is an adoption barrier that hinders the normal mode of people.”</em> </p><p>Hertz downplays the bright spots for the EV transition in the US while illustrating both the promise and pitfalls of America’s electrification push. With regard to the company's decision, given the current situation of infrastructures and consumers, their massive investment was too optimistic. However, what it did was to reveal the gigantic potential lying in the EV market once the charging networks and user-friendliness get to a certain level. </p><p>While automakers and governments continue to move toward a cleaner, electrified future, Hertz’s failures remind us that we need to tackle the practical issues first if we want to see a more expanded charging network, increased reliability, and earned consumer trust. </p><p>In a nutshell, Hertz's multibillion-dollar duel of the EV wager was courageous—and costly. It brought to light the underdeveloped state of the U.S. EV infrastructure, resulted in significant financial losses, and offered valuable insight into what has to be done for EVs to become really ​‍​‌‍​‍‌​‍​‌‍​‍‌mainstream. </p> ",
       "category": "Business",
       "date": "2025-12-08",
       "image": "/hertz-ev-bet-collapse.webp",
