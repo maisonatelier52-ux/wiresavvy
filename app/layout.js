@@ -1,11 +1,6 @@
 import "./globals.css";
 import Loader from "./components/LoaderWrapper";
 
-export const metadata = {
-  title: "Wiresavvy",
-  description: "Latest news and updates",
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
