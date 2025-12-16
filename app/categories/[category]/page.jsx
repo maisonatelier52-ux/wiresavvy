@@ -1,6 +1,9 @@
+import Script from "next/script";
 import ArticleLayout from "@/app/components/ArticleLayout";
-import details from "../../../data/details.json";
+import details from "@/data/details.json";
 import Link from "next/link";
+
+const SITE_URL = "https://wiresavvy.com";
 
 export async function generateMetadata({ params }) {
   const { category } = await params;
@@ -12,22 +15,17 @@ export async function generateMetadata({ params }) {
   return {
     title: `${formattedCategory} News — Wiresavvy`,
     description: `Read the latest ${formattedCategory.toLowerCase()} news, analysis and investigative stories from across the United States. Updated daily by Wiresavvy reporters.`,
-    keywords: [
-      `${formattedCategory} news`,
-      `${formattedCategory} updates`,
-      "US news",
-      "Wiresavvy",
-      "breaking news",
-      "latest US headlines",
-    ],
+    alternates: {
+      canonical: `${SITE_URL}/categories/${categoryName}`,
+    },
     openGraph: {
       title: `${formattedCategory} News — Wiresavvy`,
-      description: `Latest US ${formattedCategory.toLowerCase()} news, reports and analysis.`,
-      url: `https://wiresavvy.com/category/${categoryName}`,
+      description: `Latest U.S. ${formattedCategory.toLowerCase()} news, reports and analysis.`,
+      url: `${SITE_URL}/categories/${categoryName}`,
       type: "website",
       images: [
         {
-          url: "/og-default.webp",
+          url: `${SITE_URL}/og-default.webp`,
           width: 1200,
           height: 630,
           alt: `${formattedCategory} News`,
@@ -37,11 +35,8 @@ export async function generateMetadata({ params }) {
     twitter: {
       card: "summary_large_image",
       title: `${formattedCategory} News — Wiresavvy`,
-      description: `Latest US ${formattedCategory.toLowerCase()} news and analysis.`,
-      images: ["/og-default.webp"],
-    },
-    alternates: {
-      canonical: `https://wiresavvy.com/category/${categoryName}`,
+      description: `Latest U.S. ${formattedCategory.toLowerCase()} news and analysis.`,
+      images: [`${SITE_URL}/og-default.webp`],
     },
   };
 }
@@ -50,7 +45,6 @@ export default async function CategoryPage({ params }) {
   const { category } = await params;
   const categoryName = decodeURIComponent(category);
 
-  // FILTER ARTICLES OF THIS CATEGORY
   const categoryArticles = details.articles.filter(
     a => a.category.toLowerCase() === categoryName.toLowerCase()
   );
@@ -59,51 +53,84 @@ export default async function CategoryPage({ params }) {
     return (
       <ArticleLayout>
         <div className="max-w-4xl mx-auto py-20 text-center">
-          <div className="text-sm text-zinc-600 mb-3">
-            <Link href="/" className="hover:text-red-500">Home</Link>
-            <span className="mx-2">›</span>
-            <span className="uppercase text-red-500 font-semibold">
-              {categoryName}
-            </span>
-          </div>
-          <h1 className="text-3xl font-bold uppercase text-red-500">
-            No articles found in "{categoryName}"
+          <h1 className="text-3xl font-bold text-red-500">
+            No articles found in “{categoryName}”
           </h1>
         </div>
       </ArticleLayout>
     );
   }
 
-  // SORT CATEGORY ARTICLES BY DATE (LATEST FIRST)
   const sortedCategory = [...categoryArticles].sort(
     (a, b) => new Date(b.date) - new Date(a.date)
   );
 
-  // MAIN 4
   const mainFour = sortedCategory.slice(0, 4);
-
-  // --- POPULAR POSTS LOGIC ---
-  // First take from same category (after main 4)
   let popularPosts = sortedCategory.slice(4, 7);
 
-  // If less than 3, fill from other categories
   if (popularPosts.length < 3) {
     const needed = 3 - popularPosts.length;
-
     const fallback = details.articles
       .filter(
         a =>
           a.category.toLowerCase() !== categoryName.toLowerCase() &&
-          !popularPosts.some(p => p.slug === a.slug) // avoid duplicates
+          !popularPosts.some(p => p.slug === a.slug)
       )
-      .sort((a, b) => new Date(b.date) - new Date(a.date)) // newest first
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
       .slice(0, needed);
 
     popularPosts = [...popularPosts, ...fallback];
   }
 
+  /* ---------- JSON-LD ---------- */
+
+  const collectionJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": `${categoryName} News`,
+    "description": `Latest U.S. ${categoryName} news and analysis from Wiresavvy.`,
+    "url": `${SITE_URL}/categories/${categoryName}`,
+    "hasPart": sortedCategory.slice(0, 10).map(article => ({
+      "@type": "NewsArticle",
+      "headline": article.title,
+      "url": `${SITE_URL}/articles/${article.slug}`,
+      "datePublished": new Date(article.date).toISOString(),
+    })),
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": categoryName,
+        "item": `${SITE_URL}/categories/${categoryName}`,
+      },
+    ],
+  };
+
   return (
     <ArticleLayout>
+
+      <Script
+        id="category-collection-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
+      />
+
+      <Script
+        id="category-breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div className="max-w-7xl mx-auto text-black">
 
         {/* PAGE WRAPPER */}

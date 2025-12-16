@@ -1,14 +1,76 @@
 import ArticleLayout from "@/app/components/ArticleLayout";
+import Script from "next/script";
+
+const SITE_URL = "https://wiresavvy.com";
 
 export const metadata = {
-  title: "Terms of Use | Wiresavvy",
+  title: "Terms of Use — Wiresavvy",
   description:
-    "Read Wiresavvy's Terms of Use, outlining acceptable website usage, intellectual property policies, disclaimers, and legal guidelines.",
+    "Read Wiresavvy's Terms of Use outlining acceptable website usage, intellectual property rights, disclaimers, and legal guidelines.",
+  alternates: {
+    canonical: `${SITE_URL}/terms-of-use`,
+  },
+  openGraph: {
+    title: "Terms of Use — Wiresavvy",
+    description:
+      "Review the terms and conditions governing use of the Wiresavvy website and services.",
+    url: `${SITE_URL}/terms-of-use`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Terms of Use — Wiresavvy",
+    description:
+      "Understand the rules, rights, and responsibilities when using Wiresavvy.",
+  },
 };
 
 export default function TermsOfUse() {
   return (
     <ArticleLayout>
+      <Script
+        id="terms-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "TermsOfService",
+            "name": "Wiresavvy Terms of Use",
+            "url": "https://wiresavvy.com/terms-of-use",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Wiresavvy",
+              "url": "https://wiresavvy.com"
+            }
+          }),
+        }}
+      />
+
+      <Script
+        id="terms-breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://wiresavvy.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Terms of Use",
+                "item": "https://wiresavvy.com/terms-of-use"
+              }
+            ]
+          }),
+        }}
+      />
+
       <article className="prose max-w-4xl mx-auto py-16 px-6 md:px-10 leading-relaxed">
         
         <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 tracking-tight">
