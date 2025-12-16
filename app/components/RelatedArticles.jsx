@@ -137,6 +137,7 @@ export default function RelatedArticles({ articles }) {
                   {post.image && (
                     <img
                       src={post.image}
+                      alt={post.title}
                       className="w-full h-[150px] object-cover"
                     />
                   )}

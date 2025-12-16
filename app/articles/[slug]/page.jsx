@@ -164,14 +164,13 @@ export default async function ArticlePage({ params }) {
 
         {/* HERO SECTION */}
         {article.image ? (
-          <section
-            className="relative w-full h-[350px] sm:h-[450px] md:h-[550px] overflow-hidden flex items-end"
-            style={{
-              backgroundImage: `url(${article.image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center"
-            }}
-          >
+          <section className="relative w-full h-[350px] sm:h-[450px] md:h-[550px] overflow-hidden flex items-end">
+            <img
+              src={article.image}
+              alt={article.title}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="eager"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
             <div className="relative z-10 w-full p-6 md:p-8">
@@ -282,13 +281,11 @@ export default async function ArticlePage({ params }) {
                   <li key={i} className="list-none">
                     <Link href={`/articles/${p.slug}`} className="flex gap-4 items-start group">
 
-                      <div
-                        className="w-20 h-20 overflow-hidden shadow-md shrink-0"
-                        style={{
-                          backgroundImage: `url(${p.image})`,
-                          backgroundSize: "cover",
-                          backgroundPosition: "center"
-                        }}
+                      <img
+                        src={p.image}
+                        alt={p.title}
+                        className="w-20 h-20 object-cover shadow-md shrink-0"
+                        loading="lazy"
                       />
 
                       <div className="flex flex-col">

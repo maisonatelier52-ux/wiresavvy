@@ -21,6 +21,7 @@ export default function WeeklyPopular({ articles = [] }) {
             <div className="flex-shrink-0">
               <img
                 src={article.image}
+                alt={article.title}
                 className="w-12 h-12 object-cover"
               />
             </div>

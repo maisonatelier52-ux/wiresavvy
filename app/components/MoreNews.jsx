@@ -37,14 +37,22 @@ export default function MoreNews() {
 
         {/* 2nd Article — spans 2 cols ✅ */}
         <Link href={`/articles/${second.slug}`} className="sm:col-span-2">
-          <div
-            className="w-full h-[260px] md:h-[320px] lg:h-[380px] bg-cover bg-center flex flex-col justify-end p-5 text-white"
-            style={{ backgroundImage: `url(${second.image})` }}
-          >
-            <span className="text-xs font-bold text-white uppercase w-fit py-1">
-              {second.category}
-            </span>
-            <h2 className="text-2xl md:text-3xl font-extrabold mt-2 line-clamp-3">{second.title}</h2>
+          <div className="relative w-full h-[260px] md:h-[320px] lg:h-[380px] flex flex-col justify-end p-5 text-white overflow-hidden">
+            <img
+              src={second.image}
+              alt={second.title}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-black/40" />
+            <div className="relative z-10">
+              <span className="text-xs font-bold uppercase w-fit py-1">
+                {second.category}
+              </span>
+              <h2 className="text-2xl md:text-3xl font-extrabold mt-2 line-clamp-3">
+                {second.title}
+              </h2>
+            </div>
           </div>
         </Link>
 
@@ -65,14 +73,22 @@ export default function MoreNews() {
 
         {/* 4th Article — spans 2 cols ✅ */}
         <Link href={`/articles/${fourth.slug}`} className="sm:col-span-2">
-          <div
-            className="w-full h-[260px] md:h-[320px] lg:h-[380px] bg-cover bg-center flex flex-col justify-end p-5 text-white"
-            style={{ backgroundImage: `url(${fourth.image})` }}
-          >
-            <span className="text-xs font-bold text-white uppercase w-fit py-1">
-              {fourth.category}
-            </span>
-            <h2 className="text-2xl md:text-3xl font-extrabold mt-2 line-clamp-3">{fourth.title}</h2>
+          <div className="relative w-full h-[260px] md:h-[320px] lg:h-[380px] flex flex-col justify-end p-5 text-white overflow-hidden">
+            <img
+              src={fourth.image}
+              alt={fourth.title}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-black/40" />
+            <div className="relative z-10">
+              <span className="text-xs font-bold uppercase w-fit py-1">
+                {fourth.category}
+              </span>
+              <h2 className="text-2xl md:text-3xl font-extrabold mt-2 line-clamp-3">
+                {fourth.title}
+              </h2>
+            </div>
           </div>
         </Link>
 

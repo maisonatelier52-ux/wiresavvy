@@ -165,13 +165,11 @@ export default async function CategoryPage({ params }) {
                     className="group block border border-gray-200 transition shadow-sm hover:shadow-lg overflow-hidden"
                 >
                     {/* IMAGE */}
-                    <div
-                    className="w-full h-48 mb-3"
-                    style={{
-                        backgroundImage: `url(${article.image})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center"
-                    }}
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-48 mb-3 object-cover"
+                      loading="lazy"
                     />
 
                     {/* TITLE */}
@@ -217,13 +215,11 @@ export default async function CategoryPage({ params }) {
                         >
 
                           {/* IMAGE ON TOP */}
-                          <div
-                          className="w-full h-32 mb-3 overflow-hidden shadow-md"
-                          style={{
-                              backgroundImage: `url(${p.image})`,
-                              backgroundSize: "cover",
-                              backgroundPosition: "center"
-                          }}
+                          <img
+                            src={p.image}
+                            alt={p.title}
+                            className="w-full h-32 mb-3 object-cover shadow-md"
+                            loading="lazy"
                           />
 
                           {/* TITLE */}
