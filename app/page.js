@@ -14,11 +14,11 @@ import MostViewed from "./components/Mostviewed";
 const SITE_URL = "https://wiresavvy.com";
 
 export const metadata = {
-  title: "Wiresavvy — Latest U.S. News & In-Depth Reporting",
+  title: "Wiresavvy — Independent U.S. News, Business & Investigations",
   description:
     "Wiresavvy delivers fast, factual U.S. news across business, law, finance, lifestyle, travel, and investigations. Breaking headlines and trusted analysis.",
   alternates: {
-    canonical: SITE_URL,
+    canonical: "https://wiresavvy.com/",
   },
   openGraph: {
     title: "Wiresavvy — Latest U.S. News & Investigations",
@@ -91,7 +91,6 @@ export default function Home() {
   return (
     <div className="min-h-screen font-sans">
 
-      {/* ✅ Homepage Structured Data */}
       <Script
         id="website-json-ld"
         type="application/ld+json"
@@ -99,6 +98,28 @@ export default function Home() {
       />
 
       <Header />
+      {/* ===== SEO INTRO ===== */}
+      <section className="sr-only px-4 py-6">
+        <h1 className="text-2xl font-bold mb-3">
+          Wiresavvy: Latest U.S. News With In-Depth Reporting
+        </h1>
+
+        <p className="text-gray-700 leading-relaxed">
+          Wiresavvy is an independent digital news platform delivering the latest
+          U.S. news with a strong focus on depth, accuracy, and responsible
+          reporting. Our newsroom covers business, finance, law, politics,
+          technology, and public policy, offering readers clear context behind
+          every headline.
+        </p>
+
+        <p className="text-gray-700 leading-relaxed mt-3">
+          At Wiresavvy, in-depth reporting goes beyond breaking news. We prioritize
+          verified facts, expert insights, and investigative journalism to help
+          readers understand not just what happened, but why it matters. From
+          market-moving developments to national issues shaping everyday life,
+          Wiresavvy provides news you can trust.
+        </p>
+      </section>
 
       <main className="mx-auto max-w-6xl">
 
