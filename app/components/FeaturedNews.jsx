@@ -21,6 +21,7 @@ export default function FeaturedNews({ articles }) {
             <img
               src={topNews.image}
               alt={topNews.title}
+              title={topNews.title}
               className="object-cover w-full h-[300px] md:h-[460px]"
             />
 
@@ -47,6 +48,7 @@ export default function FeaturedNews({ articles }) {
                 <img
                   src={news.image}
                   alt={news.title}
+                  title={news.title}
                   className="w-full h-[160px] object-cover"
                 />
               )}

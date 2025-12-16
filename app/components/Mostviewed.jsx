@@ -41,6 +41,7 @@ export default function MostViewed() {
             <img
               src={a.image}
               alt={a.title}
+              title={a.title}
               className="w-full h-full object-cover"
             />
           ) : (

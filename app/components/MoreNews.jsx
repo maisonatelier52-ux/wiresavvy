@@ -27,7 +27,7 @@ export default function MoreNews() {
         <Link href={`/articles/${first.slug}`} className="sm:col-span-1">
           <div className="bg-white h-full">
             {first.image && (
-              <img src={first.image} alt={first.title} className="w-full h-[180px] object-cover mb-3" />
+              <img src={first.image} alt={first.title} title={first.title} className="w-full h-[180px] object-cover mb-3" />
             )}
             <span className="text-xs font-bold text-red-500 hover:text-black uppercase">{first.category}</span>
             <h2 className="text-lg font-bold hover:text-red-500 mt-1 line-clamp-2">{first.title}</h2>
@@ -41,6 +41,7 @@ export default function MoreNews() {
             <img
               src={second.image}
               alt={second.title}
+              title={second.title}
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
             />
@@ -60,7 +61,7 @@ export default function MoreNews() {
         <Link href={`/articles/${third.slug}`} className="sm:col-span-1">
           <div className="bg-white h-full">
             {third.image && (
-              <img src={third.image} alt={third.title} className="w-full h-[180px] object-coverg mb-3" />
+              <img src={third.image} alt={third.title} title={third.title} className="w-full h-[180px] object-coverg mb-3" />
             )}
             <span className="text-xs font-bold text-red-500 hover:text-black uppercase">{third.category}</span>
             <h2 className="text-lg font-bold text-zinc-900 hover:text-red-500 mt-1 line-clamp-2">{third.title}</h2>
@@ -77,6 +78,7 @@ export default function MoreNews() {
             <img
               src={fourth.image}
               alt={fourth.title}
+              title={fourth.title}
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
             />
@@ -96,7 +98,7 @@ export default function MoreNews() {
         <Link href={`/articles/${fifth.slug}`} className="sm:col-span-1">
           <div className="bg-white h-full">
             {fifth.image && (
-              <img src={fifth.image} alt={fifth.title} className="w-full h-[180px] object-cover mb-3" />
+              <img src={fifth.image} alt={fifth.title} title={fifth.title} className="w-full h-[180px] object-cover mb-3" />
             )}
             <span className="text-xs font-bold text-red-500 hover:text-black uppercase">{fifth.category}</span>
             <h2 className="text-lg font-bold text-zinc-900 hover:text-red-500 mt-1 line-clamp-2">{fifth.title}</h2>
@@ -108,7 +110,7 @@ export default function MoreNews() {
         <Link href={`/articles/${sixth.slug}`} className="sm:col-span-1">
           <div className="bg-white transition h-full">
             {sixth.image && (
-              <img src={sixth.image} alt={sixth.title} className="w-full h-[180px] object-coverg mb-3" />
+              <img src={sixth.image} alt={sixth.title} title={sixth.title} className="w-full h-[180px] object-coverg mb-3" />
             )}
             <span className="text-xs font-bold text-red-500 hover:text-black uppercase">{sixth.category}</span>
             <h2 className="text-lg font-bold text-zinc-900 hover:text-red-500 mt-1 line-clamp-2">{sixth.title}</h2>

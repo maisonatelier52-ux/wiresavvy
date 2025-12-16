@@ -22,6 +22,7 @@ export default function WeeklyPopular({ articles = [] }) {
               <img
                 src={article.image}
                 alt={article.title}
+                title={article.title}
                 className="w-12 h-12 object-cover"
               />
             </div>

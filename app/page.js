@@ -123,28 +123,24 @@ export default function Home() {
 
       <main className="mx-auto max-w-6xl">
 
-        {/* ===== SMALL SCREENS ===== */}
-        <div className="flex flex-col gap-6 lg:hidden">
-          <FeaturedNews articles={featuredArticles} />
-          <aside>
-            <MoreHeadlines articles={moreHeadlines} />
-          </aside>
-          <aside>
-            <WeeklyPopular articles={weeklyPopular} />
-          </aside>
-        </div>
+        {/* ===== RESPONSIVE HOME GRID (SINGLE RENDER) ===== */}
+        <div className="grid gap-6 lg:grid-cols-4">
 
-        {/* ===== LARGE SCREENS ===== */}
-        <div className="hidden lg:grid gap-6 grid-cols-4">
-          <aside className="col-span-1">
+          {/* LEFT SIDEBAR */}
+          <aside className="order-2 lg:order-1 lg:col-span-1">
             <MoreHeadlines articles={moreHeadlines} />
           </aside>
 
-          <FeaturedNews articles={featuredArticles} />
+          {/* MAIN CONTENT */}
+          <div className="order-1 lg:order-2 lg:col-span-2">
+            <FeaturedNews articles={featuredArticles} />
+          </div>
 
-          <aside className="col-span-1">
+          {/* RIGHT SIDEBAR */}
+          <aside className="order-3 lg:order-3 lg:col-span-1">
             <WeeklyPopular articles={weeklyPopular} />
           </aside>
+
         </div>
 
         <AdBanner />

@@ -244,6 +244,7 @@ export default async function AuthorPage({ params }) {
               <img
                 src={article.image}
                 alt={article.title}
+                title={article.title}
                 className="w-32 h-24 object-cover"
               />
               <div>

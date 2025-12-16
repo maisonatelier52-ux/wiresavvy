@@ -168,6 +168,7 @@ export default async function ArticlePage({ params }) {
             <img
               src={article.image}
               alt={article.title}
+              title={article.title}
               className="absolute inset-0 w-full h-full object-cover"
               loading="eager"
             />
@@ -284,6 +285,7 @@ export default async function ArticlePage({ params }) {
                       <img
                         src={p.image}
                         alt={p.title}
+                        title={p.title}
                         className="w-20 h-20 object-cover shadow-md shrink-0"
                         loading="lazy"
                       />

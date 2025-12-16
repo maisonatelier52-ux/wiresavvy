@@ -140,6 +140,7 @@ export default function InsightAnalysis() {
                   {a.image && (
                     <img
                       src={a.image}
+                      title={a.title}
                       className="w-auto max-w-full mx-auto h-[150px] object-cover"
                       alt={a.title}
                     />

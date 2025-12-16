@@ -168,6 +168,7 @@ export default async function CategoryPage({ params }) {
                     <img
                       src={article.image}
                       alt={article.title}
+                      title={article.title}
                       className="w-full h-48 mb-3 object-cover"
                       loading="lazy"
                     />
@@ -218,6 +219,7 @@ export default async function CategoryPage({ params }) {
                           <img
                             src={p.image}
                             alt={p.title}
+                            title={p.title}
                             className="w-full h-32 mb-3 object-cover shadow-md"
                             loading="lazy"
                           />
