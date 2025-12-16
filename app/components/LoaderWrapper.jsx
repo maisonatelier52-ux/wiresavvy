@@ -11,7 +11,11 @@ export default function LoaderWrapper({ children }) {
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) return <Loader />;
+  return (
+    <>
+      {children}
 
-  return <>{children}</>;
+      {loading && <Loader />}
+    </>
+  );
 }
