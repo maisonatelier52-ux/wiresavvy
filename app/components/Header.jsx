@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import TopTicker from "./TopTicker";
 import Sidebar from "./Sidebar";
+import Image from "next/image";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -82,8 +83,20 @@ export default function Header() {
         </button>
 
         {/* Center – Logo */}
-        <Link href="/" className="text-2xl sm:text-3xl font-bold">
-          Wiresavvy
+        {/* Center – Logo */}
+        <Link
+          href="/"
+          className="flex items-center justify-center"
+          aria-label="Wiresavvy – Independent U.S. News"
+        >
+          <Image
+            src="/wiresavvy.webp"
+            alt="Wiresavvy – Independent U.S. News, Business & Investigations"
+            width={180}
+            height={40}
+            priority
+            className="h-auto w-[140px] sm:w-[170px]"
+          />
         </Link>
 
         {/* Right – Responsive Date & Time */}
