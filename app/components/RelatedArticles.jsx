@@ -130,7 +130,7 @@ export default function RelatedArticles({ articles }) {
               className="flex-shrink-0 px-2"
               style={{ width: `${100 / visibleCount}%` }}
             >
-              <Link href={`/articles/${post.slug}`}>
+              <Link href={`/articles/${post.slug}`} title={post.title}>
                 <div>
                   {post.image && (
                     <img
@@ -155,7 +155,7 @@ export default function RelatedArticles({ articles }) {
         // ✔ Simple grid (when < 5 items)
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-2">
           {articles.map((post, i) => (
-            <Link key={i} href={`/articles/${post.slug}`}>
+            <Link key={i} href={`/articles/${post.slug}`} title={post.title}>
               <div>
                 {post.image && (
                   <img

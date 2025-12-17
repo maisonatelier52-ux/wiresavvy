@@ -53,10 +53,10 @@ export default function Footer() {
           <div>
             <div className="text-xl font-bold mb-4 text-white">Quick Links</div>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/about">About</Link></li>
-              <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-              <li><Link href="/terms-of-use">Terms of Use</Link></li>
+              <li><Link href="/" title="Home">Home</Link></li>
+              <li><Link href="/about" title="About">About</Link></li>
+              <li><Link href="/privacy-policy" title="Privacy Policy">Privacy Policy</Link></li>
+              <li><Link href="/terms-of-use" title="Terms of Use">Terms of Use</Link></li>
             </ul>
           </div>
 
@@ -70,6 +70,7 @@ export default function Footer() {
 
                   <Link
                     href={`/author/${author.id}`}
+                    title={author.name}
                     className="flex gap-3 items-start group"
                   >
                     {/* LEFT: Author Image */}

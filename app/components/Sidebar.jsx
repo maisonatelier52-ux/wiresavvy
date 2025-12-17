@@ -115,12 +115,12 @@ export default function Sidebar({ open, onClose }) {
           </div> */}
 
           {/* OTHER LINKS */}
-          <Link href="/categories/business" className="px-4 py-3 hover:text-red-500 border-b border-gray-200">Business</Link>
-          <Link href="/categories/travel" className="px-4 py-3 hover:text-red-500 border-b border-gray-200">Travel</Link>
-          <Link href="/categories/lifestyle" className="px-4 py-3 hover:text-red-500 border-b border-gray-200">Lifestyle</Link>
-          <Link href="/categories/law" className="px-4 py-3 hover:text-red-500 border-b border-gray-200">Law</Link>
-          <Link href="/categories/finance" className="px-4 py-3 hover:text-red-500 border-b border-gray-200">Finance</Link>
-          <Link href="/categories/investigation" className="px-4 py-3 hover:text-red-500">Investigation</Link>
+          <Link href="/categories/business" className="px-4 py-3 hover:text-red-500 border-b border-gray-200" title="Business">Business</Link>
+          <Link href="/categories/travel" className="px-4 py-3 hover:text-red-500 border-b border-gray-200" title="Travel">Travel</Link>
+          <Link href="/categories/lifestyle" className="px-4 py-3 hover:text-red-500 border-b border-gray-200" title="Lifestyle">Lifestyle</Link>
+          <Link href="/categories/law" className="px-4 py-3 hover:text-red-500 border-b border-gray-200" title="Law">Law</Link>
+          <Link href="/categories/finance" className="px-4 py-3 hover:text-red-500 border-b border-gray-200" title="Finence">Finance</Link>
+          <Link href="/categories/investigation" className="px-4 py-3 hover:text-red-500" title="Investigation">Investigation</Link>
 
           <div className="px-4 py-6 flex gap-3">
           <a href="https://twitter.com" title="Twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-10 h-10 flex items-center justify-center bg-zinc-200 text-zinc-700 rounded hover:bg-[#1DA1F2] hover:text-white transition-colors duration-200">

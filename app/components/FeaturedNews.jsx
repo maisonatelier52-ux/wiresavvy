@@ -20,7 +20,7 @@ export default function FeaturedNews({ articles }) {
 
       {/* ===== TOP FEATURED NEWS ===== */}
       {topNews && (
-        <Link href={`/articles/${topNews.slug}`} className="relative w-full">
+        <Link href={`/articles/${topNews.slug}`} title={topNews.title} className="relative w-full">
           <div className="relative overflow-hidden w-full">
             <img
               src={topNews.image}
@@ -46,7 +46,7 @@ export default function FeaturedNews({ articles }) {
       {/* ===== BOTTOM 2 NEWS CARDS ===== */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
         {bottomNews.map((news) => (
-          <Link key={news.slug} href={`/articles/${news.slug}`}>
+          <Link key={news.slug} title={news.title} href={`/articles/${news.slug}`}>
             <div className="bg-white overflow-hidden w-full">
               {news.image && (
                 <img

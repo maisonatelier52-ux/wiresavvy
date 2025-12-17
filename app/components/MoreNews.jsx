@@ -16,7 +16,7 @@ export default function MoreNews({ articles }) {
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-5">
 
         {/* 1st Article — spans 1 col */}
-        <Link href={`/articles/${first.slug}`} className="sm:col-span-1">
+        <Link href={`/articles/${first.slug}`} title={first.title} className="sm:col-span-1">
           <div className="bg-white h-full">
             {first.image && (
               <img src={first.image} alt={first.title} title={first.title} className="w-full h-[180px] object-cover mb-3" />
@@ -28,7 +28,7 @@ export default function MoreNews({ articles }) {
         </Link>
 
         {/* 2nd Article — spans 2 cols ✅ */}
-        <Link href={`/articles/${second.slug}`} className="sm:col-span-2">
+        <Link href={`/articles/${second.slug}`} title={second.title} className="sm:col-span-2">
           <div className="relative w-full h-[260px] md:h-[320px] lg:h-[380px] flex flex-col justify-end p-5 text-white overflow-hidden">
             <img
               src={second.image}
@@ -50,7 +50,7 @@ export default function MoreNews({ articles }) {
         </Link>
 
         {/* 3rd Article — spans 1 col */}
-        <Link href={`/articles/${third.slug}`} className="sm:col-span-1">
+        <Link href={`/articles/${third.slug}`} title={third.title} className="sm:col-span-1">
           <div className="bg-white h-full">
             {third.image && (
               <img src={third.image} alt={third.title} title={third.title} className="w-full h-[180px] object-coverg mb-3" />
@@ -65,7 +65,7 @@ export default function MoreNews({ articles }) {
       <div className="grid grid-cols-1 sm:grid-cols-4 py-5 gap-5">
 
         {/* 4th Article — spans 2 cols ✅ */}
-        <Link href={`/articles/${fourth.slug}`} className="sm:col-span-2">
+        <Link href={`/articles/${fourth.slug}`} title={fourth.title} className="sm:col-span-2">
           <div className="relative w-full h-[260px] md:h-[320px] lg:h-[380px] flex flex-col justify-end p-5 text-white overflow-hidden">
             <img
               src={fourth.image}
@@ -87,7 +87,7 @@ export default function MoreNews({ articles }) {
         </Link>
 
         {/* 5th Article — spans 1 col */}
-        <Link href={`/articles/${fifth.slug}`} className="sm:col-span-1">
+        <Link href={`/articles/${fifth.slug}`} title={fifth.title} className="sm:col-span-1">
           <div className="bg-white h-full">
             {fifth.image && (
               <img src={fifth.image} alt={fifth.title} title={fifth.title} className="w-full h-[180px] object-cover mb-3" />
@@ -99,7 +99,7 @@ export default function MoreNews({ articles }) {
         </Link>
 
         {/* 6th Article — spans 1 col */}
-        <Link href={`/articles/${sixth.slug}`} className="sm:col-span-1">
+        <Link href={`/articles/${sixth.slug}`} title={sixth.title} className="sm:col-span-1">
           <div className="bg-white transition h-full">
             {sixth.image && (
               <img src={sixth.image} alt={sixth.title} title={sixth.title} className="w-full h-[180px] object-coverg mb-3" />

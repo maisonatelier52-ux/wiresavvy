@@ -32,7 +32,7 @@ export default function MostViewed() {
   const adImage = "/ad-image.png";
 
   const renderArticle = (a, i) => (
-    <Link href={`/articles/${a.slug}`} key={i}>
+    <Link href={`/articles/${a.slug}`} title={a.title} key={i}>
       <div className="flex group">
 
         {/* IMAGE */}
@@ -77,7 +77,7 @@ export default function MostViewed() {
 
         {/* COLUMN 3 — AD */}
         <div className="flex justify-center">
-          <Link href="http://wiresavvy.com/">
+          <Link href="http://wiresavvy.com/" title="WireSavvy Home">
             <div className="w-full max-w-[400px] aspect-[1080/1920] bg-gray-200 border border-gray-400 flex items-center justify-center overflow-hidden">
               <img
                 src={adImage}

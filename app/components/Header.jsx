@@ -85,6 +85,7 @@ export default function Header() {
         {/* Center – Logo */}
         <Link
           href="/"
+          title="WireSavvy Home"
           className="flex items-center justify-center"
           aria-label="Wiresavvy – Independent U.S. News"
         >
@@ -118,6 +119,7 @@ export default function Header() {
               <Link
                 key={i}
                 href={`/categories/${cat.href}`}
+                title={cat.href}
                 className="hover:text-red-500 transition-colors duration-150"
               >
                 {cat.label}

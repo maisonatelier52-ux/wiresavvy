@@ -32,6 +32,7 @@ export default function MoreHeadlines({ articles = [] }) {
         {paged.map((article) => (
           <Link
             key={article.slug}
+            title={article.title}
             href={`/articles/${article.slug}`}
             className="group hover:text-red-500 transition-colors duration-200 block mb-4 pb-4 border-b border-gray-200 last:border-b-0 last:mb-0 last:pb-0"
           >
