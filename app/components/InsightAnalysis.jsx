@@ -100,6 +100,7 @@ export default function InsightAnalysis({ articles = [] }) {
                   <img
                     src={a.image}
                     alt={a.title}
+                    title={a.title}
                     className="h-[160px] w-full object-cover"
                   />
                 )}

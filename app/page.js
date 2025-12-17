@@ -46,102 +46,49 @@ export const metadata = {
 
 export default function Home() {
 
-//   const featuredNews = details.articles.filter(
-//     article => article.category === "Business" && article.published !== false
-//   );
-
-//   const sortedBusiness = [...featuredNews].sort(
-//     (a, b) => new Date(b.date) - new Date(a.date)
-//   );
-
-//   const featuredArticles = sortedBusiness.slice(0, 3);
-//   const featuredSlugs = new Set(featuredArticles.map(a => a.slug));
-
-//   const weeklyPopular = details.articles
-//     .filter(a => a.published !== false && !featuredSlugs.has(a.slug))
-//     .slice(0, 7)
-//     .reverse();
-
-//   const weeklyPopularSlugs = new Set(weeklyPopular.map(a => a.slug));
-
-//   const moreHeadlines = details.articles.filter(
-//     article => article.published !== false && !weeklyPopularSlugs.has(article.slug)
-//   );
-
-//   // ---------- MORE NEWS DATA (from homepage) ----------
-
-// const publishedArticles = details.articles.filter(
-//   a => a.published !== false
-// );
-
-// const businessMore = publishedArticles
-//   .filter(a => a.category === "Business")
-//   .slice(3, 6);
-
-// const lifestyleMore = publishedArticles
-//   .filter(a => a.category === "Lifestyle")
-//   .slice(0, 1);
-
-// const travelMore = publishedArticles
-//   .filter(a => a.category === "Travel")
-//   .slice(0, 1);
-
-// const financeMore = publishedArticles
-//   .filter(a => a.category === "Finance")
-//   .slice(0, 1);
-
-// const moreNewsArticles = [
-//   ...businessMore,
-//   ...lifestyleMore,
-//   ...travelMore,
-//   ...financeMore,
-// ];
-
   // ---------- BASE DATA ----------
-const publishedArticles = details.articles
-  .filter(a => a.published !== false)
-  .sort((a, b) => new Date(b.date) - new Date(a.date));
+  const publishedArticles = details.articles
+    .filter(a => a.published !== false)
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  const featuredArticles = publishedArticles
-  .filter(a => a.category === "Business")
-  .slice(0, 3);
+    const featuredArticles = publishedArticles
+    .filter(a => a.category === "Business")
+    .slice(0, 3);
 
-const usedSlugs = new Set(featuredArticles.map(a => a.slug));
+  const usedSlugs = new Set(featuredArticles.map(a => a.slug));
 
-const pickOneByCategory = (category) => {
-  const article = publishedArticles.find(
-    a => a.category === category && !usedSlugs.has(a.slug)
+  const pickOneByCategory = (category) => {
+    const article = publishedArticles.find(
+      a => a.category === category && !usedSlugs.has(a.slug)
+    );
+    if (article) usedSlugs.add(article.slug);
+    return article;
+  };
+
+  const moreNewsArticles = [
+    pickOneByCategory("Business"),
+    pickOneByCategory("Lifestyle"),
+    pickOneByCategory("Travel"),
+    pickOneByCategory("Law"),
+    pickOneByCategory("Finance"),
+    pickOneByCategory("Investigation"),
+  ].filter(Boolean);
+
+  const weeklyPopular = publishedArticles
+    .filter(a => !usedSlugs.has(a.slug))
+    .slice(0, 6);
+
+  weeklyPopular.forEach(a => usedSlugs.add(a.slug));
+
+  const insightArticles = publishedArticles
+    .filter(a => !usedSlugs.has(a.slug))
+    .slice(0, 6);
+
+  insightArticles.forEach(a => usedSlugs.add(a.slug));
+
+  const moreHeadlines = publishedArticles.filter(
+    a => !usedSlugs.has(a.slug)
   );
-  if (article) usedSlugs.add(article.slug);
-  return article;
-};
-
-const moreNewsArticles = [
-  pickOneByCategory("Business"),
-  pickOneByCategory("Lifestyle"),
-  pickOneByCategory("Travel"),
-  pickOneByCategory("Law"),
-  pickOneByCategory("Finance"),
-  pickOneByCategory("Investigation"),
-].filter(Boolean);
-
-
-const weeklyPopular = publishedArticles
-  .filter(a => !usedSlugs.has(a.slug))
-  .slice(0, 6);
-
-weeklyPopular.forEach(a => usedSlugs.add(a.slug));
-
-
-const insightArticles = publishedArticles
-  .filter(a => !usedSlugs.has(a.slug))
-  .slice(0, 6);
-
-insightArticles.forEach(a => usedSlugs.add(a.slug));
-
-const moreHeadlines = publishedArticles.filter(
-  a => !usedSlugs.has(a.slug)
-);
 
   /* ---------- JSON-LD (Homepage) ---------- */
 
@@ -230,7 +177,7 @@ const moreHeadlines = publishedArticles.filter(
         </section>
 
         <section className="border-t-2 border-gray-200 pt-8">
-<InsightAnalysis articles={insightArticles} />
+          <InsightAnalysis articles={insightArticles} />
         </section>
 
         <section className="border-t-2 border-gray-200">

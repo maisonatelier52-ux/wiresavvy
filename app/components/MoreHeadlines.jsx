@@ -35,7 +35,12 @@ export default function MoreHeadlines({ articles = [] }) {
             href={`/articles/${article.slug}`}
             className="group hover:text-red-500 transition-colors duration-200 block mb-4 pb-4 border-b border-gray-200 last:border-b-0 last:mb-0 last:pb-0"
           >
-            <h4 className="font-semibold text-sm line-clamp-2">{article.title}</h4>
+            <h4
+            className="font-semibold text-sm line-clamp-2"
+            title={article.title.length > 90 ? article.title.substring(0, 90) + '...' : article.title}
+          >
+              {article.title}
+            </h4>
           </Link>
         ))}
       </div>

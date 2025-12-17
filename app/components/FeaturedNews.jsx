@@ -11,6 +11,10 @@ export default function FeaturedNews({ articles }) {
   const topNews = sortedCategory[0];
   const bottomNews = sortedCategory.slice(1, 3);
 
+  const truncate = (text = "", limit = 100) =>
+  text.length > limit ? text.slice(0, limit).trim() + "…" : text;
+
+
   return (
     <aside className="md:col-span-2 flex flex-col gap-6 w-full">
 
@@ -60,8 +64,8 @@ export default function FeaturedNews({ articles }) {
                 <h2 className="text-lg font-bold text-zinc-900 line-clamp-2">
                   {news.title}
                 </h2>
-                <p className="text-md text-zinc-500 line-clamp-2 mt-2">
-                  {news.excerpt}
+                <p className="text-md text-zinc-500 mt-2">
+                  {truncate(news.excerpt, 60)}
                 </p>
               </div>
             </div>
