@@ -31,9 +31,9 @@ export default function FeaturedNews({ articles }) {
               <p className="text-sm font-bold uppercase mb-1">
                 {topNews.category}
               </p>
-              <h1 className="text-2xl sm:text-3xl md:text-3xl font-bold leading-snug">
+              <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold leading-snug">
                 {topNews.title}
-              </h1>
+              </h2>
             </div>
           </div>
         </Link>

@@ -76,6 +76,7 @@ export default function Footer() {
                     <img
                       src={author.photo}
                       alt={author.name}
+                      title={author.name}
                       className="w-14 h-14 object-cover rounded-full group-hover:opacity-80 transition"
                     />
 

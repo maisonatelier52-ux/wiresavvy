@@ -82,6 +82,7 @@ export default function MostViewed() {
               <img
                 src={adImage}
                 alt="Sponsor Ad"
+                title="Sponsor Ad"
                 className="w-full h-full object-contain"
               />
             </div>

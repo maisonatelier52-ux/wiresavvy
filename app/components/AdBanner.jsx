@@ -15,7 +15,8 @@ export default function AdBanner() {
           {!imgError ? (
             <img
               src={adSrc}
-              alt="Political Sponsor Ad"
+              alt="Sponsor Ad"
+              title="Sponsor Ad"
               className="
                 w-full md:w-[728px] md:h-[120px]
                 max-w-[728px]

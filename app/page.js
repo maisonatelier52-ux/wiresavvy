@@ -18,7 +18,7 @@ export const metadata = {
   description:
     "Wiresavvy delivers fast, factual U.S. news across business, law, finance, lifestyle, travel, and investigations. Breaking headlines and trusted analysis.",
   alternates: {
-    canonical: "https://wiresavvy.com/",
+    canonical: SITE_URL,
   },
   openGraph: {
     title: "Wiresavvy — Latest U.S. News & Investigations",
