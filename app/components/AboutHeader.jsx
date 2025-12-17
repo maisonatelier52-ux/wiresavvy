@@ -47,6 +47,7 @@ export default function Header() {
         {/* Center Logo */}
         <Link
           href="/"
+          title="WireSavvy Home"
           className="absolute left-1/2 -translate-x-1/2 text-3xl font-bold text-center"
         >
           Wiresavvy
@@ -65,6 +66,7 @@ export default function Header() {
             <Link
               key={i}
               href={`/categories/${cat.href}`}
+              title={cat.href}
               className="hover:text-red-500 transition-colors duration-150"
             >
               {cat.label}

@@ -9,7 +9,7 @@ export default function AdBanner() {
 
   return (
     <div className="w-full flex justify-center my-8">
-      <Link href="http://wiresavvy.com/">
+      <Link href="http://wiresavvy.com/" title="WireSavvy Home">
         {/* Wrapper gives grey BG if no image */}
         <div className="w-full md:w-[728px] md:h-[120px] flex justify-center items-center">
           {!imgError ? (

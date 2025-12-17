@@ -241,6 +241,7 @@ export default async function AuthorPage({ params }) {
           {authorArticles.map(article => (
             <Link
               key={article.slug}
+              title={article.title}
               href={`/articles/${article.slug}`}
               className="flex gap-4 group"
             >

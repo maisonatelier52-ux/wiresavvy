@@ -159,7 +159,7 @@ export default async function ArticlePage({ params }) {
 
       {/* BREADCRUMB SECTION */}
       <div className="text-sm text-zinc-600 mb-3">
-        <Link href="/" className="hover:text-red-500">Home</Link>
+        <Link href="/" title="WireSavvy Home" className="hover:text-red-500">Home</Link>
         <span className="mx-2">›</span>
         <span className="uppercase text-red-500 font-semibold">
           {article.category}
@@ -183,6 +183,7 @@ export default async function ArticlePage({ params }) {
             <div className="relative z-10 w-full p-6 md:p-8">
               <Link 
                 href={`/categories/${article.category}`} 
+                title={article.category}
                 className="text-zinc-300 hover:text-white underline underline-offset-4"
               >
                 <div className="text-xs sm:text-sm font-bold uppercase tracking-wide mb-2">
@@ -199,7 +200,8 @@ export default async function ArticlePage({ params }) {
 
                 {/* AUTHOR NAME FROM JSON */}
                 <Link 
-                  href={`/author/${author?.id}`} 
+                  href={`/author/${author?.id}`}
+                  title={author.title} 
                   className="hover:text-white underline underline-offset-4"
                 >
                   {author?.name || "Unknown Author"}
@@ -286,7 +288,7 @@ export default async function ArticlePage({ params }) {
 
                 return (
                   <li key={i} className="list-none">
-                    <Link href={`/articles/${p.slug}`} className="flex gap-4 items-start group">
+                    <Link href={`/articles/${p.slug}`} title={p.title} className="flex gap-4 items-start group">
 
                       <img
                         src={p.image}

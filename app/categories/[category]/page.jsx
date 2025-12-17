@@ -141,7 +141,7 @@ export default async function CategoryPage({ params }) {
 
             {/* BREADCRUMB */}
             <div className="text-sm text-zinc-600 mb-3">
-              <Link href="/" className="hover:text-red-500">Home</Link>
+              <Link href="/" title="WireSavvy Home" className="hover:text-red-500">Home</Link>
               <span className="mx-2">›</span>
               <span className="uppercase text-red-500 font-semibold">
                 {categoryName}
@@ -151,6 +151,11 @@ export default async function CategoryPage({ params }) {
             {/* CATEGORY TITLE */}
             <h1 className="text-3xl font-bold uppercase text-red-500 mb-8">
               {categoryName} News
+              <p className="sr-only text-zinc-700 mb-8 max-w-3xl">
+                Wiresavvy’s {categoryName} News delivers in-depth investigative reporting,
+                accountability journalism, and long-form investigations covering politics,
+                business, and public institutions across the United States.
+              </p>
             </h1>
 
             {/* MAIN 4 ARTICLES */}
@@ -161,6 +166,7 @@ export default async function CategoryPage({ params }) {
                 return (
                 <Link
                     key={i}
+                    title={article.title}
                     href={`/articles/${article.slug}`}
                     className="group block border border-gray-200 transition shadow-sm hover:shadow-lg overflow-hidden"
                 >
@@ -212,6 +218,7 @@ export default async function CategoryPage({ params }) {
                     <li key={i} className="list-none">
                         <Link
                             href={`/articles/${p.slug}`}
+                            title={p.title}
                             className="block group"
                         >
 
