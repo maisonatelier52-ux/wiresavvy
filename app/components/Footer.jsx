@@ -51,7 +51,7 @@ export default function Footer() {
 
           {/* ==== Quick Links ==== */}
           <div>
-            <h4 className="text-xl font-bold mb-4 text-white">Quick Links</h4>
+            <div className="text-xl font-bold mb-4 text-white">Quick Links</div>
             <ul className="space-y-2 text-sm">
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about">About</Link></li>
@@ -62,7 +62,7 @@ export default function Footer() {
 
           {/* ==== Authors Section (REPLACED CATEGORIES) ==== */}
           <div>
-            <h4 className="text-xl font-bold mb-4 text-white">Featured Authors</h4>
+            <div className="text-xl font-bold mb-4 text-white">Featured Authors</div>
 
             <ul className="space-y-4">
               {featuredAuthors.map((author) => (
@@ -99,7 +99,7 @@ export default function Footer() {
 
           {/* ==== Newsletter ==== */}
           <div>
-            <h4 className="text-xl font-bold mb-4 text-white">Stay Updated</h4>
+            <div className="text-xl font-bold mb-4 text-white">Stay Updated</div>
             <form className="flex flex-col space-y-3">
               <input
                 type="email"

@@ -26,7 +26,7 @@ export default function MoreHeadlines({ articles = [] }) {
 
   return (
     <div className="bg-white border border-gray-200 p-4 h-fit">
-      <h4 className="font-bold pb-2 mb-4 text-red-500 border-b">MORE HEADLINES</h4>
+            <h3 className="font-bold text-xl border-b border-red-500 pb-2 mb-4 text-red-500">MORE HEADLINES</h3>
 
       <div className="flex flex-col">
         {paged.map((article) => (
@@ -36,9 +36,9 @@ export default function MoreHeadlines({ articles = [] }) {
             className="group hover:text-red-500 transition-colors duration-200 block mb-4 pb-4 border-b border-gray-200 last:border-b-0 last:mb-0 last:pb-0"
           >
             <h4
-            className="font-semibold text-sm line-clamp-2"
-            title={article.title.length > 90 ? article.title.substring(0, 90) + '...' : article.title}
-          >
+              className="font-semibold text-sm line-clamp-2"
+              title={article.title.length > 90 ? article.title.substring(0, 90) + '...' : article.title}
+            >
               {article.title}
             </h4>
           </Link>
