@@ -1,19 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import details from "../../data/details.json";
 
-export default function MoreNews() {
-  const businessNews = details.articles.filter(a => a.category === "Business").slice(3, 6);
-  const lifestyleNews = details.articles.filter(a => a.category === "Lifestyle").slice(0, 1);
-  const travelNews = details.articles.filter(a => a.category === "Travel").slice(0, 1);
-  const financeNews = details.articles.filter(a => a.category === "Finance").slice(0, 1);
+export default function MoreNews({ articles }) {
+  if (!articles || articles.length < 6) return null;
 
-
-  const [first, second, third] = businessNews; 
-  const [fourth] = lifestyleNews;
-  const [fifth] = travelNews;
-  const [sixth] = financeNews; 
+  const [first, second, third, fourth, fifth, sixth] = articles;
 
   return (
     <section className="w-full mb-1">
