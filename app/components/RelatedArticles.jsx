@@ -5,7 +5,6 @@ import Link from "next/link";
 
 export default function RelatedArticles({ articles }) {
 
-  // ❌ If no articles — show message
   if (!articles || articles.length === 0) {
     return (
       <div className="mt-10 mb-10 text-center text-gray-500 text-sm">
@@ -16,7 +15,6 @@ export default function RelatedArticles({ articles }) {
 
   const total = articles.length;
 
-  // ❌ If less than 5 — no buttons, no slider, just a grid
   const showButtons = total >= 4;
   const enableSlider = total >= 4;
 

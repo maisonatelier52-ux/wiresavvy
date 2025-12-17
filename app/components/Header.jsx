@@ -83,7 +83,6 @@ export default function Header() {
         </button>
 
         {/* Center – Logo */}
-        {/* Center – Logo */}
         <Link
           href="/"
           className="flex items-center justify-center"
@@ -94,6 +93,7 @@ export default function Header() {
             alt="Wiresavvy – Independent U.S. News, Business & Investigations"
             width={180}
             height={40}
+            title="WireSavvy Logo"
             priority
             className="h-auto w-[140px] sm:w-[170px]"
           />

@@ -55,7 +55,7 @@ export default async function ArticlePage({ params }) {
   const { slug } = await params;
 
   // FIND ARTICLE
-  const article = details.articles.find(a => a.slug === slug);
+  const article = details.articles.find(a => a.slug === slug && a.published);
 
   if (!article) {
     return (
@@ -69,14 +69,20 @@ export default async function ArticlePage({ params }) {
 
   const author = details.authors.find(a => a.id === article.authorId);
 
-  const popularPosts = [...details.articles]
-    .filter(a => a.category === article.category && a.slug !== article.slug)
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 6);
+  // Only published articles
+  const publishedArticles = details.articles.filter(a => a.published);
 
-  const related = details.articles
+  // RELATED ARTICLES
+  const related = publishedArticles
     .filter(a => a.category === article.category && a.slug !== article.slug)
     .slice(0, 5);
+
+  // POPULAR POSTS — exclude related articles
+  const relatedSlugs = related.map(a => a.slug);
+  const popularPosts = publishedArticles
+    .filter(a => a.category !== article.category && a.slug !== article.slug && !relatedSlugs.includes(a.slug))
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 6);
 
   /* ---------- JSON-LD ---------- */
 
