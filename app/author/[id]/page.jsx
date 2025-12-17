@@ -159,6 +159,7 @@ export default async function AuthorPage({ params }) {
               {author.twitter && (
                 <a
                   href={author.twitter}
+                  title={`${author.name} on Twitter`}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${author.name} on Twitter`}
@@ -173,6 +174,7 @@ export default async function AuthorPage({ params }) {
               {author.facebook && (
                 <a
                   href={author.facebook}
+                  title={`${author.name} on Facebook`}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${author.name} on Facebook`}
@@ -187,6 +189,7 @@ export default async function AuthorPage({ params }) {
               {author.instagram && (
                 <a
                   href={author.instagram}
+                  title={`${author.name} on Instagram`}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${author.name} on Instagram`}
