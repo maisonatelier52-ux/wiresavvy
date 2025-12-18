@@ -117,6 +117,21 @@ export default async function CategoryPage({ params }) {
     ],
   };
 
+  const CATEGORY_DESCRIPTIONS = {
+  business:
+    "Wiresavvy Business News covers U.S. companies, corporate strategy, leadership, and the forces shaping the modern economy.",
+  travel:
+    "Wiresavvy Travel News reports on airlines, tourism, policy changes, and trends shaping how Americans move and explore.",
+  lifestyle:
+    "Wiresavvy Lifestyle News explores culture, wellness, design, and everyday trends shaping modern American life.",
+  law:
+    "Wiresavvy Law News delivers in-depth coverage of courts, legal battles, government enforcement, and constitutional issues.",
+  finance:
+    "Wiresavvy Finance News tracks markets, banking, economic policy, and financial risks impacting investors and consumers.",
+  investigation:
+    "Wiresavvy Investigations feature deep reporting, accountability journalism, and long-form probes into power and policy.",
+};
+
   return (
     <ArticleLayout>
 
@@ -149,14 +164,14 @@ export default async function CategoryPage({ params }) {
             </div>
 
             {/* CATEGORY TITLE */}
-            <h1 className="text-3xl font-bold uppercase text-red-500 mb-8">
+            <h1 className="text-3xl font-bold uppercase text-red-500 mb-3">
               {categoryName} News
-              <p className="sr-only text-zinc-700 mb-8 max-w-3xl">
-                Wiresavvy’s {categoryName} News delivers in-depth investigative reporting,
-                accountability journalism, and long-form investigations covering politics,
-                business, and public institutions across the United States.
-              </p>
             </h1>
+
+            <p className="text-zinc-700 mb-8 max-w-4xl">
+              {CATEGORY_DESCRIPTIONS[categoryName.toLowerCase()] ||
+                `Read the latest ${categoryName} news, analysis, and reporting from Wiresavvy.`}
+            </p>
 
             {/* MAIN 4 ARTICLES */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
