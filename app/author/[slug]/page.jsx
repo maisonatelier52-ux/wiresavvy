@@ -72,7 +72,7 @@ export default async function AuthorPage({ params }) {
   }
 
   const authorArticles = details.articles.filter(
-    a => a.authorId === author.id
+        a => a.authorId === author.id && a.published !== false  
   );
 
   /* ---------- JSON-LD ---------- */
