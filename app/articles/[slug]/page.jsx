@@ -82,7 +82,7 @@ export default async function ArticlePage({ params }) {
   const popularPosts = publishedArticles
     .filter(a => a.category !== article.category && a.slug !== article.slug && !relatedSlugs.includes(a.slug))
     .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 6);
+    .slice(3, 9);
 
   /* ---------- JSON-LD ---------- */
 

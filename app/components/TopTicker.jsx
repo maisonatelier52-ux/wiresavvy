@@ -6,7 +6,7 @@ export default function TopTicker() {
   // Sort newest → oldest, take top 5
   const latestFive = [...details.articles]
     .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 5);
+    .slice(0, 3);
 
   const repeated = [...latestFive, ...latestFive];
 
