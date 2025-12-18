@@ -32,20 +32,20 @@
     },
     {
       "id": 4,
-      "name": "Alex R",
-      "slug": "alex-r",
+      "name": "Alex John",
+      "slug": "alex-john",
       "photo": "/author/Alex-R.webp",
-      "bio": "Political correspondent covering the U.S. Supreme Court, federal agencies, and government policy.",
+      "bio": "Political correspondent and author at Wiresavvy, covering the U.S. Supreme Court, federal agencies, and government policy.",
       "twitter": "",
       "facebook": "",
       "instagram": ""
     },
     { 
       "id": 5,
-      "name": "Dana K",
-      "slug": "dana-k",
+      "name": "Dana Katherine",
+      "slug": "dana-katherine",
       "photo": "/author/Dana-K.webp",
-      "bio": "Financial journalist covering U.S. markets, banking, and the impact of technology on the economy.",
+      "bio": "Financial journalist and author at Wiresavvy, covering U.S. markets, banking, and the impact of technology on the economy.",
       "twitter": "",
       "facebook": "",
       "instagram": ""
