@@ -27,7 +27,9 @@ export default function TopTicker() {
                     href={`/articles/${item.slug}`}
                     className="text-sm text-zinc-700 hover:text-red-500 transition-colors duration-200"
                   >
-                    <h3>{item.title}</h3>
+                    <span className="block font-medium">
+                      {item.title}
+                    </span>
                   </Link>
                 </li>
               ))}
