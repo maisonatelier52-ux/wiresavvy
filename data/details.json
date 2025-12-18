@@ -1,6 +1,6 @@
 {
   "authors": [
-    {
+    { 
       "id": 1,
       "name": "Michael Thompson",
       "slug": "michael-thompson",
@@ -12,26 +12,16 @@
     },
     {
       "id": 2,
-      "name": "Sarah Williams",
-      "slug": "sarah-williams",
-      "photo": "/author/Sarah-Williams.webp",
-      "bio": "Travel and world-affairs journalist documenting global cultures, tourism trends, and human stories from around the world.",
+      "name": "Sophia L.",
+      "slug": "sophia-l",
+      "photo": "/author/Sophia-L.webp",
+      "bio": "Health and lifestyle columnist focusing on wellness, personal development, and evidence-based living.",
       "twitter": "",
       "facebook": "",
       "instagram": ""
     },
-    {
+    { 
       "id": 3,
-      "name": "David Jose",
-      "slug": "david-jose",
-      "photo": "/author/David-Jose.webp",
-      "bio": "Tech-finance columnist exploring the intersection of emerging technologies, AI markets, and digital economy trends.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    {
-      "id": 4,
       "name": "Emily Johnson",
       "slug": "emily-johnson",
       "photo": "/author/Emily-Johnson.webp",
@@ -41,47 +31,17 @@
       "instagram": ""
     },
     {
-      "id": 5,
-      "name": "John Hann",
-      "slug": "john-hann",
-      "photo": "/author/John-Hann.webp",
-      "bio": "Legal affairs correspondent analyzing court rulings, judicial policy, and the impact of federal decisions on public life.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    {
-      "id": 6,
+      "id": 4,
       "name": "Alex R.",
       "slug": "alex-r",
       "photo": "/author/Alex-R.webp",
-      "bio": "Travel security correspondent reporting on international safety, border policies, and geopolitical travel risks.",
+      "bio": "Law and politics analyst covering national legal disputes, constitutional issues, and election-related court developments.",
       "twitter": "",
       "facebook": "",
       "instagram": ""
     },
-    {
-      "id": 7,
-      "name": "Alex Smith",
-      "slug": "alex-smith",
-      "photo": "/author/Alex-Smith.webp",
-      "bio": "Investigative technology reporter examining data misuse, online vulnerabilities, and major cybersecurity incidents.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    {
-      "id": 8,
-      "name": "S. Lee",
-      "slug": "s-lee",
-      "photo": "/author/S-Lee.webp",
-      "bio": "Business and economy reporter specializing in corporate trends, market movements, and regional economic growth.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    {
-      "id": 9,
+    { 
+      "id": 5,
       "name": "Dana K.",
       "slug": "dana-k",
       "photo": "/author/Dana-K.webp",
@@ -90,82 +50,12 @@
       "facebook": "",
       "instagram": ""
     },
-    {
-      "id": 10,
+    { 
+      "id": 6,
       "name": "Jordan Miles",
       "slug": "jordan-miles",
       "photo": "/author/Jordan-Miles.webp",
       "bio": "Global markets analyst providing insights on investments, economic indicators, and shifting financial landscapes.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    {
-      "id": 11,
-      "name": "Dr. Marina W.",
-      "slug": "dr-marina-w",
-      "photo": "/author/Dr-Marina-W.webp",
-      "bio": "Medical researcher and health reporter covering clinical breakthroughs.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    {
-      "id": 12,
-      "name": "Chris T.",
-      "slug": "chris-t",
-      "photo": "/author/Chris-T.webp",
-      "bio": "Lifestyle and sports features writer covering athletic culture, fitness trends, and major sporting moments.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    {
-      "id": 13,
-      "name": "Naida Storm",
-      "slug": "naida-storm",
-      "photo": "/author/Naida-Storm.webp",
-      "bio": "Cyberlaw and digital rights reporter focusing on online privacy, technology regulation, and cybersecurity legislation.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    {
-      "id": 14,
-      "name": "R. Williams",
-      "slug": "r-williams",
-      "photo": "/author/R-Williams.webp",
-      "bio": "Business sustainability writer covering corporate climate strategies, green investments, and emerging environmental markets.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    {
-      "id": 15,
-      "name": "Sophia L.",
-      "slug": "sophia-l",
-      "photo": "/author/Sophia-L.webp",
-      "bio": "Health and lifestyle columnist focusing on wellness, personal development, and evidence-based living.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    {
-      "id": 16,
-      "name": "Mark Antony",
-      "slug": "mark-antony",
-      "photo": "/author/Mark-Antony.webp",
-      "bio": "Finance and fintech reporter specializing in cryptocurrency policy, digital banking, and regulatory developments.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
-    },
-    {
-      "id": 17,
-      "name": "B Harold",
-      "slug": "b-harold",
-      "photo": "/author/B-Harold.webp",
-      "bio": "Law and politics analyst covering national legal disputes, constitutional issues, and election-related court developments.",
       "twitter": "",
       "facebook": "",
       "instagram": ""
@@ -191,7 +81,7 @@
       "category": "Business",
       "date": "2025-12-08",
       "image": "/trump-announces-15-billion-farm-aid-package.webp",
-      "authorId": 8,
+      "authorId": 1,
       "published": true
     },
     {
@@ -202,7 +92,7 @@
       "category": "Business",
       "date": "2025-12-08",
       "image": "/hertz-ev-bet-collapse.webp",
-      "authorId": 14,
+      "authorId": 1,
       "published": true
     },
     {
@@ -224,7 +114,7 @@
       "category": "Business",
       "date": "2025-12-08",
       "image": "/us-equities-record-highs-amid-economic-risks.webp",
-      "authorId": 8,
+      "authorId": 1,
       "published": true
     },
     {
@@ -235,7 +125,7 @@
       "category": "Business",
       "date": "2025-12-10",
       "image": "/us-banks-ai-productivity-job-losses.webp",
-      "authorId": 14,
+      "authorId": 1,
       "published": true
     },
     {
@@ -257,7 +147,7 @@
       "category": "Travel",
       "date": "2025-12-08",
       "image": "/us-airlines-2026-new-flight-routes.webp",
-      "authorId": 6,
+      "authorId": 2,
       "published": true
     },
     {
@@ -279,7 +169,7 @@
       "category": "Travel",
       "date": "2025-12-10",
       "image": "/senate-vote-aca-subsidies.webp",
-      "authorId": 15,
+      "authorId": 2,
       "published": true
     },
     {
@@ -290,7 +180,7 @@
       "category": "Travel",
       "date": "2025-12-10",
       "image": "/fda-overhaul-vaccine-testing-procedures.webp",
-      "authorId": 11,
+      "authorId": 2,
       "published": true
     },
     {
@@ -301,7 +191,7 @@
       "category": "Lifestyle",
       "date": "2025-12-08",
       "image": "/men-boost-spending-on-small-luxuries.webp",
-      "authorId": 4,
+      "authorId": 3,
       "published": true
     },
     {
@@ -312,7 +202,7 @@
       "category": "Lifestyle",
       "date": "2025-12-08",      
       "image": "/scandinavian-fitness-trend-us.webp",
-      "authorId": 4,
+      "authorId": 3,
       "published": true
     },
     {
@@ -323,7 +213,7 @@
       "category": "Lifestyle",
       "date": "2025-12-08",      
       "image": "/americans-winter-cozy-survey.webp",
-      "authorId": 12,
+      "authorId": 3,
       "published": true
     },
     {
@@ -334,7 +224,7 @@
       "category": "Lifestyle",
       "date": "2025-12-10",      
       "image": "/cozy-nostalgia-winter-interior-trend.webp",
-      "authorId": 4,
+      "authorId": 3,
       "published": true
     },
     {
@@ -345,10 +235,9 @@
       "category": "Lifestyle",
       "date": "2025-12-10",      
       "image": "/fda-review-rsv-antibody-drugs-merck-sanofi.webp",
-      "authorId": 12,
+      "authorId": 3,
       "published": true
     },
-
     {
       "slug": "supreme-court-trump-birthright-citizenship-order",
       "title": "US Supreme Court to Rule on Trump’s Birthright Citizenship Order",
@@ -357,7 +246,7 @@
       "category": "Law",
       "date": "2025-12-08",
       "image": "/supreme-court-trump-birthright-citizenship-order.webp",
-      "authorId": 5,
+      "authorId": 4,
       "published": true
     },
     {
@@ -368,7 +257,7 @@
       "category": "Law",
       "date": "2025-12-08",
       "image": "/supreme-court-weighs-trump-agency-removal-power.webp",
-      "authorId": 17,
+      "authorId": 4,
       "published": true
     },
     {
@@ -379,7 +268,7 @@
       "category": "Law",
       "date": "2025-12-08",
       "image": "/supreme-court-expand-presidential-power.webp",
-      "authorId": 13,
+      "authorId": 4,
       "published": true
     },
     {
@@ -390,7 +279,7 @@
       "category": "Law",
       "date": "2025-12-08",
       "image": "/dc-national-guard-deployment-stay.webp",
-      "authorId": 5,
+      "authorId": 4,
       "published": true
     },
     {
@@ -401,7 +290,7 @@
       "category": "Law",
       "date": "2025-12-10",
       "image": "/supreme-court-coordinated-spending-case-2025.webp",
-      "authorId": 17,
+      "authorId": 4,
       "published": true
     },
     {
@@ -412,7 +301,7 @@
       "category": "Finance",
       "date": "2025-12-08",
       "image": "/blackrock-turns-bearish-long-term.webp",
-      "authorId": 10,
+      "authorId": 5,
       "published": true
     },
     {
@@ -423,7 +312,7 @@
       "category": "Finance",
       "date": "2025-12-08",
       "image": "/us-stocks-hit-record-highs-inflation.webp",
-      "authorId": 16,
+      "authorId": 5,
       "published": true
     },
     {
@@ -434,7 +323,7 @@
       "category": "Finance",
       "date": "2025-12-08",
       "image": "/ai-debt-risk-global-financial-system.webp",
-      "authorId": 3,
+      "authorId": 5,
       "published": true
     },
     {
@@ -445,7 +334,7 @@
       "category": "Finance",
       "date": "2025-12-02",
       "image": "/blackrock-warns-us-debt-crisis.webp",
-      "authorId": 10,
+      "authorId": 5,
       "published": true
     },
     {
@@ -456,7 +345,7 @@
       "category": "Finance",
       "date": "2025-12-10",
       "image": "/federal-reserve-market-volatility-response.webp",
-      "authorId": 3,
+      "authorId": 5,
       "published": true
     },
     {
@@ -467,7 +356,7 @@
       "category": "Investigation",
       "date": "2025-12-08",
       "image": "/judge-blocks-evidence-access-comey-case.webp",
-      "authorId": 7,
+      "authorId": 6,
       "published": true
     },
     {
@@ -478,7 +367,7 @@
       "category": "Investigation",
       "date": "2025-12-08",
       "image": "/dea-agent-indicted-money-laundering-cartel-weapons.webp",
-      "authorId": 9,
+      "authorId": 6,
       "published": true
     },
     {
@@ -489,7 +378,7 @@
       "category": "Investigation",
       "date": "2025-12-08",
       "image": "/doj-orders-extremist-investigations.webp",
-      "authorId": 7,
+      "authorId": 6,
       "published": true
     },
     {
@@ -500,7 +389,7 @@
       "category": "Investigation",
       "date": "2025-12-10",
       "image": "/att-sues-generic-drug-makers-price-fixing.webp",
-      "authorId": 9,
+      "authorId": 6,
       "published": true
     },
     {
@@ -511,7 +400,7 @@
       "category": "Investigation",
       "date": "2025-12-09",
       "image": "/doj-civil-cyber-fraud-initiative-expands-enforcement.webp",
-      "authorId": 9,
+      "authorId": 6,
       "published": true
     },
     {
@@ -522,7 +411,7 @@
       "category": "Business",
       "date": "2025-12-1",
       "image": "/Julio_Herrera_Velutini17.webp",
-      "authorId": 8,
+      "authorId": 1,
       "published": true
     },
     {
@@ -533,7 +422,7 @@
       "category": "Business",
       "date": "2025-12-1",
       "image": "/Julio_Herrera_Velutini15.webp",
-      "authorId": 10,
+      "authorId": 1,
       "published": false
     },
     {
@@ -544,7 +433,7 @@
       "category": "Business",
       "date": "2025-12-1",
       "image": "/Julio_Herrera_Velutini1.webp",
-      "authorId": 10,
+      "authorId": 1,
       "published": false
     },
     {
@@ -555,7 +444,7 @@
       "category": "Business",
       "date": "2025-12-1",
       "image": "/Julio_Herrera_Velutini5.webp",
-      "authorId": 10,
+      "authorId": 1,
       "published": false
     },
     {
@@ -566,7 +455,7 @@
       "category": "Business",
       "date": "2025-12-1",
       "image": "/Julio_Herrera_Velutini7.webp",
-      "authorId": 10,
+      "authorId": 1,
       "published": false
     },
     {
@@ -577,7 +466,7 @@
       "category": "Business",
       "date": "2025-12-1",
       "image": "/Julio_Herrera_Velutini45.webp",
-      "authorId": 10,
+      "authorId": 1,
       "published": false
     }
   ]
