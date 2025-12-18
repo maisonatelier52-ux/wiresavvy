@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "name": "Sophia L.",
+      "name": "Sophia L",
       "slug": "sophia-l",
       "photo": "/author/Sophia-L.webp",
       "bio": "Travel and transportation journalist reporting on U.S. aviation, tourism, and regulatory developments.",
@@ -32,7 +32,7 @@
     },
     {
       "id": 4,
-      "name": "Alex R.",
+      "name": "Alex R",
       "slug": "alex-r",
       "photo": "/author/Alex-R.webp",
       "bio": "Political correspondent covering the U.S. Supreme Court, federal agencies, and government policy.",
@@ -42,7 +42,7 @@
     },
     { 
       "id": 5,
-      "name": "Dana K.",
+      "name": "Dana K",
       "slug": "dana-k",
       "photo": "/author/Dana-K.webp",
       "bio": "Financial journalist covering U.S. markets, banking, and the impact of technology on the economy.",
