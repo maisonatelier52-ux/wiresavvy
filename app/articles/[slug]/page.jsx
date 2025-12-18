@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
     : `${SITE_URL}/default-og.png`;
 
   return {
-    title: `${article.title} | Wiresavvy`,
+    title: `${article.title}`,
     description: article.excerpt,
     alternates: {
       canonical: `${SITE_URL}/articles/${slug}`,

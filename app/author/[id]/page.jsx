@@ -1,7 +1,6 @@
 import Script from "next/script";
 import ArticleLayout from "@/app/components/ArticleLayout";
 import details from "../../../data/details.json";
-import { notFound } from "next/navigation";
 import Link from "next/link";
 
 const SITE_URL = "https://wiresavvy.com";
