@@ -115,6 +115,14 @@ export default function Header() {
           } flex items-center justify-center`}
         >
           <nav className="flex gap-4 sm:gap-6 overflow-x-auto text-xs sm:text-sm font-semibold uppercase whitespace-nowrap pb-1 no-scrollbar">
+            {/* HOME */}
+            <Link
+              href="/"
+              title="Home"
+              className="hover:text-red-500 transition-colors duration-150"
+            >
+              Home
+            </Link>
             {categories.map((cat, i) => (
               <Link
                 key={i}

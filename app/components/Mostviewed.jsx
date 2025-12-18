@@ -29,7 +29,7 @@ export default function MostViewed() {
     ? [forcedArticle, ...sorted.slice(5, 9)].reverse()
     : sorted.slice(5, 10);
 
-  const adImage = "/ad-image.png";
+  const adImage = "/ad-image.jpeg";
 
   const renderArticle = (a, i) => (
     <Link href={`/articles/${a.slug}`} title={a.title} key={i}>

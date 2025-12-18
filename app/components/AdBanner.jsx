@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function AdBanner() {
-  const adSrc = "ad-banner.png";
+  const adSrc = "ad-banner1.png";
   const [imgError, setImgError] = useState(false);
 
   return (

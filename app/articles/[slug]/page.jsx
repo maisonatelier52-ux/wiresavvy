@@ -84,6 +84,13 @@ export default async function ArticlePage({ params }) {
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(3, 9);
 
+  // FORMAT ARTICLE DATE
+  const formattedDate = new Date(article.date).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+
   /* ---------- JSON-LD ---------- */
 
   const articleJsonLd = {
@@ -197,7 +204,6 @@ export default async function ArticlePage({ params }) {
 
               {/* AUTHOR + DATE */}
               <div className="flex gap-6 text-xs sm:text-sm text-zinc-300 uppercase font-medium">
-
                 {/* AUTHOR NAME FROM JSON */}
                 <Link
                   href={`/author/${author.slug}`}
@@ -206,7 +212,7 @@ export default async function ArticlePage({ params }) {
                 >
                   {author?.name || "Unknown Author"}
                 </Link>
-                <span>{article.date}</span>
+                <span>{formattedDate}</span>
               </div>
             </div>
           </section>
