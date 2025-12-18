@@ -66,10 +66,10 @@ export default function Footer() {
 
             <ul className="space-y-4">
               {featuredAuthors.map((author) => (
-                <li key={author.id}>
+                <li key={author.slug}>
 
                   <Link
-                    href={`/author/${author.id}`}
+                    href={`/author/${author.slug}`}
                     title={author.name}
                     className="flex gap-3 items-start group"
                   >

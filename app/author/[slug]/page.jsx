@@ -6,8 +6,10 @@ import Link from "next/link";
 const SITE_URL = "https://wiresavvy.com";
 
 export async function generateMetadata({ params }) {
-  const { id } = await params;
-  const author = details.authors.find(a => a.id.toString() === id);
+  const { slug } = await params;
+
+  const author = details.authors.find(a => a.slug === slug);
+
   if (!author) {
     return {
       title: "Author Not Found — Wiresavvy",
@@ -21,12 +23,12 @@ export async function generateMetadata({ params }) {
       author.bio ||
       `Read articles and investigative reports written by ${author.name} on Wiresavvy.`,
     alternates: {
-      canonical: `${SITE_URL}/author/${id}`,
+      canonical: `${SITE_URL}/author/${author.slug}`,
     },
     openGraph: {
       title: `${author.name} — Wiresavvy Journalist`,
       description: author.bio,
-      url: `${SITE_URL}/author/${id}`,
+      url: `${SITE_URL}/author/${author.slug}`,
       type: "profile",
       images: [
         {
@@ -53,22 +55,24 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function AuthorPage({ params }) {
-  const { id } = await params;
+  const { slug } = await params;
 
-  const author = details.authors.find(a => a.id.toString() === id);
-  if (!author){
+  const author = details.authors.find(a => a.slug === slug);
+
+  if (!author) {
     return (
       <ArticleLayout>
         <div className="max-w-4xl mx-auto py-20 text-center">
           <h1 className="text-3xl font-bold text-red-500">
-            Author  Not found.
+            Author not found
           </h1>
         </div>
       </ArticleLayout>
     );
   }
+
   const authorArticles = details.articles.filter(
-    a => a.authorId.toString() === id
+    a => a.authorId === author.id
   );
 
   /* ---------- JSON-LD ---------- */
@@ -77,7 +81,7 @@ export default async function AuthorPage({ params }) {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": author.name,
-    "url": `${SITE_URL}/author/${id}`,
+    "url": `${SITE_URL}/author/${author.slug}`,
     "image": author.photo
       ? `${SITE_URL}${author.photo}`
       : `${SITE_URL}/default-author.webp`,
@@ -95,30 +99,30 @@ export default async function AuthorPage({ params }) {
     ].filter(Boolean),
   };
 
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": SITE_URL,
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Authors",
-        "item": `${SITE_URL}/author`,
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": author.name,
-        "item": `${SITE_URL}/author/${id}`,
-      },
-    ],
-  };
+    const breadcrumbJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": SITE_URL,
+            },
+            {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Authors",
+            "item": `${SITE_URL}/author`,
+            },
+            {
+            "@type": "ListItem",
+            "position": 3,
+            "name": author.name,
+            "item": `${SITE_URL}/author/${author.slug}`,
+            },
+        ],
+    };
 
   return (
     <ArticleLayout>

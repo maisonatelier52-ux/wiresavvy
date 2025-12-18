@@ -199,9 +199,9 @@ export default async function ArticlePage({ params }) {
               <div className="flex gap-6 text-xs sm:text-sm text-zinc-300 uppercase font-medium">
 
                 {/* AUTHOR NAME FROM JSON */}
-                <Link 
-                  href={`/author/${author?.id}`}
-                  title={author.title} 
+                <Link
+                  href={`/author/${author.slug}`}
+                  title={`Articles by ${author.name}`}
                   className="hover:text-white underline underline-offset-4"
                 >
                   {author?.name || "Unknown Author"}
