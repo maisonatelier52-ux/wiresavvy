@@ -1,4 +1,3 @@
-import Script from "next/script";
 import Header from "../components/AboutHeader";
 import Footer from "../components/Footer";
 
@@ -37,25 +36,23 @@ export const metadata = {
 
 export default function AboutPage() {
 
-  /* ---------- JSON-LD ---------- */
-
   const webPageJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": `${SITE_URL}/about-us#webpage`,
-  "url": `${SITE_URL}/about-us`,
-  "name": "About Wiresavvy",
-  "description": metadata.description,
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "Wiresavvy",
-    "url": SITE_URL
-  },
-  "about": {
-    "@type": "NewsMediaOrganization",
-    "name": "Wiresavvy"
-  }
-};
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE_URL}/about-us#webpage`,
+    "url": `${SITE_URL}/about-us`,
+    "name": "About Wiresavvy",
+    "description": metadata.description,
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Wiresavvy",
+      "url": SITE_URL
+    },
+    "about": {
+      "@type": "NewsMediaOrganization",
+      "name": "Wiresavvy"
+    }
+  };
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -71,24 +68,21 @@ export default function AboutPage() {
         "@type": "ListItem",
         "position": 2,
         "name": "About",
-        "item": `${SITE_URL}/about`
+        "item": `${SITE_URL}/about-us`
       }
     ]
   };
 
   return (
     <>
-      {/* ✅ STRUCTURED DATA */}
-      <Script
-        id="organization-jsonld"
+      {/* ✅ JSON-LD STRUCTURED DATA */}
+      <script
         type="application/ld+json"
-        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
       />
-      <Script
-        id="breadcrumb-jsonld"
+
+      <script
         type="application/ld+json"
-        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
