@@ -69,9 +69,6 @@ export default async function ArticlePage({ params }) {
 
   const author = details.authors.find(a => a.id === article.authorId);
 
-  // Only published articles
-  const publishedArticles = details.articles.filter(a => a.published);
-
   // RELATED ARTICLES
   const related = details.articles
     .filter(a => a.category === article.category && a.slug !== article.slug)
