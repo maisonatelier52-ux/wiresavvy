@@ -6,15 +6,33 @@ import Link from "next/link";
 const SITE_URL = "https://wiresavvy.com";
 
 export async function generateMetadata({ params }) {
-  const { category } = await params;
+  const { category } = params;
   const categoryName = decodeURIComponent(category);
 
   const formattedCategory =
     categoryName.charAt(0).toUpperCase() + categoryName.slice(1);
 
+  // 🔹 Filter + sort latest article in this category
+  const latestArticle = details.articles
+    .filter(
+      a =>
+        a.published !== false &&
+        a.category.toLowerCase() === categoryName.toLowerCase()
+    )
+    .sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+
+  // 🔹 Pick image (latest article OR fallback)
+  const ogImage = latestArticle?.image
+    ? `${SITE_URL}${latestArticle.image}`
+    : `${SITE_URL}/wiresavvy.webp`;
+
+  const ogAlt = latestArticle
+    ? latestArticle.title
+    : `${formattedCategory} News — Wiresavvy`;
+
   return {
     title: `${formattedCategory} News — Wiresavvy`,
-    description: `Read the latest ${formattedCategory.toLowerCase()} news, analysis and investigative stories from across the United States. Updated daily by Wiresavvy reporters.`,
+    description: `Read the latest ${formattedCategory.toLowerCase()} news, analysis, and investigative reporting from across the United States. Updated daily by Wiresavvy.`,
     alternates: {
       canonical: `${SITE_URL}/categories/${categoryName}`,
     },
@@ -25,10 +43,10 @@ export async function generateMetadata({ params }) {
       type: "website",
       images: [
         {
-          url: `${SITE_URL}/og-default.webp`,
+          url: ogImage,
           width: 1200,
           height: 630,
-          alt: `${formattedCategory} News`,
+          alt: ogAlt,
         },
       ],
     },
@@ -36,7 +54,7 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: `${formattedCategory} News — Wiresavvy`,
       description: `Latest U.S. ${formattedCategory.toLowerCase()} news and analysis.`,
-      images: [`${SITE_URL}/og-default.webp`],
+      images: [ogImage],
     },
   };
 }
