@@ -1,16 +1,7 @@
-"use client";
-
 import Header from "./Header";
 import Footer from "./Footer";
-import { useEffect, useState } from "react";
 
 export default function ArticleLayout({ children }) {
-  const [loading, setLoading] = useState(true);
-  
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 500);
-    return () => clearTimeout(timer);
-  }, []);
   return (
     <div className="min-h-screen font-sans">
       <Header />
