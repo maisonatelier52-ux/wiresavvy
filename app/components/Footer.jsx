@@ -122,27 +122,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-{/* <form
-  action="https://formsubmit.co/cobeca6771@besenica.com"
-  method="POST"
-  className="flex flex-col space-y-3"
->
-  <input
-    type="email"
-    name="email"
-    placeholder="Your email address"
-    required
-    className="p-2 rounded bg-zinc-800 text-white placeholder-zinc-400 focus:outline-none"
-  />
-
-  <input type="hidden" name="_captcha" value="false" />
-  <input type="hidden" name="_subject" value="New Subscriber on Wiresavvy!" />
-
-  <button
-    type="submit"
-    className="py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600 transition"
-  >
-    Subscribe
-  </button>
-</form> */}
