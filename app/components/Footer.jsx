@@ -1,11 +1,50 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
 import details from "@/data/details.json";
 
 export default function Footer() {
   // pick only first 2 authors
   const featuredAuthors = details.authors.slice(0, 2);
+
+  useEffect(() => {
+    // Set FormSubmit redirect URL dynamically
+    const currentUrl = window.location.href.split('?')[0];
+    const redirectUrl = currentUrl + '?success=true';
+    const successInput = document.getElementById('formsubmit-success-url');
+    if (successInput) {
+      successInput.value = redirectUrl;
+    }
+
+    // Check for success parameter in URL
+    const params = new URLSearchParams(window.location.search);
+    
+    if (params.get("success") === "true") {
+      const popup = document.getElementById("newsletter-popup");
+      if (!popup) return;
+
+      // Show popup with animation
+      popup.style.display = 'block';
+      
+      setTimeout(() => {
+        popup.style.opacity = '1';
+        popup.style.transform = 'translateX(-50%) translateY(0)';
+      }, 10);
+
+      // Hide popup after 3 seconds
+      setTimeout(() => {
+        popup.style.opacity = '0';
+        popup.style.transform = 'translateX(-50%) translateY(-20px)';
+        setTimeout(() => {
+          popup.style.display = 'none';
+        }, 300);
+      }, 3000);
+
+      // Clean URL without refreshing page
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }, []);
 
   return (
     <footer className="bg-zinc-900 text-zinc-200 pt-20 pb-15">
@@ -101,11 +140,22 @@ export default function Footer() {
           {/* ==== Newsletter ==== */}
           <div>
             <div className="text-xl font-bold mb-4 text-white">Stay Updated</div>
-            <form className="flex flex-col space-y-3">
+            <form 
+              className="flex flex-col space-y-3"
+              action="https://formsubmit.co/admin@investment-banking.org"
+              method="POST"
+            >
+              {/* FormSubmit Configuration */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_subject" value="New Newsletter Subscription" />
+              <input type="hidden" name="_next" id="formsubmit-success-url" />
+              
               <input
                 type="email"
+                name="email"
                 placeholder="Your email address"
                 className="p-2 rounded bg-zinc-800 text-white placeholder-zinc-400 focus:outline-none"
+                required
               />
               <button
                 type="submit"
@@ -118,6 +168,29 @@ export default function Footer() {
 
         </div>
 
+      </div>
+
+      {/* Success Popup - Placed at the end of footer */}
+      <div
+        id="newsletter-popup"
+        style={{
+          display: 'none',
+          position: 'fixed',
+          top: '20px',
+          left: '50%',
+          transform: 'translateX(-50%) translateY(-20px)',
+          background: '#013e84',
+          color: '#fff',
+          padding: '15px 20px',
+          borderRadius: '6px',
+          fontSize: '14px',
+          zIndex: 9999,
+          boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+          opacity: 0,
+          transition: 'all 0.3s ease',
+        }}
+      >
+        Successfully signed up! 🎉
       </div>
     </footer>
   );
