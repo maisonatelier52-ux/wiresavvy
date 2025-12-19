@@ -39,38 +39,23 @@ export default function AboutPage() {
 
   /* ---------- JSON-LD ---------- */
 
-  const organizationJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "NewsMediaOrganization",
+  const webPageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/about-us#webpage`,
+  "url": `${SITE_URL}/about-us`,
+  "name": "About Wiresavvy",
+  "description": metadata.description,
+  "isPartOf": {
+    "@type": "WebSite",
     "name": "Wiresavvy",
-    "url": SITE_URL,
-    "logo": `${SITE_URL}/logo.png`,
-    "sameAs": [
-      "https://twitter.com/wiresavvy",
-      "https://www.facebook.com/wiresavvy",
-      "https://www.instagram.com/wiresavvy"
-    ],
-    "publishingPrinciples": `${SITE_URL}/about`,
-    "foundingLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "US"
-      }
-    }
-  };
-
-  const aboutPageJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About Wiresavvy",
-    "url": `${SITE_URL}/about`,
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Wiresavvy",
-      "url": SITE_URL
-    }
-  };
+    "url": SITE_URL
+  },
+  "about": {
+    "@type": "NewsMediaOrganization",
+    "name": "Wiresavvy"
+  }
+};
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -98,13 +83,7 @@ export default function AboutPage() {
         id="organization-jsonld"
         type="application/ld+json"
         strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-      />
-      <Script
-        id="aboutpage-jsonld"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
       />
       <Script
         id="breadcrumb-jsonld"

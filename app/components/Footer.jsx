@@ -93,7 +93,7 @@ export default function Footer() {
             <div className="text-xl font-bold mb-4 text-white">Quick Links</div>
             <ul className="space-y-2 text-sm">
               <li><Link href="/" title="Home">Home</Link></li>
-              <li><Link href="/about" title="About">About</Link></li>
+              <li><Link href="/about-us" title="About Us">About</Link></li>
               <li><Link href="/privacy-policy" title="Privacy Policy">Privacy Policy</Link></li>
               <li><Link href="/terms-of-use" title="Terms of Use">Terms of Use</Link></li>
             </ul>
