@@ -23,6 +23,7 @@ export async function generateMetadata({ params }) {
       description: `Latest U.S. ${formattedCategory.toLowerCase()} news, reports and analysis.`,
       url: `${SITE_URL}/categories/${categoryName}`,
       type: "website",
+      siteName: "Wiresavvy",
       images: [
         {
           url: `${SITE_URL}/wiresavvy.webp`,

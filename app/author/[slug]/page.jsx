@@ -30,6 +30,7 @@ export async function generateMetadata({ params }) {
       description: author.bio,
       url: `${SITE_URL}/author/${author.slug}`,
       type: "profile",
+      siteName: "Wiresavvy",
       images: [
         {
           url: author.photo

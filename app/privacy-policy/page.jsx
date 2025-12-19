@@ -13,6 +13,7 @@ export const metadata = {
       "Learn how Wiresavvy protects your privacy and manages information including cookies, analytics, and data usage.",
     url: `${SITE_URL}/privacy-policy`,
     type: "website",
+    siteName: "Wiresavvy",
     images: [
       {
         url: `${SITE_URL}/privacy.webp`,

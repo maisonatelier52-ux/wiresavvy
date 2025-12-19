@@ -16,6 +16,7 @@ export const metadata = {
       "Discover the mission and vision behind Wiresavvy — an independent US digital news platform.",
     url: `${SITE_URL}/about-us`,
     type: "website",
+    siteName: "Wiresavvy",
     images: [
       {
         url: `${SITE_URL}/about.webp`,

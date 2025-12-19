@@ -16,6 +16,7 @@ export const metadata = {
       "Review the terms and conditions governing use of the Wiresavvy website and services.",
     url: `${SITE_URL}/terms-of-use`,
     type: "website",
+    siteName: "Wiresavvy",
   },
   twitter: {
     card: "summary",
