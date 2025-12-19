@@ -6,7 +6,7 @@ import Link from "next/link";
 const SITE_URL = "https://wiresavvy.com";
 
 export async function generateMetadata({ params }) {
-  const { category } = await params;
+  const { category } = params;
   const categoryName = decodeURIComponent(category);
 
   const formattedCategory =
@@ -29,6 +29,7 @@ export async function generateMetadata({ params }) {
   return {
     title: `${formattedCategory} News — Wiresavvy`,
     description: `Read the latest ${formattedCategory.toLowerCase()} news, analysis, and investigative reporting from across the United States. Updated daily by Wiresavvy.`,
+    description: `Read the latest ${formattedCategory.toLowerCase()} news, analysis, and investigative reporting from across the United States. Updated daily by Wiresavvy.`,
     alternates: {
       canonical: `${SITE_URL}/categories/${categoryName}`,
     },
@@ -39,6 +40,7 @@ export async function generateMetadata({ params }) {
       type: "website",
       images: [
         {
+          url: ogImage,
           url: ogImage,
           width: 1200,
           height: 630,
