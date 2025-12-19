@@ -55,7 +55,7 @@ export default async function ArticlePage({ params }) {
   const { slug } = await params;
 
   // FIND ARTICLE
-  const article = details.articles.find(a => a.slug === slug && a.published);
+  const article = details.articles.find(a => a.slug === slug);
 
   if (!article) {
     return (
@@ -73,13 +73,13 @@ export default async function ArticlePage({ params }) {
   const publishedArticles = details.articles.filter(a => a.published);
 
   // RELATED ARTICLES
-  const related = publishedArticles
+  const related = details.articles
     .filter(a => a.category === article.category && a.slug !== article.slug)
     .slice(0, 5);
 
   // POPULAR POSTS — exclude related articles
   const relatedSlugs = related.map(a => a.slug);
-  const popularPosts = publishedArticles
+  const popularPosts = details.articles
     .filter(a => a.category !== article.category && a.slug !== article.slug && !relatedSlugs.includes(a.slug))
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(3, 9);

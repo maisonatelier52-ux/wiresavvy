@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function AdBanner() {
-  const adSrc = "ad-banner1.png";
   const [imgError, setImgError] = useState(false);
 
   return (
@@ -14,7 +13,7 @@ export default function AdBanner() {
         <div className="w-full md:w-[728px] md:h-[120px] flex justify-center items-center">
           {!imgError ? (
             <img
-              src={adSrc}
+              src="/ad-banner1.png"
               alt="Sponsor Ad"
               title="Sponsor Ad"
               className="
