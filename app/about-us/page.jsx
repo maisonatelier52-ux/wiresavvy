@@ -9,13 +9,13 @@ export const metadata = {
   description:
     "Learn about Wiresavvy, a modern US digital news platform delivering sharp, factual, and timely journalism across Business, Finance, Law, Lifestyle, Travel, and Investigative reporting.",
   alternates: {
-    canonical: `${SITE_URL}/about`,
+    canonical: `${SITE_URL}/about-us`,
   },
   openGraph: {
     title: "About Wiresavvy",
     description:
       "Discover the mission and vision behind Wiresavvy — an independent US digital news platform.",
-    url: `${SITE_URL}/about`,
+    url: `${SITE_URL}/about-us`,
     type: "website",
     images: [
       {
@@ -97,16 +97,19 @@ export default function AboutPage() {
       <Script
         id="organization-jsonld"
         type="application/ld+json"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
       <Script
         id="aboutpage-jsonld"
         type="application/ld+json"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageJsonLd) }}
       />
       <Script
         id="breadcrumb-jsonld"
         type="application/ld+json"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
@@ -123,7 +126,7 @@ export default function AboutPage() {
           />
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white text-center">
-              Truthful reporting is the foundation<br />of an informed society.
+              Wiresavvy — Truthful Reporting for an Informed Society
             </h1>
           </div>
         </section>
