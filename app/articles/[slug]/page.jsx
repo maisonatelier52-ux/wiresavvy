@@ -33,6 +33,7 @@ export async function generateMetadata({ params }) {
       description: article.excerpt,
       url: `${SITE_URL}/articles/${slug}`,
       type: "article",
+      siteName: "Wiresavvy",
       images: [
         {
           url: imageUrl,
