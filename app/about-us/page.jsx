@@ -126,7 +126,7 @@ export default function AboutPage() {
           />
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white text-center">
-              Wiresavvy — Truthful Reporting for an Informed Society
+              Truthful reporting is the foundation<br />of an informed society.
             </h1>
           </div>
         </section>
