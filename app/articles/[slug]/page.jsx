@@ -3,6 +3,7 @@ import RelatedArticles from "@/app/components/RelatedArticles";
 import details from "../../../data/details.json";
 import ArticleLayout from "../../components/ArticleLayout";
 import Link from "next/link";
+import Image from "next/image";
 
 const SITE_URL = "https://wiresavvy.com";
 
@@ -178,12 +179,14 @@ export default async function ArticlePage({ params }) {
         {/* HERO SECTION */}
         {article.image ? (
           <section className="relative w-full h-[350px] sm:h-[450px] md:h-[550px] overflow-hidden flex items-end">
-            <img
+            <Image
               src={article.image}
               alt={article.title}
               title={article.title}
-              className="absolute inset-0 w-full h-full object-cover"
-              loading="eager"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
