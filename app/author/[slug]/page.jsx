@@ -148,7 +148,6 @@ export default async function AuthorPage({ params }) {
             alt={`${author.name}, author at Wiresavvy`}
             width={128}
             height={128}
-            priority
             className="rounded-full shadow-md object-cover"
           />
 
