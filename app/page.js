@@ -1,5 +1,3 @@
-import Script from "next/script";
-import Link from "next/link";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MoreHeadlines from "./components/MoreHeadlines";
@@ -120,7 +118,7 @@ export default function Home() {
   return (
     <div className="min-h-screen font-sans">
 
-      <Script
+      <script
         id="website-json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
