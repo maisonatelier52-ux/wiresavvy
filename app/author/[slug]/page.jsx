@@ -24,6 +24,10 @@ export async function generateMetadata({ params }) {
       `Read articles and investigative reports written by ${author.name} on Wiresavvy.`,
     alternates: {
       canonical: `${SITE_URL}/author/${author.slug}`,
+      languages: {
+        "en": `${SITE_URL}/author/${author.slug}`,
+        "en-US": `${SITE_URL}/author/${author.slug}`,
+      },
     },
     openGraph: {
       title: `${author.name} — Wiresavvy Journalist`,
