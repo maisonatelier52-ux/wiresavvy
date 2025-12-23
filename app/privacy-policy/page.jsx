@@ -33,13 +33,11 @@ export const metadata = {
 };
 
 import ArticleLayout from "@/app/components/ArticleLayout";
-import Link from "next/link";
-import Script from "next/script";
 
 export default function PrivacyPolicy() {
   return (
     <ArticleLayout>
-      <Script
+      <script
         id="privacy-policy-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -57,7 +55,7 @@ export default function PrivacyPolicy() {
         }}
       />
 
-      <Script
+      <script
         id="privacy-breadcrumb-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
