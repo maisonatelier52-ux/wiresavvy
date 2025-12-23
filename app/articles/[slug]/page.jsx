@@ -149,14 +149,14 @@ export default async function ArticlePage({ params }) {
   return (
     <ArticleLayout>
 
-      <Script
+      <script
         id="article-json-ld"
         type="application/ld+json"
         strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, '\\u003c') }}
       />
 
-      <Script
+      <script
         id="breadcrumb-json-ld"
         type="application/ld+json"
         strategy="beforeInteractive"
