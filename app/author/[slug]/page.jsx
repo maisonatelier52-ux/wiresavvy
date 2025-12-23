@@ -1,6 +1,7 @@
 import ArticleLayout from "@/app/components/ArticleLayout";
 import details from "../../../data/details.json";
 import Link from "next/link";
+import Image from "next/image";
 
 const SITE_URL = "https://wiresavvy.com";
 
@@ -145,16 +146,21 @@ export default async function AuthorPage({ params }) {
 
         {/* AUTHOR HEADER */}
         <div className="flex gap-6 items-start">
-          <img
+          <Image
             src={author.photo || "/blank-profile-picture.webp"}
-            alt={author.name}
-            className="w-32 h-32 object-cover rounded-full shadow-md"
+            alt={`${author.name}, author at Wiresavvy`}
+            width={128}
+            height={128}
+            priority
+            className="rounded-full shadow-md object-cover"
           />
 
           <div>
-            <h1 className="text-3xl font-bold">{author.name}</h1>
-            <p className="text-gray-700 mt-3 max-w-xl">
-              {author.bio}
+            <h1 className="text-3xl font-bold">
+              {author.name}, Author at Wiresavvy
+            </h1>
+            <p className="mt-2 text-gray-600 max-w-xl">
+              {author.name} is a journalist and author at Wiresavvy. {author.bio}
             </p>
 
             {/* SOCIAL ICONS */}
@@ -231,7 +237,7 @@ export default async function AuthorPage({ params }) {
 
         {/* ARTICLES */}
         <h2 className="mt-12 text-2xl font-bold text-red-500 uppercase">
-          Articles by {author.name}
+          Articles written by {author.name} at Wiresavvy
         </h2>
 
         <div className="mt-6 space-y-6">
