@@ -127,9 +127,9 @@ export default async function CategoryPage({ params }) {
     law:
       "Wiresavvy Law News delivers in-depth coverage of courts, legal battles, government enforcement, and constitutional issues.",
     finance:
-      "Wiresavvy Finance News tracks markets, banking, economic policy, and financial risks impacting investors and consumers.",
+      "Wiresavvy Finance News tracks markets, banking, economic policy, and risks impacting finance of investors and consumers.",
     investigation:
-      "Wiresavvy Investigations feature deep reporting, accountability journalism, and long-form probes into power and policy.",
+      "Wiresavvy Investigation News delivers in-depth investigative reporting, accountability journalism, and long-form investigations into power, corruption, and public policy across the United States.",
   };
 
   return (
