@@ -144,11 +144,12 @@ export default async function AuthorPage({ params }) {
         {/* AUTHOR HEADER */}
         <div className="flex gap-6 items-start">
           <Image
-            src={author.photo || "/blank-profile-picture.webp"}
+            src={author.photo}
             alt={`${author.name}, author at Wiresavvy`}
             width={128}
             height={128}
-            className="w-32 h-32 object-cover rounded-full shadow-md"
+            priority
+            className="rounded-full shadow-md object-cover"
           />
 
           <div>
