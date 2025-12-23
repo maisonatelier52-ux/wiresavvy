@@ -1,7 +1,6 @@
 import ArticleLayout from "@/app/components/ArticleLayout";
 import details from "../../../data/details.json";
 import Link from "next/link";
-import Image from "next/image";
 
 const SITE_URL = "https://wiresavvy.com";
 
@@ -9,6 +8,7 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
 
   const author = details.authors.find(a => a.slug === slug);
+  const imageUrl = `${SITE_URL}${author.photo}`;
 
   if (!author) {
     return {
@@ -37,9 +37,7 @@ export async function generateMetadata({ params }) {
       siteName: "Wiresavvy",
       images: [
         {
-          url: author.photo
-            ? `${SITE_URL}${author.photo}`
-            : `${SITE_URL}/blank-profile-picture.webp`,
+          url: imageUrl,
           width: 600,
           height: 600,
           alt: author.name,
@@ -50,11 +48,7 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: `${author.name} — Wiresavvy`,
       description: author.bio,
-      images: [
-        author.photo
-          ? `${SITE_URL}${author.photo}`
-          : `${SITE_URL}/blank-profile-picture.webp`,
-      ],
+      images: [imageUrl],
     },
   };
 }
@@ -87,9 +81,7 @@ export default async function AuthorPage({ params }) {
     "@type": "Person",
     "name": author.name,
     "url": `${SITE_URL}/author/${author.slug}`,
-    "image": author.photo
-      ? `${SITE_URL}${author.photo}`
-      : `${SITE_URL}/blank-profile-picture.webp`,
+    "image": `${SITE_URL}${author.photo}`,
     "description": author.bio,
     "jobTitle": "Journalist",
     "worksFor": {
@@ -150,13 +142,10 @@ export default async function AuthorPage({ params }) {
 
         {/* AUTHOR HEADER */}
         <div className="flex gap-6 items-start">
-          <Image
-            src={author.photo || "/blank-profile-picture.webp"}
-            alt={`${author.name}, author at Wiresavvy`}
-            width={128}
-            height={128}
-            priority
-            className="rounded-full shadow-md object-cover"
+          <img
+            src={author.photo || "/default-author.webp"}
+            alt={author.name}
+            className="w-32 h-32 object-cover rounded-full shadow-md"
           />
 
           <div>
