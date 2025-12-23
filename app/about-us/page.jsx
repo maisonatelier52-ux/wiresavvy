@@ -4,14 +4,13 @@ import Footer from "../components/Footer";
 const SITE_URL = "https://wiresavvy.com";
 
 export const metadata = {
-  title: "About Us — Wiresavvy",
+  title: "About Wiresavvy — Independent US Digital News Platform",
   description:
-    "Learn about Wiresavvy, a modern US digital news platform delivering sharp, factual, and timely journalism across Business, Finance, Law, Lifestyle, Travel, and Investigative reporting.",
-  alternates: {
+    "Learn about Wiresavvy, an independent US digital news platform delivering factual reporting across business, finance, law, lifestyle, travel, and investigations.",  alternates: {
     canonical: `${SITE_URL}/about-us`,
   },
   openGraph: {
-    title: "About Wiresavvy",
+    title: "About Wiresavvy — Independent US Digital News Platform",
     description:
       "Discover the mission and vision behind Wiresavvy — an independent US digital news platform.",
     url: `${SITE_URL}/about-us`,
@@ -108,7 +107,7 @@ export default function AboutPage() {
         {/* MISSION */}
         <section className="max-w-5xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10">
           <p className="text-lg leading-relaxed py-10">
-            <strong className="text-2xl"><em>Wiresavvy</em></strong> is a modern US digital news platform delivering sharp, factual, and timely coverage across Business, Travel, Lifestyle & Health, Law, Finance, and Investigative journalism. Our mission is simple: bring clarity to a world of noise.
+            <strong className="text-2xl"><em>At Wiresavvy,</em></strong> we believe truthful journalism forms the foundation of an informed society. Our reporting is built on accuracy, independence, and accountability to help readers understand complex issues shaping the United States.
           </p>
           <img
             src="/write.webp"
