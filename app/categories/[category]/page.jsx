@@ -129,7 +129,7 @@ export default async function CategoryPage({ params }) {
     finance:
       "Wiresavvy Finance News tracks markets, banking, economic policy, and risks impacting finance of investors and consumers.",
     investigation:
-      "Wiresavvy Investigation News delivers in-depth investigative reporting, accountability journalism, and long-form investigations into power, corruption, and public policy across the United States.",
+    "Wiresavvy Investigation News is a dedicated investigation news section featuring original investigation reporting, accountability journalism, and in-depth investigation stories examining power, corruption, and public policy across the United States.",
   };
 
   return (
@@ -165,7 +165,7 @@ export default async function CategoryPage({ params }) {
 
             {/* CATEGORY TITLE */}
             <h1 className="text-3xl font-bold uppercase text-red-500 mb-3">
-              {categoryName} News
+              {categoryName} News — Wiresavvy
             </h1>
 
             <p className="text-zinc-700 mb-8 max-w-4xl">
