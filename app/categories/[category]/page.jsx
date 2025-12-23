@@ -165,7 +165,7 @@ export default async function CategoryPage({ params }) {
 
             {/* CATEGORY TITLE */}
             <h1 className="text-3xl font-bold uppercase text-red-500 mb-3">
-              {categoryName} News, Analysis & Updates
+              {categoryName} News
             </h1>
 
             <p className="text-zinc-700 mb-8 max-w-4xl">
