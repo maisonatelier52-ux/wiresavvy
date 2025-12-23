@@ -26,6 +26,7 @@ export const metadata = {
       "Breaking U.S. news, in-depth investigations, and expert reporting across business, finance, law, and more.",
     url: SITE_URL,
     type: "website",
+    siteName: "Wiresavvy",
     images: [
       {
         url: `${SITE_URL}/wiresavvy.webp`,
