@@ -16,7 +16,7 @@ export const metadata = {
     siteName: "Wiresavvy",
     images: [
       {
-        url: `${SITE_URL}/privacy.webp`,
+        url: `${SITE_URL}/wiresavvy.webp`,
         width: 1200,
         height: 630,
         alt: "Privacy Policy - Wiresavvy",
@@ -28,7 +28,7 @@ export const metadata = {
     title: "Wiresavvy Privacy Policy",
     description:
       "Understand how Wiresavvy collects, uses, and safeguards user information across our platform.",
-    images: [`${SITE_URL}/privacy.webp`],
+    images: [`${SITE_URL}/wiresavvy.webp`],
   },
 };
 

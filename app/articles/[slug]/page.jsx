@@ -1,4 +1,3 @@
-import Script from "next/script";
 import RelatedArticles from "@/app/components/RelatedArticles";
 import details from "../../../data/details.json";
 import ArticleLayout from "../../components/ArticleLayout";
@@ -19,10 +18,6 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const imageUrl = article.image
-    ? `${SITE_URL}${article.image}`
-    : `${SITE_URL}/default-og.png`;
-
   return {
     title: `${article.title}`,
     description: article.excerpt,
@@ -37,7 +32,7 @@ export async function generateMetadata({ params }) {
       siteName: "Wiresavvy",
       images: [
         {
-          url: imageUrl,
+          url: `${SITE_URL}/wiresavvy.webp`,
           width: 1200,
           height: 630,
           alt: article.title,
@@ -48,7 +43,7 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: article.title,
       description: article.excerpt,
-      images: [imageUrl],
+      images: [`${SITE_URL}/wiresavvy.webp`],
     },
   };
 }
@@ -151,14 +146,14 @@ export default async function ArticlePage({ params }) {
   return (
     <ArticleLayout>
 
-      <Script
+      <script
         id="article-json-ld"
         type="application/ld+json"
         strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, '\\u003c') }}
       />
 
-      <Script
+      <script
         id="breadcrumb-json-ld"
         type="application/ld+json"
         strategy="beforeInteractive"

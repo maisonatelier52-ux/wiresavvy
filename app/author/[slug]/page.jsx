@@ -1,4 +1,3 @@
-import Script from "next/script";
 import ArticleLayout from "@/app/components/ArticleLayout";
 import details from "../../../data/details.json";
 import Link from "next/link";
@@ -35,7 +34,7 @@ export async function generateMetadata({ params }) {
         {
           url: author.photo
             ? `${SITE_URL}${author.photo}`
-            : `${SITE_URL}/default-author.webp`,
+            : `${SITE_URL}/blank-profile-picture.webp`,
           width: 600,
           height: 600,
           alt: author.name,
@@ -49,7 +48,7 @@ export async function generateMetadata({ params }) {
       images: [
         author.photo
           ? `${SITE_URL}${author.photo}`
-          : `${SITE_URL}/default-author.webp`,
+          : `${SITE_URL}/blank-profile-picture.webp`,
       ],
     },
   };
@@ -85,7 +84,7 @@ export default async function AuthorPage({ params }) {
     "url": `${SITE_URL}/author/${author.slug}`,
     "image": author.photo
       ? `${SITE_URL}${author.photo}`
-      : `${SITE_URL}/default-author.webp`,
+      : `${SITE_URL}/blank-profile-picture.webp`,
     "description": author.bio,
     "jobTitle": "Journalist",
     "worksFor": {
@@ -129,13 +128,13 @@ export default async function AuthorPage({ params }) {
     <ArticleLayout>
 
       {/* ✅ Structured Data */}
-      <Script
+      <script
         id="author-person-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
 
-      <Script
+      <script
         id="author-breadcrumb-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
@@ -147,7 +146,7 @@ export default async function AuthorPage({ params }) {
         {/* AUTHOR HEADER */}
         <div className="flex gap-6 items-start">
           <img
-            src={author.photo || "/default-author.webp"}
+            src={author.photo || "/blank-profile-picture.webp"}
             alt={author.name}
             className="w-32 h-32 object-cover rounded-full shadow-md"
           />

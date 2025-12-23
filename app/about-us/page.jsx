@@ -19,7 +19,7 @@ export const metadata = {
     siteName: "Wiresavvy",
     images: [
       {
-        url: `${SITE_URL}/about.webp`,
+        url: `${SITE_URL}/wiresavvy.webp`,
         width: 1200,
         height: 630,
         alt: "About Wiresavvy",
@@ -31,7 +31,7 @@ export const metadata = {
     title: "About Wiresavvy",
     description:
       "Learn who we are and what drives our mission to deliver factual US news.",
-    images: [`${SITE_URL}/about.webp`],
+    images: [`${SITE_URL}/wiresavvy.webp`],
   },
 };
 
