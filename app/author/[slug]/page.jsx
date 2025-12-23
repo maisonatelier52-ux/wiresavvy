@@ -1,6 +1,7 @@
 import ArticleLayout from "@/app/components/ArticleLayout";
 import details from "../../../data/details.json";
 import Link from "next/link";
+import Image from "next/image";
 
 const SITE_URL = "https://wiresavvy.com";
 
@@ -142,9 +143,11 @@ export default async function AuthorPage({ params }) {
 
         {/* AUTHOR HEADER */}
         <div className="flex gap-6 items-start">
-          <img
-            src={author.photo || "/default-author.webp"}
-            alt={author.name}
+          <Image
+            src={author.photo || "/blank-profile-picture.webp"}
+            alt={`${author.name}, author at Wiresavvy`}
+            width={128}
+            height={128}
             className="w-32 h-32 object-cover rounded-full shadow-md"
           />
 
