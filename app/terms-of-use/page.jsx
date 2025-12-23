@@ -1,5 +1,4 @@
 import ArticleLayout from "@/app/components/ArticleLayout";
-import Script from "next/script";
 
 const SITE_URL = "https://wiresavvy.com";
 
@@ -29,7 +28,7 @@ export const metadata = {
 export default function TermsOfUse() {
   return (
     <ArticleLayout>
-      <Script
+      <script
         id="terms-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -47,7 +46,7 @@ export default function TermsOfUse() {
         }}
       />
 
-      <Script
+      <script
         id="terms-breadcrumb-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
