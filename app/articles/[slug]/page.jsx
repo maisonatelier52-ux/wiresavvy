@@ -72,7 +72,7 @@ export default async function ArticlePage({ params }) {
   // RELATED ARTICLES
   const related = details.articles
     .filter(a => a.category === article.category && a.slug !== article.slug)
-    .slice(0, 5);
+    .slice(0, 4);
 
   // POPULAR POSTS — exclude related articles
   const relatedSlugs = related.map(a => a.slug);
