@@ -3,23 +3,73 @@ import details from "../data/details.json";
 const SITE_URL = "https://wiresavvy.com";
 
 export default function sitemap() {
+  const now = new Date();
+
+  /* ---------------- STATIC PAGES ---------------- */
   const staticPages = [
     {
       url: SITE_URL,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: "daily",
       priority: 1.0,
     },
+    {
+      url: `${SITE_URL}/about-us`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${SITE_URL}/contact-us`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${SITE_URL}/privacy-policy`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${SITE_URL}/terms-of-service`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 
-  const articlePages = details.articles
-    .filter(article => article.published !== false)
-    .map(article => ({
-      url: `${SITE_URL}/${article.slug}`,
-      lastModified: new Date(article.date),
-      changeFrequency: "weekly",
-      priority: 0.8,
+  /* ---------------- CATEGORY PAGES ---------------- */
+  const categoryPages = [...new Set(details.articles.map(a => a.category))]
+    .map(category => ({
+      url: `${SITE_URL}/categories/${encodeURIComponent(
+        category.toLowerCase()
+      )}`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.7,
     }));
 
-  return [...staticPages, ...articlePages];
+  /* ---------------- AUTHOR PAGES ---------------- */
+  const authorPages = details.authors.map(author => ({
+    url: `${SITE_URL}/author/${author.slug || author.name.toLowerCase().replace(/\s+/g, "-")}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.6,
+  }));
+
+  /* ---------------- ARTICLE PAGES (NO FILTER) ---------------- */
+  const articlePages = details.articles.map(article => ({
+    url: `${SITE_URL}/articles/${article.slug}`,
+    lastModified: new Date(article.date),
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }));
+
+  return [
+    ...staticPages,
+    ...categoryPages,
+    ...authorPages,
+    ...articlePages,
+  ];
 }
