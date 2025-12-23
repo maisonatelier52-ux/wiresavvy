@@ -1,4 +1,3 @@
-import Script from "next/script";
 import ArticleLayout from "@/app/components/ArticleLayout";
 import details from "@/data/details.json";
 import Link from "next/link";
@@ -166,7 +165,7 @@ export default async function CategoryPage({ params }) {
 
             {/* CATEGORY TITLE */}
             <h1 className="text-3xl font-bold uppercase text-red-500 mb-3">
-              {categoryName} News
+              {categoryName} News, Analysis & Updates
             </h1>
 
             <p className="text-zinc-700 mb-8 max-w-4xl">
