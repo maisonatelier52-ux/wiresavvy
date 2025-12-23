@@ -136,13 +136,13 @@ export default async function CategoryPage({ params }) {
   return (
     <ArticleLayout>
 
-      <Script
+      <script
         id="category-collection-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
       />
 
-      <Script
+      <script
         id="category-breadcrumb-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
