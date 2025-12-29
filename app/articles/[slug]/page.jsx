@@ -100,7 +100,7 @@ export default async function ArticlePage({ params }) {
     "headline": article.title,
     "description": article.excerpt,
     "articleSection": article.category,
-    "keywords": article.title.split(" "),
+    "keywords": article.keywords,
     "image": [`${SITE_URL}${article.image}`],
     "datePublished": new Date(article.date).toISOString(),
     "dateModified": new Date(article.date).toISOString(),
