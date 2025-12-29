@@ -1,6 +1,6 @@
 import details from "../data/details.json";
 
-const SITE_URL = "https://wiresavvy.com";
+const SITE_URL = "https://www.wiresavvy.com";
 
 export default function sitemap() {
   const now = new Date();
