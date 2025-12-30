@@ -5,7 +5,7 @@ import ArticleLayout from "../../components/ArticleLayout";
 import Link from "next/link";
 import Image from "next/image";
 
-const SITE_URL = "https://wiresavvy.com";
+const SITE_URL = "https://www.wiresavvy.com";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;

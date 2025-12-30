@@ -2,7 +2,7 @@ import ArticleLayout from "@/app/components/ArticleLayout";
 import details from "@/data/details.json";
 import Link from "next/link";
 
-const SITE_URL = "https://wiresavvy.com";
+const SITE_URL = "https://www.wiresavvy.com";
 
 export async function generateMetadata({ params }) {
   const { category } = await params;

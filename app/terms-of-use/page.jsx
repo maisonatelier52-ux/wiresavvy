@@ -1,6 +1,6 @@
 import ArticleLayout from "@/app/components/ArticleLayout";
 
-const SITE_URL = "https://wiresavvy.com";
+const SITE_URL = "https://www.wiresavvy.com";
 
 export const metadata = {
   title: "Terms of Use — Wiresavvy",
@@ -36,11 +36,11 @@ export default function TermsOfUse() {
             "@context": "https://schema.org",
             "@type": "TermsOfService",
             "name": "Wiresavvy Terms of Use",
-            "url": "https://wiresavvy.com/terms-of-use",
+            "url": "https://www.wiresavvy.com/terms-of-use",
             "publisher": {
               "@type": "Organization",
               "name": "Wiresavvy",
-              "url": "https://wiresavvy.com"
+              "url": "https://www.wiresavvy.com"
             }
           }),
         }}
@@ -58,13 +58,13 @@ export default function TermsOfUse() {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://wiresavvy.com"
+                "item": "https://www.wiresavvy.com"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Terms of Use",
-                "item": "https://wiresavvy.com/terms-of-use"
+                "item": "https://www.wiresavvy.com/terms-of-use"
               }
             ]
           }),

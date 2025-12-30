@@ -6,7 +6,7 @@ export default function robots() {
         allow: "/",
       },
     ],
-    sitemap: "https://wiresavvy.com/sitemap.xml",
-    host: "https://wiresavvy.com",
+    sitemap: "https://www.wiresavvy.com/sitemap.xml",
+    host: "https://www.wiresavvy.com",
   };
 }

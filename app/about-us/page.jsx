@@ -1,7 +1,7 @@
 import Header from "../components/AboutHeader";
 import Footer from "../components/Footer";
 
-const SITE_URL = "https://wiresavvy.com";
+const SITE_URL = "https://www.wiresavvy.com";
 
 export const metadata = {
   title: "About Wiresavvy — Independent US Digital News Platform",

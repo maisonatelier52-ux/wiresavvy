@@ -2,7 +2,7 @@ import "./globals.css";
 import Loader from "./components/LoaderWrapper";
 
 export const metadata = {
-  metadataBase: new URL("https://wiresavvy.com"),
+  metadataBase: new URL("https://www.wiresavvy.com"),
 
   icons: {
     icon: "/favicon.ico",

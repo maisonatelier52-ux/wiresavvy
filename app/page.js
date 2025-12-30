@@ -9,7 +9,7 @@ import details from "../data/details.json";
 import AdBanner from "./components/AdBanner";
 import MostViewed from "./components/Mostviewed";
 
-const SITE_URL = "https://wiresavvy.com";
+const SITE_URL = "https://www.wiresavvy.com";
 
 export const metadata = {
   title: "Wiresavvy — Independent U.S. News, Business & Investigations",
