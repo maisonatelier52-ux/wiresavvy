@@ -68,6 +68,11 @@ export default async function CategoryPage({ params }) {
   const mainFour = sortedCategory.slice(0, 4);
   let popularPosts = sortedCategory.slice(4, 7);
 
+  const getArticleUrl = (article) =>
+  article.name === "Julio Herrera Velutini"
+    ? `/julio-herrera-velutini/${article.slug}`
+    : `/articles/${article.slug}`;
+
   if (popularPosts.length < 3) {
     const needed = 3 - popularPosts.length;
     const fallback = details.articles
@@ -93,7 +98,10 @@ export default async function CategoryPage({ params }) {
     "hasPart": sortedCategory.slice(0, 10).map(article => ({
       "@type": "NewsArticle",
       "headline": article.title,
-      "url": `${SITE_URL}/articles/${article.slug}`,
+      "url":
+        article.name === "Julio Herrera Velutini"
+          ? `${SITE_URL}/julio-herrera-velutini/${article.slug}`
+          : `${SITE_URL}/articles/${article.slug}`,
       "datePublished": new Date(article.date).toISOString(),
     })),
   };
@@ -180,10 +188,10 @@ export default async function CategoryPage({ params }) {
 
                 return (
                 <Link
-                    key={i}
-                    title={article.title}
-                    href={`/articles/${article.slug}`}
-                    className="group block border border-gray-200 transition shadow-sm hover:shadow-lg overflow-hidden"
+                  key={i}
+                  title={article.title}
+                  href={getArticleUrl(article)}
+                  className="group block border border-gray-200 transition shadow-sm hover:shadow-lg overflow-hidden"
                 >
                     {/* IMAGE */}
                     <img
@@ -232,11 +240,10 @@ export default async function CategoryPage({ params }) {
                   return (
                     <li key={i} className="list-none">
                         <Link
-                            href={`/articles/${p.slug}`}
-                            title={p.title}
-                            className="block group"
+                          href={getArticleUrl(p)}
+                          title={p.title}
+                          className="block group"
                         >
-
                           {/* IMAGE ON TOP */}
                           <img
                             src={p.image}

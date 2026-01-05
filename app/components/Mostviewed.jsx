@@ -31,31 +31,39 @@ export default function MostViewed() {
 
   const adImage = "/ad-image.jpeg";
 
-  const renderArticle = (a, i) => (
-    <Link href={`/articles/${a.slug}`} title={a.title} key={i}>
-      <div className="flex group">
+  const renderArticle = (a, i) => {
+    // Determine the URL: use Julio Herrera route if name matches
+    const articleUrl =
+      a.name === "Julio Herrera Velutini"
+        ? `/julio-herrera-velutini/${a.slug}`
+        : `/articles/${a.slug}`;
 
-        {/* IMAGE */}
-        <div className="w-[110px] h-[80px] flex-shrink-0 bg-gray-100 flex items-center justify-center overflow-hidden">
-          {a.image ? (
-            <img
-              src={a.image}
-              alt={a.title}
-              title={a.title}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <span className="text-xs text-gray-500 uppercase">image</span>
-          )}
+    return (
+      <Link href={articleUrl} title={a.title} key={i}>
+        <div className="flex group">
+
+          {/* IMAGE */}
+          <div className="w-[110px] h-[80px] flex-shrink-0 bg-gray-100 flex items-center justify-center overflow-hidden">
+            {a.image ? (
+              <img
+                src={a.image}
+                alt={a.title}
+                title={a.title}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <span className="text-xs text-gray-500 uppercase">image</span>
+            )}
+          </div>
+
+          <h2 className="text-base font-semibold text-black hover:text-red-500 transition-colors px-2">
+            {a.title}
+          </h2>
+
         </div>
-
-        <h2 className="text-base font-semibold text-black hover:text-red-500 transition-colors px-2">
-          {a.title}
-        </h2>
-
-      </div>
-    </Link>
-  );
+      </Link>
+    );
+  };
 
   return (
     <section className="w-full my-7 px-2">

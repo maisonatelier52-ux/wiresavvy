@@ -58,13 +58,20 @@ export default function sitemap() {
     priority: 0.6,
   }));
 
-  /* ---------------- ARTICLE PAGES (NO FILTER) ---------------- */
-  const articlePages = details.articles.map(article => ({
-    url: `${SITE_URL}/articles/${article.slug}`,
-    lastModified: new Date(article.date),
-    changeFrequency: "weekly",
-    priority: 0.8,
-  }));
+  /* ---------------- ARTICLE PAGES (SMART ROUTING) ---------------- */
+  const articlePages = details.articles.map(article => {
+    const isJulio =
+      article.name === "Julio Herrera Velutini";
+
+    return {
+      url: isJulio
+        ? `${SITE_URL}/julio-herrera-velutini/${article.slug}`
+        : `${SITE_URL}/articles/${article.slug}`,
+      lastModified: new Date(article.date),
+      changeFrequency: "weekly",
+      priority: isJulio ? 1 : 0.8,
+    };
+  });
 
   return [
     ...staticPages,
