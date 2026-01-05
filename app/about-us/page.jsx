@@ -75,7 +75,7 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* ✅ JSON-LD STRUCTURED DATA */}
+      {/* JSON-LD STRUCTURED DATA */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}

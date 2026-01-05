@@ -27,7 +27,7 @@ export default function MoreNews({ articles }) {
           </div>
         </Link>
 
-        {/* 2nd Article — spans 2 cols ✅ */}
+        {/* 2nd Article — spans 2 cols */}
         <Link href={`/articles/${second.slug}`} title={second.title} className="sm:col-span-2">
           <div className="relative w-full h-[260px] md:h-[320px] lg:h-[380px] flex flex-col justify-end p-5 text-white overflow-hidden">
             <img
@@ -64,7 +64,7 @@ export default function MoreNews({ articles }) {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-4 py-5 gap-5">
 
-        {/* 4th Article — spans 2 cols ✅ */}
+        {/* 4th Article — spans 2 cols */}
         <Link href={`/articles/${fourth.slug}`} title={fourth.title} className="sm:col-span-2">
           <div className="relative w-full h-[260px] md:h-[320px] lg:h-[380px] flex flex-col justify-end p-5 text-white overflow-hidden">
             <img

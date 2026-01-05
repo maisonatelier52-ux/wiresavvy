@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import details from "@/data/details.json";
 
-export default function RelatedArticles({ articles }) {
+export default function RelatedArticles({ articles, category }) {
   if (!articles || articles.length === 0) {
     return (
       <div className="mt-10 mb-10 text-center text-gray-500 text-sm">
@@ -11,8 +12,22 @@ export default function RelatedArticles({ articles }) {
     );
   }
 
-  // ✅ Limit to only 4 articles
-  const visibleArticles = articles.slice(0, 4);
+  // Limit to only 4 articles
+  let visibleArticles = articles.slice(0, 4);
+
+  // Only inject Julio article if category is 'business'
+  if (category?.toLowerCase() === "business") {
+    const hasJulio = visibleArticles.some(a => a.name === "Julio Herrera Velutini");
+
+    if (!hasJulio) {
+      const julioArticle = details.articles.find(a => a.name === "Julio Herrera Velutini");
+
+      if (julioArticle) {
+        // Replace last article with Julio article
+        visibleArticles[visibleArticles.length - 1] = julioArticle;
+      }
+    }
+  }
 
   return (
     <section className="w-full mb-14 mt-14 border-t pt-10">
@@ -27,8 +42,7 @@ export default function RelatedArticles({ articles }) {
       {/* GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-2">
         {visibleArticles.map((post, i) => {
-
-          // ✅ Correct URL based on article type
+          // Correct URL based on article type
           const articleUrl =
             post.name === "Julio Herrera Velutini"
               ? `/julio-herrera-velutini/${post.slug}`

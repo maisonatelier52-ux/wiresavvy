@@ -4,12 +4,21 @@ import details from "../../../data/details.json";
 import ArticleLayout from "../../components/ArticleLayout";
 import Link from "next/link";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 const SITE_URL = "https://www.wiresavvy.com";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const article = details.articles.find(a => a.slug === slug);
+
+  // BLOCK JULIO ARTICLES FROM /articles/[slug]
+  if (article?.name === "Julio Herrera Velutini") {
+    return {
+      title: "Page not found | Wiresavvy",
+      robots: "noindex, nofollow",
+    };
+  }
 
   if (!article) {
     return {
@@ -56,6 +65,11 @@ export default async function ArticlePage({ params }) {
 
   // FIND ARTICLE
   const article = details.articles.find(a => a.slug === slug);
+
+  // 🚫 DO NOT RENDER JULIO ARTICLES HERE
+  if (article?.name === "Julio Herrera Velutini") {
+    notFound();
+  }
 
   if (!article) {
     return (
@@ -328,7 +342,7 @@ export default async function ArticlePage({ params }) {
 
         </div>
 
-        <RelatedArticles articles={related} />
+        <RelatedArticles articles={related} category={article.category} />
 
       </div>
 

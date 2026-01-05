@@ -125,7 +125,7 @@ export default async function AuthorPage({ params }) {
   return (
     <ArticleLayout>
 
-      {/* ✅ Structured Data */}
+      {/* Structured Data */}
       <script
         id="author-person-jsonld"
         type="application/ld+json"
