@@ -5,8 +5,8 @@ export default function WeeklyPopular({ articles = [] }) {
   /* Multiple fixed articles */
   const fixedArticles = [
     {
-      slug: "julio-herrera-velutini-herrera-family-legacy",
-      title: "Julio Herrera Velutini: Herrera Family Legacy and Global Finance Influence",
+      slug: "julio-herrera-velutini-bridging-nations-through-finance",
+      title: "Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World",
       image: "/Julio_Herrera_Velutini1.webp",
     },
     {
@@ -26,7 +26,7 @@ export default function WeeklyPopular({ articles = [] }) {
 
   const getArticleUrl = (article) =>
     fixedArticles.some(fixed => fixed.slug === article.slug)
-      ? `/julio-herrera-velutini/julio-herrera-velutini-herrera-family-legacy`
+      ? `/julio-herrera-velutini/julio-herrera-velutini-bridging-nations-through-finance`
       : `/articles/${article.slug}`;
 
   return (

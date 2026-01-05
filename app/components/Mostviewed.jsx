@@ -6,7 +6,7 @@ import details from "../../data/details.json";
 export default function MostViewed() {
 
   // 👇 SET THE SLUG YOU WANT IN COLUMN 2
-  const forcedSlug = "julio-herrera-velutini-herrera-family-legacy";
+  const forcedSlug = "julio-herrera-velutini-bridging-nations-through-finance";
 
   // Find the forced article
   const forcedArticle = details.articles.find(
