@@ -345,7 +345,7 @@
       ],
       "date": "2025-12-29",
       "image": "/nyc-metrocards-omny.webp",
-      "authorId": 1,
+      "authorId": 2,
       "published": true
     },
     {
@@ -594,6 +594,26 @@
       ],
       "date": "2025-12-10",
       "image": "/supreme-court-coordinated-spending-case-2025.webp",
+      "authorId": 4,
+      "published": true
+    },
+    {
+      "slug": "senate-war-powers-venezuela-bill",
+      "title": "U.S. Senate Passes Bipartisan Bill Limiting Presidential War Powers in Venezuela",
+      "excerpt": "The U.S. Senate has passed bipartisan legislation to restrict the president’s ability to deploy troops to Venezuela without congressional approval, reinforcing constitutional checks and balances in foreign military actions.",
+      "content": "<p>The U.S. Senate has passed important bipartisan legislation that aims to give Congress back control over military deployments. Limiting the president's power to send troops to Venezuela without first getting permission from Congress is the main way this is done. This move shows that people are more worried that the president will go too far, and that there is a renewed focus on constitutional checks and balances, especially when it comes to complicated and controversial foreign affairs.</p><h2>Background and Support from Both Parties</h2><p>Many people believe that the bill is a direct response to recent U.S. military actions in Venezuela. It has the backing of both major parties. The U.S. and Russia have been fighting over this country for a long time. This shows that strategic rivalries are getting stronger in Latin America.</p><p>The Senate's support for this bill shows that they really want to limit the president's war powers even more. This is especially important because recent governments have been criticised for using military force without getting enough input or oversight from Congress.</p><h2>Main Parts of the Law</h2><p>The main point of the bill is that the president would have to get clear permission from Congress before sending U.S. troops to Venezuela, unless there was an immediate threat to national security.</p><p>This measure is meant to stop unilateral actions, like a reported covert surveillance and limited strike mission earlier this year that happened with little involvement from Congress. Lawmakers are worried that these kinds of actions, without official approval, make it harder to be open and accountable to the people.</p><h2>Principles of the Constitution and Oversight</h2><p>Supporters say that the law reaffirms the constitutional requirement that only Congress can declare war. They say that recent military actions that were often justified by broad goals like promoting democracy or fighting drug trafficking have gone too far with presidential power, setting a dangerous example.</p><p>The bill aims to make the separation of powers clearer and limit executive unilateralism by making Congress approve military action in Venezuela.</p><h2>Debates about the Opposition and National Security</h2><p>Critics say that the bill could make it harder for the president to respond quickly to new threats. They say that in some cases, quick military action is necessary to protect U.S. interests, and that needing congressional approval could cause delays or bureaucratic problems that could put national security at risk.</p><h2>Wider Effects on Foreign Policy</h2><p>Even though there are worries about these things, the strong bipartisan support shows that a lot of lawmakers want to make sure that military force is used wisely and with strong oversight.</p><p>The bill has made it through important Senate committees and is now waiting for a vote by the whole chamber. If passed, it would be a big change in U.S. foreign policy, giving Congress more power to oversee military actions not just in Latin America but also in other parts of the world.</p><h2>Tensions in the Region and Strategic Competition</h2><p>As tensions rise in Latin America, the legislative effort is taking place. Some analysts say that recent U.S. military actions, whether open or secret, are part of a larger strategic battle between Washington and Moscow for power in the hemisphere.</p><p>As the bill moves forward, it will probably spark more discussion about how much power the executive and legislative branches should have in making U.S. defence and foreign policy.</p><p>The Senate's passage of this war powers bill is a big step towards changing the way the U.S. military operates and the Constitution. It shows a push for Congress to have more say in decisions about war and peace.</p><p>This could lead to more careful and responsible use of force in places like Venezuela that are unstable. The final result of this legislative effort will have a big impact on how the US deals with complicated international problems in the future.</p>",
+      "category": "Law",
+      "keywords": [
+        "U.S. Senate",
+        "war powers",
+        "Venezuela",
+        "Congress oversight",
+        "military deployments",
+        "foreign policy",
+        "checks and balances"
+      ],
+      "date": "2026-01-09",
+      "image": "/senate-war-powers-venezuela-bill.webp",
       "authorId": 4,
       "published": true
     },
