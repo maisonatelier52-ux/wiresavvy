@@ -7,8 +7,8 @@
       "photo": "/author/Michael-Thompson.webp",
       "bio": "Senior business and policy analyst covering U.S. industries, finance, and corporate regulation.",
       "twitter": "",
-      "facebook": "",
-      "instagram": ""
+      "quora": "https://www.quora.com/profile/Michael-Thompson-4141",
+      "reddit": "https://www.reddit.com/user/michael-thompson01/"
     },
     {
       "id": 2,
@@ -17,8 +17,8 @@
       "photo": "/author/Sophia-L.webp",
       "bio": "Travel and transportation journalist reporting on U.S. aviation, tourism, and regulatory developments.",
       "twitter": "",
-      "facebook": "",
-      "instagram": ""
+      "quora": "",
+      "reddit": ""
     },
     { 
       "id": 3,
@@ -27,8 +27,8 @@
       "photo": "/author/Emily-Johnson.webp",
       "bio": "Lifestyle and consumer trends reporter, covering home, wellness, and economic behavior.",
       "twitter": "",
-      "facebook": "",
-      "instagram": ""
+      "quora": "",
+      "reddit": ""
     },
     {
       "id": 4,
@@ -37,8 +37,8 @@
       "photo": "/author/Alex-R.webp",
       "bio": "Alex John a political correspondent and author at Wiresavvy, covering the U.S. Supreme Court, federal agencies, and government policy.",
       "twitter": "",
-      "facebook": "",
-      "instagram": ""
+      "quora": "",
+      "reddit": "https://www.reddit.com/user/alex-john01/"
     },
     { 
       "id": 5,
@@ -46,9 +46,9 @@
       "slug": "dana-katherine",
       "photo": "/author/Dana-K.webp",
       "bio": "Dana Katherine a financial journalist and author at Wiresavvy, covering U.S. markets, banking, and the impact of technology on the economy.",
-      "twitter": "",
-      "facebook": "",
-      "instagram": ""
+      "twitter": "https://x.com/DanaK25216",
+      "quora": "https://www.quora.com/profile/Dana-Katherine-10",
+      "reddit": "https://www.reddit.com/user/dana_katherine/"
     },
     { 
       "id": 6,
@@ -57,8 +57,8 @@
       "photo": "/author/Jordan-Miles.webp",
       "bio": "Investigative reporter focusing on law enforcement, federal investigations, and legal affairs.",
       "twitter": "",
-      "facebook": "",
-      "instagram": ""
+      "quora": "",
+      "reddit": ""
     }
   ],
   "articles": [

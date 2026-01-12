@@ -92,8 +92,8 @@ export default async function AuthorPage({ params }) {
     },
     "sameAs": [
       author.twitter,
-      author.facebook,
-      author.instagram,
+      author.quora,
+      author.reddit
     ].filter(Boolean),
   };
 
@@ -175,54 +175,65 @@ export default async function AuthorPage({ params }) {
                   </svg>
                 </a>
               )}
-
-              {author.facebook && (
+              {author.reddit && (
                 <a
-                  href={author.facebook}
-                  title={`${author.name} on Facebook`}
+                  href={author.reddit}
+                  title={`${author.name} on Reddit`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`${author.name} on Facebook`}
-                  className="p-2 rounded-sm bg-zinc-200 hover:bg-[#1877F2] hover:text-white transition"
+                  aria-label={`${author.name} on Reddit`}
+                  className="p-2 rounded-sm bg-zinc-200 hover:bg-[#FF4500] hover:text-white transition"
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07c0 4.99 3.66 9.13 8.44 9.95v-7.04H7.9v-2.91h2.54V9.84c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.76-1.61 1.53v1.85h2.74l-.44 2.91h-2.3v7.04C18.34 21.2 22 17.06 22 12.07z" />
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 20c4.418 0 8-2.686 8-6s-3.582-6-8-6-8 2.686-8 6 3.582 6 8 6Z"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    />
+                    <circle cx="9" cy="13" r="1" fill="currentColor" />
+                    <circle cx="15" cy="13" r="1" fill="currentColor" />
+                    <path
+                      d="M9.5 15.5c.8.7 1.8 1 2.5 1s1.7-.3 2.5-1"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                    />
+                    <circle cx="19" cy="9" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+                    <path
+                      d="M14.5 7.5 15.5 4l3 .5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </a>
               )}
-
-              {author.instagram && (
+              {author.quora && (
                 <a
-                  href={author.instagram}
-                  title={`${author.name} on Instagram`}
+                  href={author.quora}
+                  title={`${author.name} on Quora`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`${author.name} on Instagram`}
-                  className="p-2 rounded-sm bg-zinc-200 hover:bg-[#E1306C] hover:text-white transition"
+                  aria-label={`${author.name} on Quora`}
+                  className="p-2 rounded-sm bg-zinc-200 hover:bg-[#B92B27] hover:text-white transition"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <rect
-                      x="3"
-                      y="3"
-                      width="18"
-                      height="18"
-                      rx="5"
+                    {/* Q outer circle */}
+                    <circle
+                      cx="11"
+                      cy="11"
+                      r="6"
                       stroke="currentColor"
-                      strokeWidth="1.5"
+                      strokeWidth="2"
                     />
+
+                    {/* Q tail */}
                     <path
-                      d="M16 11.37a4 4 0 1 1-4.63-4"
+                      d="M14.5 14.5 18 18"
                       stroke="currentColor"
-                      strokeWidth="1.5"
+                      strokeWidth="2"
                       strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M17.5 6.5h.01"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
                     />
                   </svg>
                 </a>
