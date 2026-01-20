@@ -238,6 +238,20 @@ export default async function AuthorPage({ params }) {
                   </svg>
                 </a>
               )}
+              {author.medium && (
+                <a
+                  href={author.medium}
+                  title={`${author.name} on Medium`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${author.name} on Medium`}
+                  className="p-2 rounded-sm bg-zinc-200 hover:bg-[#00ab6c] hover:text-white transition"
+                >
+                  <svg width="18" height="18" viewBox="0 0 1043.63 592.71" fill="currentColor">
+                    <path d="M588.67 296.35c0 163.7-131.9 296.36-294.34 296.36C131.9 592.71 0 460.05 0 296.35 0 132.66 131.9 0 294.33 0c162.44 0 294.34 132.66 294.34 296.35zM911.4 296.35c0 154.04-65.95 278.98-147.17 278.98-81.22 0-147.17-124.94-147.17-278.98C617.06 142.32 683 17.37 764.23 17.37c81.22 0 147.17 124.95 147.17 278.98zM1043.63 296.35c0 138.01-23.61 249.91-52.73 249.91-29.12 0-52.73-111.9-52.73-249.91 0-138.02 23.61-249.92 52.73-249.92 29.12 0 52.73 111.9 52.73 249.92z" />
+                  </svg>
+                </a>
+              )}
             </div>
           </div>
         </div>
