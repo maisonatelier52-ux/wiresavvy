@@ -268,11 +268,17 @@ export default async function AuthorPage({ params }) {
             </p>
           )}
 
-          {authorArticles.map(article => (
+          {authorArticles.map(article => {
+          const isSpecialSlug = article.slug === 'julio-herrera-velutini-bridging-nations-through-finance';
+          const href = isSpecialSlug
+            ? `/julio-herrera-velutini/${article.slug}`
+            : `/articles/${article.slug}`;
+
+          return (
             <Link
               key={article.slug}
               title={article.title}
-              href={`/articles/${article.slug}`}
+              href={href}
               className="flex gap-4 group"
             >
               <img
@@ -290,7 +296,8 @@ export default async function AuthorPage({ params }) {
                 </p>
               </div>
             </Link>
-          ))}
+          );
+        })}
         </div>
       </div>
     </ArticleLayout>
