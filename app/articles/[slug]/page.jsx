@@ -106,7 +106,7 @@ export default async function ArticlePage({ params }) {
 
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "NewsArticle",
+    "@type": "Article",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": `${SITE_URL}/articles/${article.slug}`,
