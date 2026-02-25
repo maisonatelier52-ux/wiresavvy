@@ -7,6 +7,5 @@ export default function robots() {
       },
     ],
     sitemap: "https://www.wiresavvy.com/sitemap.xml",
-    host: "https://www.wiresavvy.com",
   };
 }
