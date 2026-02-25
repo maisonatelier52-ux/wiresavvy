@@ -296,6 +296,8 @@ export default async function ArticlePage({ params }) {
               [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:my-4
               [&_li]:my-2 [&_li]:leading-relaxed
 
+              /* UNDERLINE */
+              [&_u]:underline [&_u]:decoration-1 [&_u]:underline-offset-2
             "
             dangerouslySetInnerHTML={{ __html: article.content }}
           />
