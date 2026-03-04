@@ -1246,7 +1246,7 @@
       ],
       "date": "2026-02-04",
       "image": "/clintons-epstein-testimony.webp",
-      "authorId": 1,
+      "authorId": 6,
       "published": true
     },
     {
@@ -1269,7 +1269,7 @@
       ],
       "date": "2026-02-06",
       "image": "/colorado-funeral-home-case.webp",
-      "authorId": 1,
+      "authorId": 6,
       "published": true
     },
     { 
@@ -1292,7 +1292,28 @@
       ],
       "date": "2026-02-10",
       "image": "/press-freedom-doj-reporter-search.webp",
-      "authorId": 1,
+      "authorId": 6,
+      "published": true
+    },
+    {
+      "slug": "nancy-mace-ethics-investigation-housing-reimbursements",
+      "title": "Nancy Mace Faces Ethics Probe Over Congressional Housing Expense Claims",
+      "excerpt": "The House Ethics Committee is investigating Rep. Nancy Mace over claims she overcharged a congressional housing reimbursement program, allegations she strongly denies.",
+      "content": "<p>The House Ethics Committee has launched an investigation into charges that Rep. Nancy Mace overcharged a congressional program designed to help politicians cover housing costs in Washington and their home districts. The investigation was launched in response to a referral from the neutral Office of Congressional Conduct, which investigates complaints of misbehavior against members of Congress.</p><p>In a report issued Monday, the watchdog office stated that there is \"substantial reason to believe that Rep. Mace engaged in improper reimbursement practices.\" The committee stated that it has expanded its assessment of the topic, but noted that launching an investigation does not imply misconduct or reflect any conclusion on the situation.</p><p>Mace, a Republican from South Carolina serving her third term in the House, has disputed the claims and called the process political. Her staff stated that she does not take the ethics charge seriously and accused the staff of Congressional Conduct of neglecting facts in her rebuttal.</p><h2>Why This News Matters:</h2><p>Investigations into the ethics of members of Congress are at the heart of the public's trust in how their tax dollars are spent. The investigation into Rep. Nancy Mace is looking into whether a program that was supposed to help lawmakers pay for housing in Washington was used correctly. An investigation doesn't mean that something wrong happened, but it does make people wonder about how well Congress is keeping an eye on its expense programs, especially since Mace is running for a high-profile political office back home.</p><h2>Allegations of Improper Housing Reimbursements</h2><p>The investigation centers on Mace's involvement in a congressional housing reimbursement program. This program helps cover hotel, food, and travel costs for lawmakers with homes both in Washington and in their home districts. The inquiry suggests that Mace submitted requests and received reimbursements that were greater than her actual living expenses for several months during 2023 and 2024.</p><p>The Office of Congressional Conduct found that she was reimbursed approximately $9,500 more than the actual cost of the Washington house she shared with her then-fiancé. According to the watchdog office, the available data implies Mace did not take the necessary precautions to ensure she sought compensation only for expenses incurred.</p><p>The report also stated that she declined to engage in an interview throughout the investigation, preventing investigators from discovering how or why she chose to seek the maximum permissible compensation even though it surpassed the expenses incurred.</p><h2>Dispute Over Evidence and Personal Allegations</h2><p>Mace and her legal team have aggressively challenged the results, claiming that the study is based on unreliable sources. In a letter to the ethics committee, her attorney, William Sullivan Jr., stated that the congresswoman's former fiancé was involved in an ongoing campaign to destroy her through false narratives and the misuse of legal processes.</p><p>Sullivan indicated that any evidence provided by the former fiancé should raise major credibility concerns, and that the referral appears to rely heavily on unverified documents from individuals with personal or antagonistic motivations. According to the congressional records cited in the article, Mace's housing expenses in 2023 exceeded $27,000, encompassing periods where she reported over $3,000 for lodging. Mace also indicated that her total housing costs in Washington surpassed $100,000, and she received roughly $29,000 in reimbursements after taxes were accounted for.</p><h2>Political Context and Ethics Review Process</h2><p>The probe comes as Mace competes in a tight Republican primary for governor of South Carolina and has announced her decision not to seek reelection to the House. GOP Rep. Michael Guest of Mississippi, chairman of the House Ethics Committee, said the panel received the referral in December and would continue to evaluate it before making a decision.</p><p>The committee stated that mandatory notification of an investigation does not imply that a violation has occurred. The housing reimbursement program has come under fire since it does not require politicians to give extensive proof of spending and essentially enhances congressional salary for those who use it. The Ethics Committee has stated that it will not comment further on the case until its review is complete.</p>",
+      "category": "Investigation",
+      "keywords": [
+        "Nancy Mace ethics probe",
+        "House Ethics Committee investigation",
+        "congressional housing reimbursements",
+        "Office of Congressional Conduct",
+        "improper reimbursement practices",
+        "South Carolina governor race",
+        "congressional expense oversight",
+        "ethics investigation 2026"
+      ],
+      "date": "2026-02-27",
+      "image": "/nancy-mace-ethics.webp",
+      "authorId": 6,
       "published": true
     },
     {
