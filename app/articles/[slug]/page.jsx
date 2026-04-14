@@ -91,7 +91,7 @@ export default async function ArticlePage({ params }) {
   // POPULAR POSTS — exclude related articles
   const relatedSlugs = related.map(a => a.slug);
   const popularPosts = details.articles
-    .filter(a => a.category !== article.category && a.slug !== article.slug && !relatedSlugs.includes(a.slug))
+    .filter(a => a.category !== article.category && a.slug !== article.slug && !relatedSlugs.includes(a.slug) && !a.name)
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(3, 9);
 

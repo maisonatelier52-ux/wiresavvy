@@ -55,7 +55,7 @@ export default function Home() {
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
     const featuredArticles = publishedArticles
-    .filter(a => a.category === "Business")
+    .filter(a => a.category === "Business" && !a.name)
     .slice(0, 3);
 
   const usedSlugs = new Set(featuredArticles.map(a => a.slug));
