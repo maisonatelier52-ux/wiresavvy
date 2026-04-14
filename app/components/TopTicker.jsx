@@ -4,6 +4,7 @@ import details from "../../data/details.json";
 
 export default function TopTicker() {
   const latestThree = [...details.articles]
+    .filter(a => a.published === true && !a.name)
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(0, 3);
 

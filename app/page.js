@@ -51,7 +51,7 @@ export default function Home() {
 
   // ---------- BASE DATA ----------
   const publishedArticles = details.articles
-    .filter(a => a.published !== false)
+    .filter(a => a.published !== false && !a.name)
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
     const featuredArticles = publishedArticles
