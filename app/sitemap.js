@@ -69,7 +69,7 @@ export default function sitemap() {
 
   return [
     ...staticPages,
-    ...pillarPages,      // ← Added
+    // ...pillarPages,      // ← Added
     ...categoryPages,
     ...authorPages,
     ...articlePages,
