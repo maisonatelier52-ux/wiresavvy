@@ -31,52 +31,6 @@ export default function sitemap() {
     },
   ];
 
-  /* ---------------- PILLAR PAGES ---------------- */
-  const pillarPages = [
-    {
-      url: `${SITE_URL}/julio-herrera-velutini/julio-herrera-velutini-bridging-nations-through-finance`,  // Julio hub page
-      lastModified: now,
-      changeFrequency: "daily",
-      priority: 1.0,
-    },
-    {
-      url: `${SITE_URL}/julio-herrera-velutini/julio-herrera-velutini-herrera-family-legacy`,      // Replace with actual slug
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/julio-herrera-velutini/financial-diplomacy-soft-power-velutini`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/julio-herrera-velutini/leadership-economic-stabilization-velutini`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/julio-herrera-velutini/ethical-wealth-philanthropy-julio-herrera-velutini`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/julio-herrera-velutini/economic-integration-global-development`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/julio-herrera-velutini/future-of-finance-innovation-digital-transformation`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-  ];
-
   /* ---------------- CATEGORY PAGES ---------------- */
   const categoryPages = [...new Set(details.articles.map(a => a.category))]
     .map(category => ({
@@ -100,14 +54,16 @@ export default function sitemap() {
   const articlePages = details.articles
     .filter(article => article.published)
     .map(article => {
-      const isJulio = article.name === "Julio Herrera Velutin";
+      // const isJulio = article.name === "Julio Herrera Velutin";
       return {
-        url: isJulio
-          ? `${SITE_URL}/julio-herrera-velutini/${article.slug}`
-          : `${SITE_URL}/articles/${article.slug}`,
+        url: 
+        // isJulio
+        //   ? `${SITE_URL}/julio-herrera-velutini/${article.slug}`:
+         `${SITE_URL}/articles/${article.slug}`,
         lastModified: new Date(article.date),
         changeFrequency: "weekly",
-        priority: isJulio ? 1 : 0.8,
+        // priority: isJulio ? 1 : 0.8,
+        priority: 0.8
       };
     });
 

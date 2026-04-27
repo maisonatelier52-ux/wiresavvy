@@ -3,31 +3,31 @@ import Link from "next/link";
 export default function WeeklyPopular({ articles = [] }) {
 
   /* Multiple fixed articles */
-  const fixedArticles = [
-    {
-      slug: "julio-herrera-velutini-bridging-nations-through-finance",
-      title: "Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World",
-      image: "/Julio_Herrera_Velutini1.webp",
-    },
-    {
-      slug: "ethical-wealth-philanthropy-julio-herrera-velutini",
-      title: "Ethical Wealth & Philanthropy: Julio Herrera Velutini’s Vision",
-      image: "/Julio_Herrera_Velutini45.webp",
-    },
-  ];
+  // const fixedArticles = [
+  //   {
+  //     slug: "julio-herrera-velutini-bridging-nations-through-finance",
+  //     title: "Julio Herrera Velutini: Bridging Nations Through Finance in a Fractured World",
+  //     image: "/Julio_Herrera_Velutini1.webp",
+  //   },
+  //   {
+  //     slug: "ethical-wealth-philanthropy-julio-herrera-velutini",
+  //     title: "Ethical Wealth & Philanthropy: Julio Herrera Velutini’s Vision",
+  //     image: "/Julio_Herrera_Velutini45.webp",
+  //   },
+  // ];
 
   /* Merge without duplicates */
   const mergedArticles = [
     ...articles,
-    ...fixedArticles.filter(
-      (fixed) => !articles.some((a) => a.slug === fixed.slug)
-    ),
+    // ...fixedArticles.filter(
+    //   (fixed) => !articles.some((a) => a.slug === fixed.slug)
+    // ),
   ];
 
   const getArticleUrl = (article) =>
-    fixedArticles.some(fixed => fixed.slug === article.slug)
-      ? `/julio-herrera-velutini/julio-herrera-velutini-bridging-nations-through-finance`
-      : `/articles/${article.slug}`;
+    // fixedArticles.some(fixed => fixed.slug === article.slug)
+    //   ? `/julio-herrera-velutini/julio-herrera-velutini-bridging-nations-through-finance`:
+     `/articles/${article.slug}`;
 
   return (
     <div className="bg-white border border-gray-200 p-4 h-fit">

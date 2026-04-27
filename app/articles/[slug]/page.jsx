@@ -13,12 +13,12 @@ export async function generateMetadata({ params }) {
   const article = details.articles.find(a => a.slug === slug);
 
   // BLOCK JULIO ARTICLES FROM /articles/[slug]
-  if (article?.name === "Julio Herrera Velutini") {
-    return {
-      title: "Page not found | Wiresavvy",
-      robots: "noindex, nofollow",
-    };
-  }
+  // if (article?.name === "Julio Herrera Velutini") {
+  //   return {
+  //     title: "Page not found | Wiresavvy",
+  //     robots: "noindex, nofollow",
+  //   };
+  // }
 
   if (!article) {
     return {
@@ -67,9 +67,9 @@ export default async function ArticlePage({ params }) {
   const article = details.articles.find(a => a.slug === slug);
 
   // 🚫 DO NOT RENDER JULIO ARTICLES HERE
-  if (article?.name === "Julio Herrera Velutini") {
-    notFound();
-  }
+  // if (article?.name === "Julio Herrera Velutini") {
+  //   notFound();
+  // }
 
   if (!article) {
     return (

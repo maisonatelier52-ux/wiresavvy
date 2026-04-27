@@ -68,10 +68,12 @@ export default async function CategoryPage({ params }) {
   const mainFour = sortedCategory.slice(0, 4);
   let popularPosts = sortedCategory.slice(4, 7);
 
-  const getArticleUrl = (article) =>
-  article.name === "Julio Herrera Velutini"
-    ? `/julio-herrera-velutini/${article.slug}`
-    : `/articles/${article.slug}`;
+  // const getArticleUrl = (article) =>
+  // article.name === "Julio Herrera Velutini"
+  //   ? `/julio-herrera-velutini/${article.slug}`
+  //   : `/articles/${article.slug}`;
+
+  const getArticleUrl = (article) => `/articles/${article.slug}`;
 
   if (popularPosts.length < 3) {
     const needed = 3 - popularPosts.length;
@@ -99,9 +101,9 @@ export default async function CategoryPage({ params }) {
       "@type": "NewsArticle",
       "headline": article.title,
       "url":
-        article.name === "Julio Herrera Velutini"
-          ? `${SITE_URL}/julio-herrera-velutini/${article.slug}`
-          : `${SITE_URL}/articles/${article.slug}`,
+        // article.name === "Julio Herrera Velutini"
+        //   ? `${SITE_URL}/julio-herrera-velutini/${article.slug}`:
+        `${SITE_URL}/articles/${article.slug}`,
       "datePublished": new Date(article.date).toISOString(),
     })),
   };

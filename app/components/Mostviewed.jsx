@@ -6,37 +6,37 @@ import details from "../../data/details.json";
 export default function MostViewed() {
 
   // 👇 SET THE SLUG YOU WANT IN COLUMN 2
-  const forcedSlug = "julio-herrera-velutini-bridging-nations-through-finance";
+  // const forcedSlug = "julio-herrera-velutini-bridging-nations-through-finance";
 
   // Find the forced article
-  const forcedArticle = details.articles.find(
-    (a) => a.slug === forcedSlug
-  );
+  // const forcedArticle = details.articles.find(
+  //   (a) => a.slug === forcedSlug
+  // );
 
   // Remove forced article from main list
-  const filteredArticles = details.articles.filter(
-    (a) => a.slug !== forcedSlug
-  );
+  const filteredArticles = details.articles;
 
   // Take remaining articles
-  const sorted = [...filteredArticles].slice(0, 9);
+  // const sorted = [...filteredArticles].slice(0, 9);
+  const sorted = [...filteredArticles].slice(0, 10);
 
   // Column split
   const col1 = sorted.slice(0, 5);
 
   // Column 2: forced article first, then remaining
-  const col2 = forcedArticle
-    ? [forcedArticle, ...sorted.slice(5, 9)].reverse()
-    : sorted.slice(5, 10);
+  const col2 = 
+  // forcedArticle
+  //   ? [forcedArticle, ...sorted.slice(5, 9)].reverse():
+   sorted.slice(5, 10);
 
   const adImage = "/ad-image.jpeg";
 
   const renderArticle = (a, i) => {
     // Determine the URL: use Julio Herrera route if name matches
     const articleUrl =
-      a.name === "Julio Herrera Velutini"
-        ? `/julio-herrera-velutini/${a.slug}`
-        : `/articles/${a.slug}`;
+      // a.name === "Julio Herrera Velutini"
+      //   ? `/julio-herrera-velutini/${a.slug}`:
+        `/articles/${a.slug}`;
 
     return (
       <Link href={articleUrl} title={a.title} key={i}>

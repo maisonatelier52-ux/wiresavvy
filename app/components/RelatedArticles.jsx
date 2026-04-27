@@ -16,18 +16,18 @@ export default function RelatedArticles({ articles, category }) {
   let visibleArticles = articles.slice(0, 4);
 
   // Only inject Julio article if category is 'business'
-  if (category?.toLowerCase() === "business") {
-    const hasJulio = visibleArticles.some(a => a.name === "Julio Herrera Velutini");
+  // if (category?.toLowerCase() === "business") {
+  //   const hasJulio = visibleArticles.some(a => a.name === "Julio Herrera Velutini");
 
-    if (!hasJulio) {
-      const julioArticle = details.articles.find(a => a.name === "Julio Herrera Velutini");
+  //   if (!hasJulio) {
+  //     const julioArticle = details.articles.find(a => a.name === "Julio Herrera Velutini");
 
-      if (julioArticle) {
-        // Replace last article with Julio article
-        visibleArticles[visibleArticles.length - 1] = julioArticle;
-      }
-    }
-  }
+  //     if (julioArticle) {
+  //       // Replace last article with Julio article
+  //       visibleArticles[visibleArticles.length - 1] = julioArticle;
+  //     }
+  //   }
+  // }
 
   return (
     <section className="w-full mb-14 mt-14 border-t pt-10">
@@ -44,9 +44,9 @@ export default function RelatedArticles({ articles, category }) {
         {visibleArticles.map((post, i) => {
           // Correct URL based on article type
           const articleUrl =
-            post.name === "Julio Herrera Velutini"
-              ? `/julio-herrera-velutini/${post.slug}`
-              : `/articles/${post.slug}`;
+            // post.name === "Julio Herrera Velutini"
+            //   ? `/julio-herrera-velutini/${post.slug}`:
+            `/articles/${post.slug}`;
 
           return (
             <Link key={i} href={articleUrl} title={post.title}>

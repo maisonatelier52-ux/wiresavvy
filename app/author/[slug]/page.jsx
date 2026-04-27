@@ -268,7 +268,7 @@ export default async function AuthorPage({ params }) {
             </p>
           )}
 
-          {authorArticles.map(article => {
+          {/* {authorArticles.map(article => {
           const isSpecialSlug = article.slug === 'julio-herrera-velutini-bridging-nations-through-finance';
           const href = isSpecialSlug
             ? `/julio-herrera-velutini/${article.slug}`
@@ -297,7 +297,7 @@ export default async function AuthorPage({ params }) {
               </div>
             </Link>
           );
-        })}
+        })} */}
         </div>
       </div>
     </ArticleLayout>
