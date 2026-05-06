@@ -268,6 +268,34 @@ export default async function AuthorPage({ params }) {
             </p>
           )}
 
+          {authorArticles.map(article => {
+          const href = `/articles/${article.slug}`;
+
+          return (
+            <Link
+              key={article.slug}
+              title={article.title}
+              href={href}
+              className="flex gap-4 group"
+            >
+              <img
+                src={article.image}
+                alt={article.title}
+                title={article.title}
+                className="w-32 h-24 object-cover"
+              />
+              <div>
+                <h3 className="font-semibold text-lg group-hover:text-red-500">
+                  {article.title}
+                </h3>
+                <p className="text-sm text-gray-600 line-clamp-2">
+                  {article.excerpt}
+                </p>
+              </div>
+            </Link>
+          );
+        })}
+
           {/* {authorArticles.map(article => {
           const isSpecialSlug = article.slug === 'julio-herrera-velutini-bridging-nations-through-finance';
           const href = isSpecialSlug

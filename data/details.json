@@ -626,7 +626,7 @@
       ],
       "date": "2026-03-08",
       "image": "/kansas-city-airport-evacuation.webp",
-      "authorId": 1,
+      "authorId": 2,
       "published": true
     },
     {
@@ -826,7 +826,7 @@
       ],
       "date": "2026-03-23",
       "image": "/pop-culture-embraces-intellectual-trend.webp",
-      "authorId": 1,
+      "authorId": 3,
       "published": true
     },
     {
@@ -982,7 +982,7 @@
         "state sovereignty",
         "federal immigration law"
       ],
-      "authorId": 1,
+      "authorId": 4,
       "date": "2026-02-27",
       "published": true,
       "image": "/new-jersey-immigration-lawsuit.webp"
@@ -1007,7 +1007,7 @@
       ],
       "date": "2026-03-24",
       "image": "/maduro-legal-fees-sanctions-us-court-case.webp",
-      "authorId": 1,
+      "authorId": 4,
       "published": true
     },
     {
@@ -1258,7 +1258,7 @@
       ],
       "date": "2026-04-13",
       "image": "/oil-prices-surge-us-blockade-strait-of-hormuz.webp",
-      "authorId": 1,
+      "authorId": 5,
       "published": true
     },
     {
@@ -1539,7 +1539,7 @@
       ],
       "date": "2026-04-22",
       "image": "/ohio-state-president-investigation-policy-violation.webp",
-      "authorId": 1,
+      "authorId": 6,
       "published": true
     }
   ]
