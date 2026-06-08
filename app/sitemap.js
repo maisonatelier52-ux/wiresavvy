@@ -3,34 +3,6 @@ const SITE_URL = "https://www.wiresavvy.com";
 export default function sitemap() {
   const now = new Date();
 
-  /* ---------------- STATIC PAGES ---------------- */
-  const staticPages = [
-    {
-      url: SITE_URL,
-      lastModified: now,
-      changeFrequency: "daily",
-      priority: 1.0,
-    },
-    {
-      url: `${SITE_URL}/about-us`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${SITE_URL}/privacy-policy`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${SITE_URL}/terms-of-service`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-  ];
-
   /* ---------------- CATEGORY PAGES ---------------- */
   const categoryPages = [...new Set(details.articles.map(a => a.category))]
     .map(category => ({
@@ -68,7 +40,6 @@ export default function sitemap() {
     });
 
   return [
-    ...staticPages,
     // ...pillarPages,      // ← Added
     ...categoryPages,
     ...authorPages,

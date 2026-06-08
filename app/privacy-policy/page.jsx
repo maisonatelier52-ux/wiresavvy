@@ -1,206 +1,206 @@
-const SITE_URL = "https://www.wiresavvy.com";
+"use client"
 
-export const metadata = {
-  title: "Privacy Policy — Wiresavvy",
-  description:
-    "Read Wiresavvy's Privacy Policy to understand how we collect, use, protect, and handle your information while you browse our U.S.-focused news platform.",
-  alternates: {
-    canonical: `${SITE_URL}/privacy-policy`,
-  },
-  openGraph: {
-    title: "Wiresavvy Privacy Policy",
-    description:
-      "Learn how Wiresavvy protects your privacy and manages information including cookies, analytics, and data usage.",
-    url: `${SITE_URL}/privacy-policy`,
-    type: "website",
-    siteName: "Wiresavvy",
-    images: [
+import { useState } from "react";
+import ArticleLayout from "../components/ArticleLayout";
+
+const privacySections = [
+  {
+    id: "collect",
+    icon: "◈",
+    title: "Information We Collect",
+    content: [
       {
-        url: `${SITE_URL}/wiresavvy.webp`,
-        width: 1200,
-        height: 630,
-        alt: "Privacy Policy - Wiresavvy",
+        sub: "Information you provide",
+        text: "When you contact us, submit a news tip, sign up for a newsletter, or interact with our platform, we may collect your name, email address, and any other information you choose to provide.",
+      },
+      {
+        sub: "Automatically collected data",
+        text: "When you visit Wiresavvy, we automatically collect certain technical information including your IP address, browser type, operating system, referring URLs, pages visited, and time spent on the site. This data is used to understand how readers engage with our content and to improve the platform.",
+      },
+      {
+        sub: "Cookies and tracking technologies",
+        text: "We use cookies and similar technologies to enhance your experience, remember your preferences, and gather analytics data. You can control cookie settings through your browser at any time.",
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Wiresavvy Privacy Policy",
-    description:
-      "Understand how Wiresavvy collects, uses, and safeguards user information across our platform.",
-    images: [`${SITE_URL}/wiresavvy.webp`],
+  {
+    id: "use",
+    icon: "◉",
+    title: "How We Use Your Information",
+    content: [
+      {
+        sub: "",
+        text: "We use the information we collect to operate and improve the Wiresavvy platform, deliver newsletters and communications you have requested, respond to enquiries and news tips, analyse readership trends and content performance, and comply with applicable legal obligations.",
+      },
+      {
+        sub: "",
+        text: "We do not sell your personal information to third parties. We do not use your data to build advertising profiles or to target you with personalised advertisements without your consent.",
+      },
+    ],
   },
-};
-
-import ArticleLayout from "@/app/components/ArticleLayout";
+  {
+    id: "share",
+    icon: "◌",
+    title: "Sharing Your Information",
+    content: [
+      {
+        sub: "Service providers",
+        text: "We may share data with trusted third-party service providers who assist in operating our website, sending emails, or analysing usage. These providers are contractually required to keep your information confidential and to use it only for the services they provide to us.",
+      },
+      {
+        sub: "Legal requirements",
+        text: "We may disclose your information if required to do so by law or in response to a valid legal process, such as a court order or government request.",
+      },
+      {
+        sub: "Business transfers",
+        text: "In the event of a merger, acquisition, or sale of assets, user data may be transferred as part of that transaction. We will notify users of any such change and your choices regarding your data.",
+      },
+    ],
+  },
+  {
+    id: "retention",
+    icon: "◷",
+    title: "Data Retention",
+    content: [
+      {
+        sub: "",
+        text: "We retain personal information for as long as necessary to fulfil the purposes for which it was collected, to comply with legal obligations, and to resolve disputes. When data is no longer required, we take reasonable steps to delete or anonymise it.",
+      },
+    ],
+  },
+  {
+    id: "rights",
+    icon: "◎",
+    title: "Your Rights",
+    content: [
+      {
+        sub: "",
+        text: "Depending on your jurisdiction, you may have the right to access, correct, or delete the personal information we hold about you. You may also have the right to object to or restrict certain types of processing, or to request a copy of your data in a portable format.",
+      },
+      {
+        sub: "",
+        text: "To exercise any of these rights, please contact us at the address below. We will respond to all legitimate requests within the timeframe required by applicable law.",
+      },
+    ],
+  },
+  {
+    id: "security",
+    icon: "◆",
+    title: "Security",
+    content: [
+      {
+        sub: "",
+        text: "We take reasonable technical and organisational measures to protect your personal information against unauthorised access, loss, or misuse. However, no method of data transmission over the internet is completely secure, and we cannot guarantee absolute security.",
+      },
+    ],
+  },
+  {
+    id: "children",
+    icon: "◇",
+    title: "Children's Privacy",
+    content: [
+      {
+        sub: "",
+        text: "Wiresavvy is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us and we will take steps to delete it.",
+      },
+    ],
+  },
+  {
+    id: "changes",
+    icon: "◈",
+    title: "Changes to This Policy",
+    content: [
+      {
+        sub: "",
+        text: "We may update this Privacy Policy from time to time. Any changes will be posted on this page with a revised effective date. Continued use of Wiresavvy after changes are published constitutes acceptance of the updated policy.",
+      },
+    ],
+  },
+];
 
 export default function PrivacyPolicy() {
+  const [active, setActive] = useState(null);
+
   return (
     <ArticleLayout>
-      <script
-        id="privacy-policy-jsonld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "PrivacyPolicy",
-            "name": "Wiresavvy Privacy Policy",
-            "url": "https://www.wiresavvy.com/privacy-policy",
-            "publisher": {
-              "@type": "Organization",
-              "name": "Wiresavvy",
-              "url": "https://www.wiresavvy.com"
-            }
-          }),
-        }}
-      />
+    <div className="min-h-screen font-['Georgia',serif]">
+      <div className="h-1 w-full bg-gradient-to-r from-red-600 via-red-500 to-orange-500" />
 
-      <script
-        id="privacy-breadcrumb-jsonld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.wiresavvy.com"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Privacy Policy",
-                "item": "https://www.wiresavvy.com/privacy-policy"
-              }
-            ]
-          }),
-        }}
-      />
-      <article className="prose max-w-4xl mx-auto py-16 px-6 md:px-10 leading-relaxed">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 tracking-tight">
-          Privacy Policy
-        </h1>
+      {/* Hero — full bleed with grid lines */}
+      <section className="relative border-b border-black/10 overflow-hidden">
 
-        <p className="text-sm text-gray-500 mb-10 border-b pb-4">
-          Last updated: November 2025
-        </p>
+        <div className="relative max-w-5xl mx-auto px-6 py-16 md:py-24">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
+            Your Privacy,
+            <br />
+            <span className="text-black/75">Our Responsibility</span>
+          </h1>
+          <p className="text-black/50 font-sans text-base md:text-lg leading-relaxed max-w-2xl">
+            This policy explains what data Wiresavvy collects, how we use it,
+            and the choices you have. We collect only what we need to deliver
+            independent journalism.
+          </p>
+          <p className="text-black/55 font-sans text-xs mt-6">
+            Effective date: June 2026
+          </p>
+        </div>
+      </section>
 
-        <h2 className="text-2xl font-bold mt-10">Introduction</h2>
-        <p>
-          Wiresavvy collects, uses, distributes, and protects personal information on our U.S.–based digital news platform, including our website, mobile-accessible pages, and any service that links to this Privacy Policy. By using our Services, you agree to this Privacy Policy.
-        </p>
+      {/* Accordion sections */}
+      <main className="max-w-4xl mx-auto px-6 py-14">
+        <div className="divide-y divide-black/50">
+          {privacySections.map((s, i) => (
+            <div key={s.id}>
+              <button
+                className="w-full text-left py-7 flex items-center gap-5 group"
+                onClick={() => setActive(active === i ? null : i)}
+              >
+                <span className="text-red-400/60 text-lg w-6 shrink-0">{s.icon}</span>
+                <span className="flex-1 text-base md:text-lg font-bold tracking-tight group-hover:text-red-400 transition-colors">
+                  {s.title}
+                </span>
+                <span className="text-black/25 text-xl shrink-0 w-6 text-center">
+                  {active === i ? "−" : "+"}
+                </span>
+              </button>
+              {active === i && (
+                <div className="pb-8 pl-11 space-y-5">
+                  {s.content.map((c, j) => (
+                    <div key={j}>
+                      {c.sub && (
+                        <p className="text-black/80 font-sans text-xs uppercase tracking-widest mb-2">
+                          {c.sub}
+                        </p>
+                      )}
+                      <p className="text-black/60 font-sans text-sm leading-relaxed">
+                        {c.text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
 
-        <h2 className="text-2xl font-bold mt-10">1. Privacy Policy Scope</h2>
-        <p>This Privacy Policy covers any information gathered when you:</p>
-        <ul className="list-disc pl-6 space-y-1">
-          <li>Read articles or browse our website</li>
-          <li>Submit forms or contact us</li>
-          <li>Comment or engage with interactive features</li>
-          <li>Interact with advertisements</li>
-        </ul>
-        <p>Not covered by this policy:</p>
-        <ul className="list-disc pl-6 space-y-1">
-          <li>Information collected offline or by phone (unless stated)</li>
-          <li>Websites, apps, and services that link to or integrate with our platform</li>
-          <li>Content governed by separate agreements</li>
-        </ul>
+        {/* Contact block */}
+        <div className="mt-14 bg-black/4 border border-black/10 p-8">
+          <h3 className="text-lg font-bold mb-2">Privacy Enquiries</h3>
+          <p className="text-black/50 font-sans text-sm mb-5 leading-relaxed">
+            For any questions about this Privacy Policy, to exercise your data
+            rights, or to report a privacy concern, contact us at:
+          </p>
+          <a
+            href="mailto:privacy@wiresavvy.com"
+            className="inline-block bg-red-400 hover:bg-red-500 transition-colors text-black font-sans text-sm font-semibold px-6 py-3"
+          >
+            privacy@wiresavvy.com →
+          </a>
+        </div>
 
-        <h2 className="text-2xl font-bold mt-10">2. Information We Collect</h2>
-
-        <h3 className="text-xl font-semibold mt-6">A. Information You Provide</h3>
-        <p>If you choose to interact with us, we may collect:</p>
-        <ul className="list-disc pl-6 space-y-1">
-          <li>Name and email address</li>
-          <li>Phone number (if provided)</li>
-          <li>Messages, comments, and submitted forms</li>
-          <li>Newsletter subscription preferences</li>
-        </ul>
-
-        <h3 className="text-xl font-semibold mt-6">B. Automatically Collected Data</h3>
-        <p>When you visit our Services, we automatically collect:</p>
-        <ul className="list-disc pl-6 space-y-1">
-          <li>IP address and approximate location</li>
-          <li>Browser, device type, and operating system</li>
-          <li>Page views, scrolling, clicks, and session duration</li>
-          <li>Referral links</li>
-          <li>Cookie and analytics data</li>
-        </ul>
-
-        <h3 className="text-xl font-semibold mt-6">C. Data from Other Sources</h3>
-        <p>We may receive information from:</p>
-        <ul className="list-disc pl-6 space-y-1">
-          <li>Analytics providers (e.g., Google Analytics)</li>
-          <li>Advertising partners</li>
-          <li>Social media platforms</li>
-        </ul>
-
-        <h2 className="text-2xl font-bold mt-10">3. How We Use Your Information</h2>
-        <p>We use your information to:</p>
-        <ul className="list-disc pl-6 space-y-1">
-          <li>Operate and maintain our website</li>
-          <li>Publish and distribute news</li>
-          <li>Enhance performance and usability</li>
-          <li>Analyze traffic and engagement</li>
-          <li>Respond to user messages</li>
-          <li>Prevent fraudulent or harmful activity</li>
-          <li>Personalize content and advertising</li>
-          <li>Enforce the Terms of Use</li>
-        </ul>
-
-        <h2 className="text-2xl font-bold mt-10">4. Sharing of Information</h2>
-        <p>We do not sell personal information. We may share data with:</p>
-        <ul className="list-disc pl-6 space-y-1">
-          <li>Service providers such as hosting, security, and analytics vendors</li>
-          <li>Advertising partners for measurement and performance</li>
-          <li>Legal authorities when required</li>
-          <li>Business partners in the event of mergers or acquisitions</li>
-        </ul>
-
-        <h2 className="text-2xl font-bold mt-10">5. Cookies & Tracking Technologies</h2>
-        <p>We use cookies to improve performance, measure analytics, personalize content, and deliver relevant ads. Disabling cookies may affect certain features of the site.</p>
-
-        <h2 className="text-2xl font-bold mt-10">6. Your Privacy Rights</h2>
-        <p>Depending on your location, you may request:</p>
-        <ul className="list-disc pl-6 space-y-1">
-          <li>Access to the personal data we hold about you</li>
-          <li>Correction of incorrect or outdated information</li>
-          <li>Deletion of your personal data</li>
-          <li>Opt-out from personalized advertising</li>
-          <li>Restriction of certain data uses</li>
-        </ul>
-        <p>To exercise these rights, email us at <strong>privacy@wiresavvy.com</strong>.</p>
-
-        <h2 className="text-2xl font-bold mt-10">7. Data Security</h2>
-        <p>We use security measures such as encryption, firewalls, and access controls to protect your information. However, no system is completely secure, and data transmission carries inherent risks.</p>
-
-        <h2 className="text-2xl font-bold mt-10">8. External Links</h2>
-        <p>Our platform may contain links to third-party websites or tools. We are not responsible for the privacy practices of these external sites.</p>
-
-        <h2 className="text-2xl font-bold mt-10">9. Children's Privacy</h2>
-        <p>We do not knowingly collect personal information from children under 13. If such data is discovered, we will delete it promptly.</p>
-
-        <h2 className="text-2xl font-bold mt-10">10. International Users</h2>
-        <p>Wiresavvy operates from the United States. If you access our Services from outside the U.S., your data may be processed under U.S. laws.</p>
-
-        <h2 className="text-2xl font-bold mt-10">11. Data Retention</h2>
-        <p>We retain personal data only as long as necessary to:</p>
-        <ul className="list-disc pl-6 space-y-1">
-          <li>Provide our services</li>
-          <li>Comply with legal obligations</li>
-          <li>Resolve disputes</li>
-          <li>Ensure platform security</li>
-        </ul>
-
-        <h2 className="text-2xl font-bold mt-10">12. Changes to This Privacy Policy</h2>
-        <p>We may update this Privacy Policy periodically. The “Last Updated” date indicates the most recent changes. Continued use of our Services constitutes acceptance of the updated policy.</p>
-
-        <h2 className="text-2xl font-bold mt-10">13. Contact Us</h2>
-        <p>Email: <strong>privacy@wiresavvy.com</strong></p>
-        <p>Address: U.S. Editorial Division of Wiresavvy News</p>
-      </article>
+        <p className="text-black/45 font-sans text-xs mt-8">Last updated: June 2026</p>
+      </main>
+    </div>
     </ArticleLayout>
   );
 }

@@ -2,11 +2,26 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
-import details from "@/data/details.json";
+
+const newsRoom = [
+  { label: "About Us", href: "/about-us" },
+  { label: "Our Team", href: "/our-team" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Editorial Policy", href: "/editorial-policy" },
+  { label: "Corrections Policy", href: "/corrections-policy" },
+  { label: "Source Methodology", href: "/source-methodology" },
+];
+
+const standards = [
+  { label: "Ownership & Funding", href: "/ownership-and-funding" },
+  { label: "Advertising Policy", href: "/advertising-policy" },
+  { label: "Right of Reply", href: "/right-of-reply" },
+  { label: "Legal", href: "/legal" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+];
 
 export default function Footer() {
-  // pick only first 2 authors
-  const featuredAuthors = details.authors.slice(0, 2);
 
   useEffect(() => {
     // Set FormSubmit redirect URL dynamically
@@ -88,50 +103,43 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* ==== Quick Links ==== */}
+          {/* ==== Newsroom ==== */}
           <div>
-            <div className="text-xl font-bold mb-4 text-white">Quick Links</div>
+            <div className="text-xl font-bold mb-4 text-white">
+              Newsroom
+            </div>
+
             <ul className="space-y-2 text-sm">
-              <li><Link href="/" title="Home">Home</Link></li>
-              <li><Link href="/about-us" title="About Us">About</Link></li>
-              <li><Link href="/privacy-policy" title="Privacy Policy">Privacy Policy</Link></li>
-              <li><Link href="/terms-of-use" title="Terms of Use">Terms of Use</Link></li>
+              {newsRoom.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    title={item.label}
+                    className="text-zinc-300 hover:text-white transition"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* ==== Authors Section (REPLACED CATEGORIES) ==== */}
+          {/* ==== Standards ==== */}
           <div>
-            <div className="text-xl font-bold mb-4 text-white">Featured Authors</div>
+            <div className="text-xl font-bold mb-4 text-white">
+              Standards
+            </div>
 
-            <ul className="space-y-4">
-              {featuredAuthors.map((author) => (
-                <li key={author.slug}>
-
+            <ul className="space-y-2 text-sm">
+              {standards.map((item) => (
+                <li key={item.href}>
                   <Link
-                    href={`/author/${author.slug}`}
-                    title={author.name}
-                    className="flex gap-3 items-start group"
+                    href={item.href}
+                    title={item.label}
+                    className="text-zinc-300 hover:text-white transition"
                   >
-                    {/* LEFT: Author Image */}
-                    <img
-                      src={author.photo}
-                      alt={author.name}
-                      title={author.name}
-                      className="w-14 h-14 object-cover rounded-full group-hover:opacity-80 transition"
-                    />
-
-                    {/* RIGHT: Name + Bio */}
-                    <div>
-                      <p className="font-semibold text-white group-hover:text-blue-400 transition">
-                        {author.name}
-                      </p>
-
-                      <p className="text-sm text-zinc-400 leading-snug">
-                        {author.bio.slice(0, 70)}...
-                      </p>
-                    </div>
+                    {item.label}
                   </Link>
-
                 </li>
               ))}
             </ul>
