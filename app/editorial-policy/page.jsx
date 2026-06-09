@@ -1,5 +1,67 @@
 import ArticleLayout from "../components/ArticleLayout";
 
+const SITE_URL = "https://www.wiresavvy.com";
+const PAGE_URL = `${SITE_URL}/editorial-policy`;
+
+export const metadata = {
+  title:
+    "Editorial Policy | Wiresavvy Editorial Standards & Journalistic Principles",
+  description:
+    "Learn about Wiresavvy's editorial policy, including our commitment to accuracy, editorial independence, fact-checking, transparency, corrections, and responsible journalism.",
+  keywords: [
+    "Wiresavvy editorial policy",
+    "editorial standards",
+    "journalism ethics",
+    "fact checking",
+    "news corrections",
+    "editorial independence",
+    "newsroom policy",
+    "responsible journalism",
+    "investigative journalism",
+    "editorial guidelines",
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title:
+      "Editorial Policy | Wiresavvy Editorial Standards & Journalistic Principles",
+    description:
+      "Discover the editorial principles that guide Wiresavvy's independent journalism, fact-checking, transparency, and accountability.",
+    url: PAGE_URL,
+    siteName: "Wiresavvy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Wiresavvy Editorial Policy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Editorial Policy | Wiresavvy Editorial Standards & Journalistic Principles",
+    description:
+      "Read the editorial principles and standards that guide Wiresavvy's reporting.",
+    images: [`${SITE_URL}/og-image.jpg`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+};
+
 const principles = [
   {
     id: "accuracy",
@@ -74,9 +136,114 @@ const principles = [
 ];
 
 export default function EditorialPolicy() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${PAGE_URL}#webpage`,
+        url: PAGE_URL,
+        name: "Editorial Policy",
+        description:
+          "Wiresavvy's editorial standards and journalistic principles governing all published content.",
+        inLanguage: "en-US",
+        isPartOf: {
+          "@id": `${SITE_URL}/#website`,
+        },
+        about: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        breadcrumb: {
+          "@id": `${PAGE_URL}#breadcrumb`,
+        },
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": `${PAGE_URL}#policy`,
+        name: "Wiresavvy Editorial Policy",
+        url: PAGE_URL,
+        description:
+          "Editorial standards covering accuracy, independence, fairness, sourcing, corrections, and accountability.",
+        creator: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        publisher: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        dateModified: "2026-06-09",
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: "Wiresavvy",
+        publisher: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "NewsMediaOrganization",
+        "@id": `${SITE_URL}/#organization`,
+        name: "Wiresavvy",
+        url: SITE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/logo.png`,
+        },
+        description:
+          "Wiresavvy is an independent digital news publication providing reporting, analysis, and investigative journalism across U.S. news, business, finance, politics, law, and technology.",
+        ethicsPolicy: PAGE_URL,
+        publishingPrinciples: PAGE_URL,
+        sameAs: [
+          "https://facebook.com/wiresavvy",
+          "https://x.com/wiresavvy",
+          "https://www.linkedin.com/company/wiresavvy",
+          "https://www.instagram.com/wiresavvy"
+        ],
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${PAGE_URL}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_URL,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Editorial Policy",
+            item: PAGE_URL,
+          },
+        ],
+      },
+      {
+        "@type": "ItemList",
+        name: "Editorial Principles",
+        itemListElement: principles.map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: item.title,
+          description: item.paragraphs.join(" "),
+        })),
+      },
+    ],
+  };
+
   return (
     <ArticleLayout>
-    <div className="min-h-screen bg-[#f5f3ef] font-['Georgia',serif] text-[#0d0f14]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
+
+      <div className="min-h-screen bg-[#f5f3ef] font-['Georgia',serif] text-[#0d0f14]">
       <div className="h-1 w-full bg-gradient-to-r from-red-600 via-red-500 to-orange-500" />
 
       {/* Hero — stark broadsheet style */}

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 
 const newsRoom = [
-  { label: "About Us", href: "/about-us" },
+  { label: "About Us", href: "/about" },
   { label: "Our Team", href: "/our-team" },
   { label: "Contact Us", href: "/contact" },
   { label: "Editorial Policy", href: "/editorial-policy" },

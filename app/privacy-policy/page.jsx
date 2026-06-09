@@ -1,7 +1,82 @@
-"use client"
-
-import { useState } from "react";
 import ArticleLayout from "../components/ArticleLayout";
+
+export const metadata = {
+  title: "Privacy Policy | Wiresavvy",
+  description:
+    "Read the Wiresavvy Privacy Policy to learn what information we collect, how we use it, how we protect your data, and your privacy rights when using our website.",
+  keywords: [
+    "Wiresavvy Privacy Policy",
+    "Privacy Policy",
+    "Data Protection",
+    "Cookies",
+    "User Privacy",
+    "Personal Information",
+    "Wiresavvy",
+    "News Website Privacy",
+  ],
+  alternates: {
+    canonical: "https://www.wiresavvy.com/privacy-policy",
+  },
+  openGraph: {
+    title: "Privacy Policy | Wiresavvy",
+    description:
+      "Learn how Wiresavvy collects, uses, stores, and protects your personal information.",
+    url: "https://www.wiresavvy.com/privacy-policy",
+    siteName: "Wiresavvy",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Wiresavvy",
+    description:
+      "Understand how Wiresavvy handles your personal information and protects your privacy.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Privacy Policy",
+  headline: "Privacy Policy",
+  description:
+    "The official Privacy Policy of Wiresavvy explaining data collection, cookies, user rights, security practices, and information handling.",
+  url: "https://www.wiresavvy.com/privacy-policy",
+  inLanguage: "en-US",
+  dateModified: "2026-06-09",
+  publisher: {
+    "@type": "Organization",
+    name: "Wiresavvy",
+    url: "https://www.wiresavvy.com",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://www.wiresavvy.com/logo.png",
+    },
+  },
+  mainEntity: {
+    "@type": "Article",
+    headline: "Privacy Policy",
+    description:
+      "Information about how Wiresavvy collects, uses, stores, and protects user information.",
+    author: {
+      "@type": "Organization",
+      name: "Wiresavvy",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Wiresavvy",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.wiresavvy.com/logo.png",
+      },
+    },
+    dateModified: "2026-06-09",
+  },
+};
 
 const privacySections = [
   {
@@ -119,9 +194,15 @@ const privacySections = [
 ];
 
 export default function PrivacyPolicy() {
-  const [active, setActive] = useState(null);
 
   return (
+    <>
+    <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify(jsonLd),
+    }}
+  />
     <ArticleLayout>
     <div className="min-h-screen font-['Georgia',serif]">
       <div className="h-1 w-full bg-gradient-to-r from-red-600 via-red-500 to-orange-500" />
@@ -151,34 +232,26 @@ export default function PrivacyPolicy() {
         <div className="divide-y divide-black/50">
           {privacySections.map((s, i) => (
             <div key={s.id}>
-              <button
-                className="w-full text-left py-7 flex items-center gap-5 group"
-                onClick={() => setActive(active === i ? null : i)}
-              >
+              <div className="w-full py-7 flex items-center gap-5">
                 <span className="text-red-400/60 text-lg w-6 shrink-0">{s.icon}</span>
                 <span className="flex-1 text-base md:text-lg font-bold tracking-tight group-hover:text-red-400 transition-colors">
                   {s.title}
                 </span>
-                <span className="text-black/25 text-xl shrink-0 w-6 text-center">
-                  {active === i ? "−" : "+"}
-                </span>
-              </button>
-              {active === i && (
-                <div className="pb-8 pl-11 space-y-5">
-                  {s.content.map((c, j) => (
-                    <div key={j}>
-                      {c.sub && (
-                        <p className="text-black/80 font-sans text-xs uppercase tracking-widest mb-2">
-                          {c.sub}
-                        </p>
-                      )}
-                      <p className="text-black/60 font-sans text-sm leading-relaxed">
-                        {c.text}
+              </div>
+              <div className="pb-8 pl-11 space-y-5">
+                {s.content.map((c, j) => (
+                  <div key={j}>
+                    {c.sub && (
+                      <p className="text-black/80 font-sans text-xs uppercase tracking-widest mb-2">
+                        {c.sub}
                       </p>
-                    </div>
-                  ))}
-                </div>
-              )}
+                    )}
+                    <p className="text-black/60 font-sans text-sm leading-relaxed">
+                      {c.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
@@ -202,5 +275,6 @@ export default function PrivacyPolicy() {
       </main>
     </div>
     </ArticleLayout>
+    </>
   );
 }

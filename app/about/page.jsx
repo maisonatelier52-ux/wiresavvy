@@ -1,5 +1,66 @@
 import ArticleLayout from "../components/ArticleLayout";
 
+const SITE_URL = "https://www.wiresavvy.com";
+const PAGE_URL = `${SITE_URL}/about`;
+
+export const metadata = {
+  title: "About Wiresavvy | Independent News, Analysis & Investigative Journalism",
+  description:
+    "Learn about Wiresavvy's mission, editorial values, and commitment to independent journalism covering U.S. news, business, law, politics, technology, and investigations with accuracy and context.",
+  keywords: [
+    "About Wiresavvy",
+    "Wiresavvy newsroom",
+    "independent journalism",
+    "investigative journalism",
+    "US news",
+    "business news",
+    "politics",
+    "technology news",
+    "editorial standards",
+    "news analysis",
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title:
+      "About Wiresavvy | Independent News, Analysis & Investigative Journalism",
+    description:
+      "Discover Wiresavvy's mission to deliver accurate, independent journalism with context, accountability, and investigative reporting.",
+    url: PAGE_URL,
+    siteName: "Wiresavvy",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: `${SITE_URL}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "About Wiresavvy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "About Wiresavvy | Independent News, Analysis & Investigative Journalism",
+    description:
+      "Learn about Wiresavvy's editorial mission and commitment to context-driven independent journalism.",
+    images: [`${SITE_URL}/og-image.jpg`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+};
+
 const coverageAreas = [
   { label: "U.S. News", icon: "◈" },
   { label: "Business & Finance", icon: "◉" },
@@ -33,9 +94,104 @@ const pillars = [
 ];
 
 export default function About() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${PAGE_URL}#webpage`,
+        url: PAGE_URL,
+        name: "About Wiresavvy",
+        description:
+          "Learn about Wiresavvy's mission, editorial standards, and commitment to independent journalism.",
+        isPartOf: {
+          "@id": `${SITE_URL}/#website`,
+        },
+        about: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "AboutPage",
+        "@id": PAGE_URL,
+        url: PAGE_URL,
+        name: "About Wiresavvy",
+        description:
+          "Discover the mission, newsroom values, and editorial principles behind Wiresavvy.",
+        mainEntity: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: "Wiresavvy",
+        publisher: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "NewsMediaOrganization",
+        "@id": `${SITE_URL}/#organization`,
+        name: "Wiresavvy",
+        url: SITE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/logo.png`,
+        },
+        description:
+          "Wiresavvy is an independent digital news publication providing in-depth reporting, investigative journalism, and contextual analysis across U.S. news, business, politics, law, and technology.",
+        sameAs: [
+          "https://www.facebook.com/wiresavvy",
+          "https://twitter.com/wiresavvy",
+          "https://www.linkedin.com/company/wiresavvy",
+          "https://www.instagram.com/wiresavvy"
+        ],
+        knowsAbout: [
+          "U.S. News",
+          "Business",
+          "Finance",
+          "Politics",
+          "Public Policy",
+          "Law",
+          "Technology",
+          "Investigative Journalism"
+        ],
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${PAGE_URL}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_URL,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "About",
+            item: PAGE_URL,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <ArticleLayout>
-    <div className="min-h-screen font-['Georgia',serif]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
+
+          <div className="min-h-screen font-['Georgia',serif]">
       {/* Accent bar */}
       <div className="h-1 w-full" />
 

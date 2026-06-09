@@ -1,6 +1,65 @@
 import Link from "next/link";
 import ArticleLayout from "../components/ArticleLayout";
 
+const SITE_URL = "https://www.wiresavvy.com";
+const PAGE_URL = `${SITE_URL}/ownership-funding`;
+
+export const metadata = {
+  title: "Ownership & Funding | Wiresavvy Transparency",
+  description:
+    "Learn about Wiresavvy's ownership, funding model, editorial independence, sponsored content policies, affiliate relationships, and commitment to transparent journalism.",
+  keywords: [
+    "Wiresavvy ownership",
+    "Wiresavvy funding",
+    "editorial independence",
+    "media transparency",
+    "news funding",
+    "affiliate disclosure",
+    "sponsored content policy",
+    "journalism ethics",
+    "ownership transparency",
+    "news organization funding"
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: "Ownership & Funding | Wiresavvy Transparency",
+    description:
+      "Discover how Wiresavvy is funded and how editorial independence is protected.",
+    url: PAGE_URL,
+    siteName: "Wiresavvy",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: `${SITE_URL}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Wiresavvy Ownership & Funding",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ownership & Funding | Wiresavvy Transparency",
+    description:
+      "Learn about Wiresavvy's ownership structure, funding sources, and editorial independence.",
+    images: [`${SITE_URL}/og-image.jpg`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+};
+
 const sections = [
   {
     title: "Who We Are",
@@ -40,10 +99,108 @@ const sections = [
 ];
 
 export default function OwnershipFunding() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${PAGE_URL}#webpage`,
+        url: PAGE_URL,
+        name: "Ownership & Funding",
+        description:
+          "Transparency information about Wiresavvy's ownership, funding, and editorial independence.",
+        inLanguage: "en-US",
+        isPartOf: {
+          "@id": `${SITE_URL}/#website`,
+        },
+        about: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        breadcrumb: {
+          "@id": `${PAGE_URL}#breadcrumb`,
+        },
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": `${PAGE_URL}#document`,
+        name: "Ownership & Funding Policy",
+        url: PAGE_URL,
+        description:
+          "Information about Wiresavvy's ownership structure, revenue model, sponsored content practices, affiliate relationships, and editorial independence.",
+        creator: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        publisher: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        dateModified: "2026-06-09",
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: "Wiresavvy",
+        publisher: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+      },
+      {
+        "@type": "NewsMediaOrganization",
+        "@id": `${SITE_URL}/#organization`,
+        name: "Wiresavvy",
+        url: SITE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/logo.png`,
+        },
+        publishingPrinciples: `${SITE_URL}/editorial-policy`,
+        ethicsPolicy: `${SITE_URL}/editorial-policy`,
+        correctionsPolicy: `${SITE_URL}/corrections-policy`,
+        ownershipFundingInfo: PAGE_URL,
+      },
+      {
+        "@type": "ItemList",
+        name: "Ownership & Funding Principles",
+        itemListElement: sections.map((section, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: section.title,
+          description: section.content,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${PAGE_URL}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_URL,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Ownership & Funding",
+            item: PAGE_URL,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <ArticleLayout>
-    <div className="min-h-screen font-['Georgia',serif]">
-      {/* Top accent bar */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
+
+      <div className="min-h-screen font-['Georgia',serif]">
+        {/* Top accent bar */}
       <div className="h-1 w-full bg-gradient-to-r from-red-600 via-red-500 to-orange-500" />
 
       {/* Hero */}

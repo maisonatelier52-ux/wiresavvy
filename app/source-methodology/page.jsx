@@ -1,5 +1,65 @@
 import ArticleLayout from "../components/ArticleLayout";
 
+const SITE_URL = "https://www.wiresavvy.com";
+const PAGE_URL = `${SITE_URL}/source-methodology`;
+
+export const metadata = {
+  title: "Source Methodology | Wiresavvy Editorial Standards",
+  description:
+    "Learn how Wiresavvy researches, verifies, and evaluates sources through fact-checking, primary documentation, editorial review, and transparent journalistic standards.",
+  keywords: [
+    "Wiresavvy source methodology",
+    "journalism standards",
+    "fact checking",
+    "source verification",
+    "editorial methodology",
+    "news sources",
+    "primary sources",
+    "journalistic ethics",
+    "editorial standards",
+    "news verification",
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: "Source Methodology | Wiresavvy Editorial Standards",
+    description:
+      "Discover how Wiresavvy verifies information and evaluates sources before publication.",
+    url: PAGE_URL,
+    siteName: "Wiresavvy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Wiresavvy Source Methodology",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Source Methodology | Wiresavvy Editorial Standards",
+    description:
+      "Learn about the sourcing and verification standards behind Wiresavvy journalism.",
+    images: [`${SITE_URL}/og-image.jpg`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+};
+
+
 const sourceTypes = [
   { label: "Official Government & Agency Statements", icon: "◆" },
   { label: "Court Filings & Public Records", icon: "◈" },
@@ -42,10 +102,126 @@ const evaluationQuestions = [
 ];
 
 export default function SourceMethodology() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${PAGE_URL}#webpage`,
+        url: PAGE_URL,
+        name: "Source Methodology",
+        description:
+          "Wiresavvy's methodology for sourcing, verifying, and fact-checking information before publication.",
+        inLanguage: "en-US",
+        isPartOf: {
+          "@id": `${SITE_URL}/#website`,
+        },
+        about: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        breadcrumb: {
+          "@id": `${PAGE_URL}#breadcrumb`,
+        },
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": `${PAGE_URL}#methodology`,
+        name: "Wiresavvy Source Methodology",
+        description:
+          "Editorial methodology governing source selection, verification, anonymous sourcing, and fact-checking.",
+        url: PAGE_URL,
+        creator: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        publisher: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        dateModified: "2026-06-09",
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: "Wiresavvy",
+        publisher: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+      },
+      {
+        "@type": "NewsMediaOrganization",
+        "@id": `${SITE_URL}/#organization`,
+        name: "Wiresavvy",
+        url: SITE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/logo.png`,
+        },
+        publishingPrinciples: `${SITE_URL}/editorial-policy`,
+        ethicsPolicy: `${SITE_URL}/editorial-policy`,
+        correctionsPolicy: `${SITE_URL}/corrections-policy`,
+      },
+      {
+        "@type": "ItemList",
+        name: "Primary Sources Used by Wiresavvy",
+        itemListElement: sourceTypes.map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: item.label,
+        })),
+      },
+      {
+        "@type": "ItemList",
+        name: "Editorial Standards",
+        itemListElement: principles.map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: item.title,
+          description: item.body,
+        })),
+      },
+      {
+        "@type": "ItemList",
+        name: "Source Evaluation Framework",
+        itemListElement: evaluationQuestions.map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: item.q,
+          description: item.desc,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${PAGE_URL}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_URL,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Source Methodology",
+            item: PAGE_URL,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <ArticleLayout>
-    <div className="min-h-screen font-['Georgia',serif]">
-      <div className="h-1 w-full bg-gradient-to-r from-red-600 via-red-500 to-orange-500" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
+
+      <div className="min-h-screen font-['Georgia',serif]">
+        <div className="h-1 w-full bg-gradient-to-r from-red-600 via-red-500 to-orange-500" />
 
       {/* Hero */}
       <section className="border-b border-white/10 relative overflow-hidden">

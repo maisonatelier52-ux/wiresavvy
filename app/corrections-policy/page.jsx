@@ -1,7 +1,63 @@
-"use client";
-
-import { useState } from "react";
 import ArticleLayout from "../components/ArticleLayout";
+
+const SITE_URL = "https://www.wiresavvy.com";
+const PAGE_URL = `${SITE_URL}/corrections-policy`;
+
+export const metadata = {
+  title: "Corrections Policy | Wiresavvy Editorial Standards",
+  description:
+    "Read the Wiresavvy Corrections Policy and learn how we review, verify, correct, and transparently update factual errors in our journalism.",
+  keywords: [
+    "Wiresavvy corrections policy",
+    "news corrections",
+    "editorial corrections",
+    "fact checking",
+    "journalism standards",
+    "editorial accountability",
+    "news updates",
+    "correction policy",
+    "responsible journalism",
+    "editorial transparency",
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: "Corrections Policy | Wiresavvy Editorial Standards",
+    description:
+      "Learn how Wiresavvy handles corrections, updates, and editorial accountability.",
+    url: PAGE_URL,
+    siteName: "Wiresavvy",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Wiresavvy Corrections Policy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Corrections Policy | Wiresavvy Editorial Standards",
+    description:
+      "Transparency and accountability guide every correction at Wiresavvy.",
+    images: [`${SITE_URL}/og-image.jpg`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+};
 
 const correctionTypes = [
   { icon: "◈", label: "Names & Titles" },
@@ -57,12 +113,128 @@ const faqs = [
 ];
 
 export default function CorrectionsPolicy() {
-  const [openFaq, setOpenFaq] = useState(null);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${PAGE_URL}#webpage`,
+        url: PAGE_URL,
+        name: "Corrections Policy",
+        description:
+          "Wiresavvy's corrections policy describing how factual errors are reviewed and corrected.",
+        isPartOf: {
+          "@id": `${SITE_URL}/#website`,
+        },
+        about: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        breadcrumb: {
+          "@id": `${PAGE_URL}#breadcrumb`,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": `${PAGE_URL}#policy`,
+        name: "Wiresavvy Corrections Policy",
+        url: PAGE_URL,
+        creator: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        publisher: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        dateModified: "2026-06-09",
+        inLanguage: "en-US",
+        description:
+          "Policy outlining Wiresavvy's approach to corrections, updates, transparency, and editorial accountability.",
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: "Wiresavvy",
+        publisher: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+      },
+      {
+        "@type": "NewsMediaOrganization",
+        "@id": `${SITE_URL}/#organization`,
+        name: "Wiresavvy",
+        url: SITE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/logo.png`,
+        },
+        correctionsPolicy: PAGE_URL,
+        ethicsPolicy: `${SITE_URL}/editorial-policy`,
+        publishingPrinciples: `${SITE_URL}/editorial-policy`,
+      },
+      {
+        "@type": "HowTo",
+        name: "How Wiresavvy Handles Corrections",
+        description:
+          "The editorial process followed when a factual error is identified.",
+        step: steps.map((step) => ({
+          "@type": "HowToStep",
+          name: step.title,
+          text: step.body,
+        })),
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.a,
+          },
+        })),
+      },
+      {
+        "@type": "ItemList",
+        name: "Correction Categories",
+        itemListElement: correctionTypes.map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: item.label,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${PAGE_URL}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_URL,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Corrections Policy",
+            item: PAGE_URL,
+          },
+        ],
+      },
+    ],
+  };
 
   return (
     <ArticleLayout>
-    <div className="min-h-screen bg-[#f5f3ef] font-['Georgia',serif] text-[#0d0f14]">
-      <div className="h-1 w-full bg-gradient-to-r from-red-600 via-red-500 to-orange-500" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
+
+      <div className="min-h-screen bg-[#f5f3ef] font-['Georgia',serif] text-[#0d0f14]">
+        <div className="h-1 w-full bg-gradient-to-r from-red-600 via-red-500 to-orange-500" />
 
       {/* Hero — split dark/light */}
       <section className="grid md:grid-cols-2">
@@ -186,39 +358,30 @@ export default function CorrectionsPolicy() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="bg-[#f5f3ef]">
-        <div className="max-w-5xl mx-auto px-6 py-14">
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-2xl font-bold tracking-tight">
-              Common Questions
-            </h2>
-            <div className="flex-1 h-px bg-black/10" />
-          </div>
-          <div className="divide-y divide-black/8">
-            {faqs.map((f, i) => (
-              <div key={i} className="py-6">
-                <button
-                  className="w-full text-left flex items-center justify-between gap-4 group"
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                >
-                  <span className="font-sans text-base font-medium group-hover:text-red-600 transition-colors">
-                    {f.q}
-                  </span>
-                  <span className="text-black/25 text-xl shrink-0 w-6 text-center leading-none">
-                    {openFaq === i ? "−" : "+"}
-                  </span>
-                </button>
-                {openFaq === i && (
-                  <p className="mt-4 text-black/60 font-sans text-sm leading-relaxed max-w-2xl">
-                    {f.a}
+        <section className="bg-[#f5f3ef]">
+          <div className="max-w-5xl mx-auto px-6 py-14">
+            <div className="flex items-center gap-4 mb-8">
+              <h2 className="text-2xl font-bold tracking-tight">
+                Common Questions
+              </h2>
+              <div className="flex-1 h-px bg-black/10" />
+            </div>
+
+            <div className="divide-y divide-black/8">
+              {faqs.map((faq, index) => (
+                <div key={index} className="py-6">
+                  <h3 className="font-sans text-base font-semibold text-black mb-3">
+                    {faq.q}
+                  </h3>
+
+                  <p className="font-sans text-sm leading-relaxed text-black/65 max-w-3xl">
+                    {faq.a}
                   </p>
-                )}
-              </div>
-            ))}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* Submit a correction CTA */}
       <section className="bg-[#0d0f14] text-white">

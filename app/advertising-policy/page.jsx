@@ -1,6 +1,65 @@
 import Link from "next/link";
 import ArticleLayout from "../components/ArticleLayout";
 
+const SITE_URL = "https://www.wiresavvy.com";
+const PAGE_URL = `${SITE_URL}/advertising-policy`;
+
+export const metadata = {
+  title: "Advertising Policy | Wiresavvy Editorial Standards",
+  description:
+    "Read Wiresavvy's Advertising Policy explaining editorial independence, sponsored content disclosures, affiliate partnerships, advertising standards, and our commitment to reader trust.",
+  keywords: [
+    "Wiresavvy advertising policy",
+    "advertising standards",
+    "sponsored content policy",
+    "affiliate disclosure",
+    "editorial independence",
+    "native advertising",
+    "journalism ethics",
+    "advertising transparency",
+    "news advertising policy",
+    "media advertising guidelines",
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: "Advertising Policy | Wiresavvy Editorial Standards",
+    description:
+      "Learn how Wiresavvy separates advertising from editorial content while maintaining transparency and reader trust.",
+    url: PAGE_URL,
+    siteName: "Wiresavvy",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: `${SITE_URL}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Wiresavvy Advertising Policy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Advertising Policy | Wiresavvy Editorial Standards",
+    description:
+      "Understand Wiresavvy's advertising standards, sponsored content policies, and editorial independence.",
+    images: [`${SITE_URL}/og-image.jpg`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+};
+
 const policies = [
   {
     label: "Editorial Firewall",
@@ -35,10 +94,108 @@ const policies = [
 ];
 
 export default function AdvertisingPolicy() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${PAGE_URL}#webpage`,
+        url: PAGE_URL,
+        name: "Advertising Policy",
+        description:
+          "Wiresavvy's advertising policy covering sponsored content, affiliate partnerships, editorial independence, and advertising standards.",
+        inLanguage: "en-US",
+        isPartOf: {
+          "@id": `${SITE_URL}/#website`,
+        },
+        about: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        breadcrumb: {
+          "@id": `${PAGE_URL}#breadcrumb`,
+        },
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": `${PAGE_URL}#policy`,
+        name: "Wiresavvy Advertising Policy",
+        url: PAGE_URL,
+        description:
+          "Policy describing Wiresavvy's advertising practices, editorial firewall, affiliate relationships, and sponsored content disclosures.",
+        creator: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        publisher: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+        dateModified: "2026-06-09",
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: "Wiresavvy",
+        publisher: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+      },
+      {
+        "@type": "NewsMediaOrganization",
+        "@id": `${SITE_URL}/#organization`,
+        name: "Wiresavvy",
+        url: SITE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/logo.png`,
+        },
+        publishingPrinciples: `${SITE_URL}/editorial-policy`,
+        ethicsPolicy: `${SITE_URL}/editorial-policy`,
+        correctionsPolicy: `${SITE_URL}/corrections-policy`,
+        ownershipFundingInfo: `${SITE_URL}/ownership-funding`,
+      },
+      {
+        "@type": "ItemList",
+        name: "Advertising Policy Principles",
+        itemListElement: policies.map((policy, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: policy.heading,
+          description: policy.body,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${PAGE_URL}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_URL,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Advertising Policy",
+            item: PAGE_URL,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <ArticleLayout>
-    <div className="min-h-screen bg-[#f5f3ef] text-[#0d0f14] font-['Georgia',serif]">
-      {/* Top accent bar */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
+
+      <div className="min-h-screen bg-[#f5f3ef] text-[#0d0f14] font-['Georgia',serif]">
+        {/* Top accent bar */}
       <div className="h-1 w-full bg-gradient-to-r from-red-600 via-red-500 to-orange-500" />
 
       {/* Hero — newspaper column layout */}

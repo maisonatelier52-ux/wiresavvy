@@ -1,6 +1,122 @@
 import { Mail } from "lucide-react";
 import ArticleLayout from "../components/ArticleLayout";
 
+export const metadata = {
+  title: "Right of Reply | Wiresavvy",
+  description:
+    "Learn about Wiresavvy's Right of Reply policy and how individuals, companies, and organisations can respond to reporting or request editorial review in the interest of fairness and accuracy.",
+  keywords: [
+    "Wiresavvy Right of Reply",
+    "Right of Reply Policy",
+    "Editorial Fairness",
+    "Media Response Policy",
+    "Journalism Standards",
+    "Editorial Transparency",
+    "News Corrections",
+    "Responsible Journalism",
+    "Editorial Review",
+    "Wiresavvy Policies",
+  ],
+  alternates: {
+    canonical: "https://www.wiresavvy.com/right-of-reply",
+  },
+  openGraph: {
+    title: "Right of Reply | Wiresavvy",
+    description:
+      "Discover how Wiresavvy provides individuals and organisations the opportunity to respond to reporting as part of its commitment to fairness, transparency, and responsible journalism.",
+    url: "https://www.wiresavvy.com/right-of-reply",
+    siteName: "Wiresavvy",
+    type: "website",
+    images: [
+      {
+        url: "https://www.wiresavvy.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Wiresavvy Right of Reply",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Right of Reply | Wiresavvy",
+    description:
+      "Read Wiresavvy's Right of Reply policy and our commitment to editorial fairness, accountability, and transparency.",
+    images: ["https://www.wiresavvy.com/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.wiresavvy.com/right-of-reply",
+      url: "https://www.wiresavvy.com/right-of-reply",
+      name: "Right of Reply | Wiresavvy",
+      description:
+        "Wiresavvy's Right of Reply policy explains how individuals and organisations may respond to reporting and request editorial consideration.",
+      isPartOf: {
+        "@id": "https://www.wiresavvy.com/#website",
+      },
+      about: {
+        "@id": "https://www.wiresavvy.com/#organization",
+      },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: "https://www.wiresavvy.com/og-image.jpg",
+      },
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.wiresavvy.com/#organization",
+      name: "Wiresavvy",
+      url: "https://www.wiresavvy.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.wiresavvy.com/logo.png",
+      },
+      email: "editorial@wiresavvy.com",
+      sameAs: [
+        "https://x.com/",
+        "https://www.facebook.com/",
+        "https://www.linkedin.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.wiresavvy.com/#website",
+      url: "https://www.wiresavvy.com",
+      name: "Wiresavvy",
+      publisher: {
+        "@id": "https://www.wiresavvy.com/#organization",
+      },
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://www.wiresavvy.com/right-of-reply#about",
+      url: "https://www.wiresavvy.com/right-of-reply",
+      name: "Right of Reply",
+      description:
+        "Information explaining Wiresavvy's Right of Reply process and editorial commitment to fairness, transparency, and responsible journalism.",
+      publisher: {
+        "@id": "https://www.wiresavvy.com/#organization",
+      }
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "Editorial Requests",
+      "email": "editorial@wiresavvy.com",
+      "availableLanguage": "English"
+    }
+  ]
+};
+
 export default function RightOfReply() {
   const requirements = [
     "Your name and contact information",
@@ -8,21 +124,6 @@ export default function RightOfReply() {
     "The specific information you are responding to",
     "Any supporting documents or evidence you would like us to review",
   ];
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    name: "Right of Reply",
-    description:
-      "Learn how Wiresavvy handles right of reply requests and provides individuals and organisations an opportunity to respond to reporting.",
-    url: "https://www.wiresavvy.com/right-of-reply",
-    publisher: {
-      "@type": "Organization",
-      name: "Wiresavvy",
-      url: "https://www.wiresavvy.com",
-      email: "editorial@wiresavvy.com",
-    },
-  };
 
   return (
     <>

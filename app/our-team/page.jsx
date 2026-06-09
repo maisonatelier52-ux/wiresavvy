@@ -1,7 +1,66 @@
-"use client";
-
-import { useState } from "react";
 import ArticleLayout from "../components/ArticleLayout";
+
+const SITE_URL = "https://www.wiresavvy.com";
+const PAGE_URL = `${SITE_URL}/meet-the-team`;
+
+export const metadata = {
+  title:
+    "Meet the Team | Wiresavvy Newsroom Journalists & Editorial Staff",
+  description:
+    "Meet the journalists and editors behind Wiresavvy. Learn about our newsroom, editorial expertise, and reporters covering business, politics, finance, travel, lifestyle, and investigative journalism.",
+  keywords: [
+    "Wiresavvy team",
+    "Wiresavvy newsroom",
+    "journalists",
+    "editors",
+    "news reporters",
+    "business reporter",
+    "political correspondent",
+    "investigative journalist",
+    "financial journalist",
+    "editorial staff",
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title:
+      "Meet the Team | Wiresavvy Newsroom Journalists & Editorial Staff",
+    description:
+      "Get to know the journalists behind Wiresavvy's independent reporting and investigative journalism.",
+    url: PAGE_URL,
+    siteName: "Wiresavvy",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: `${SITE_URL}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Meet the Wiresavvy Team",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Meet the Team | Wiresavvy Newsroom Journalists & Editorial Staff",
+    description:
+      "Meet the reporters and editorial staff behind Wiresavvy.",
+    images: [`${SITE_URL}/og-image.jpg`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+};
 
 const authors = [
   {
@@ -89,6 +148,7 @@ const beatColors = {
 
 const SocialIcon = ({ platform, url }) => {
   if (!url) return null;
+
   const icons = {
     twitter: (
       <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
@@ -112,12 +172,13 @@ const SocialIcon = ({ platform, url }) => {
     ),
   };
 
+
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-white/30 hover:text-white transition-colors"
+      className="text-black/30 hover:text-red-500 transition-colors"
       aria-label={platform}
     >
       {icons[platform]}
@@ -126,120 +187,189 @@ const SocialIcon = ({ platform, url }) => {
 };
 
 export default function MeetTheTeam() {
-  const [hovered, setHovered] = useState(null);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": PAGE_URL,
+        url: PAGE_URL,
+        name: "Meet the Team",
+        description:
+          "Meet the editorial team and journalists behind Wiresavvy.",
+        mainEntity: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${PAGE_URL}#webpage`,
+        url: PAGE_URL,
+        name: "Meet the Team",
+        isPartOf: {
+          "@id": `${SITE_URL}/#website`,
+        },
+        about: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: "Wiresavvy",
+        publisher: {
+          "@id": `${SITE_URL}/#organization`,
+        },
+      },
+      {
+        "@type": "NewsMediaOrganization",
+        "@id": `${SITE_URL}/#organization`,
+        name: "Wiresavvy",
+        url: SITE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/logo.png`,
+        },
+      },
+      {
+        "@type": "ItemList",
+        name: "Wiresavvy Editorial Team",
+        itemListElement: authors.map((author, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          item: {
+            "@type": "Person",
+            name: author.name,
+            jobTitle: author.role,
+            description: author.bio,
+            image: `${SITE_URL}${author.photo}`,
+            url: `${SITE_URL}/author/${author.slug}`,
+            sameAs: Object.values(author.social),
+          },
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_URL,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Meet the Team",
+            item: PAGE_URL,
+          },
+        ],
+      },
+    ],
+  };
 
   return (
     <ArticleLayout>
-    <div className="min-h-screen font-['Georgia',serif]">
-      <div className="h-1 w-full" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
 
-      {/* Hero */}
-      <section className="border-b border-black/10 relative overflow-hidden">
-        <div className="absolute inset-0" />
-        <div className="relative max-w-5xl mx-auto px-6 py-16 md:py-24">
-          <p className="text-red-500 text-xs uppercase tracking-[0.2em] font-sans mb-4">
-            The Newsroom
-          </p>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
-            Meet the Team
-          </h1>
-          <p className="text-black/55 font-sans text-lg leading-relaxed max-w-2xl">
-            Every story starts with a journalist who cares enough to ask the
-            right questions. Here is the Wiresavvy newsroom.
-          </p>
+      <div className="min-h-screen font-['Georgia',serif]">
+        <div className="h-1 w-full" />
+
+          {/* Hero remains unchanged */}
+          <section className="border-b border-black/10 relative overflow-hidden">
+          <div className="absolute inset-0" />
+          <div className="relative max-w-5xl mx-auto px-6 py-16 md:py-24">
+            <p className="text-red-500 text-xs uppercase tracking-[0.2em] font-sans mb-4">
+              The Newsroom
+            </p>
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
+              Meet the Team
+            </h1>
+            <p className="text-black/55 font-sans text-lg leading-relaxed max-w-2xl">
+              Every story starts with a journalist who cares enough to ask the
+              right questions. Here is the Wiresavvy newsroom.
+            </p>
+          </div>
+        </section>
+
+        {/* Shared belief strip */}
+        <div className="border-b border-black/10 bg-black/[0.025]">
+          <div className="max-w-5xl mx-auto px-6 py-7 flex items-center gap-5">
+            <div className="w-1 h-10 shrink-0 rounded-full" />
+            <p className="font-sans text-sm text-black/55 leading-relaxed italic">
+              "Different backgrounds. Different beats. One shared commitment: journalism
+              that gives readers a clearer view of the world shaping their lives."
+            </p>
+          </div>
         </div>
-      </section>
 
-      {/* Shared belief strip */}
-      <div className="border-b border-white/10 bg-black/[0.025]">
-        <div className="max-w-5xl mx-auto px-6 py-7 flex items-center gap-5">
-          <div className="w-1 h-10 shrink-0 rounded-full" />
-          <p className="font-sans text-sm text-black/55 leading-relaxed italic">
-            "Different backgrounds. Different beats. One shared commitment: journalism
-            that gives readers a clearer view of the world shaping their lives."
-          </p>
-        </div>
-      </div>
+        {/* Author Grid */}
+        <main className="max-w-5xl mx-auto px-6 py-14">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {authors.map((author) => (
+              <div
+                key={author.id}
+                className="border border-black/10 p-6 transition-all duration-300 hover:border-red-500/40 hover:bg-black/[0.03] group"
+              >
+                <div className="flex items-start justify-between mb-5">
+                  <div className="w-14 h-14 rounded-full overflow-hidden border border-black/10">
+                    <img
+                      src={author.photo}
+                      alt={author.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
 
-      {/* Author grid */}
-      <main className="max-w-5xl mx-auto px-6 py-14">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {authors.map((author) => (
-            <div
-              key={author.id}
-              className={`border border-black/10 p-6 transition-all duration-300 group ${
-                hovered === author.id ? "border-red-500/50 bg-black/[0.03]" : ""
-              }`}
-              onMouseEnter={() => setHovered(author.id)}
-              onMouseLeave={() => setHovered(null)}
-            >
-              {/* Avatar + beat tag */}
-              <div className="flex items-start justify-between mb-5">
-                <div className="w-14 h-14 rounded-full bg-black/10 overflow-hidden border border-black/15 shrink-0">
-                  <img
-                    src={author.photo}
-                    alt={author.name}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.target.style.display = "none";
-                      e.target.parentElement.innerHTML = `<span class="w-full h-full flex items-center justify-center text-xl font-bold text-white/40">${author.name.charAt(0)}</span>`;
-                    }}
-                  />
+                  <span
+                    className={`text-xs font-sans uppercase tracking-widest px-2.5 py-1 border rounded-sm ${
+                      beatColors[author.beat]
+                    }`}
+                  >
+                    {author.beat}
+                  </span>
                 </div>
-                <span
-                  className={`text-xs font-sans uppercase tracking-widest px-2.5 py-1 border rounded-sm ${
-                    beatColors[author.beat] || "bg-black/10 text-white/40 border-black/10"
-                  }`}
-                >
-                  {author.beat}
-                </span>
+
+                <h2 className="text-base font-bold tracking-tight mb-1 group-hover:text-red-500 transition-colors">
+                  {author.name}
+                </h2>
+
+                <p className="text-black/40 font-sans text-xs uppercase mb-4">
+                  {author.role}
+                </p>
+
+                <p className="text-black/60 font-sans text-sm leading-relaxed mb-5">
+                  {author.bio}
+                </p>
+
+                <div className="flex items-center gap-3 border-t border-black/10 pt-4">
+                  {Object.entries(author.social).map(([platform, url]) =>
+                    url ? (
+                      <SocialIcon
+                        key={platform}
+                        platform={platform}
+                        url={url}
+                      />
+                    ) : null
+                  )}
+
+                  <a
+                    href={`/author/${author.slug}`}
+                    className="ml-auto text-xs font-sans text-black/40 hover:text-red-500"
+                  >
+                    Articles →
+                  </a>
+                </div>
               </div>
-
-              {/* Name + role */}
-              <h2 className="text-base font-bold tracking-tight mb-0.5 group-hover:text-red-400 transition-colors">
-                {author.name}
-              </h2>
-              <p className="text-black/35 font-sans text-xs mb-4 uppercase tracking-wide">
-                {author.role}
-              </p>
-
-              {/* Bio */}
-              <p className="text-black/60 font-sans text-sm leading-relaxed mb-5">
-                {author.bio}
-              </p>
-
-              {/* Social links */}
-              <div className="flex items-center gap-3 border-t border-black/10 pt-4">
-                {Object.entries(author.social).map(([platform, url]) =>
-                  url ? (
-                    <SocialIcon key={platform} platform={platform} url={url} />
-                  ) : null
-                )}
-                <a
-                  href={`/author/${author.slug}`}
-                  className="ml-auto text-black/25 hover:text-red-400 font-sans text-xs transition-colors"
-                >
-                  Articles →
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Footer note */}
-        <div className="mt-14 border-t border-black/10 pt-8 flex flex-col md:flex-row justify-between gap-4">
-          <p className="text-black/30 font-sans text-sm">
-            News tips and press enquiries:{" "}
-            <a href="mailto:newsroom@wiresavvy.com" className="text-red-400 hover:underline">
-              newsroom@wiresavvy.com
-            </a>
-          </p>
-          <a href="/about" className="text-black/30 hover:text-white font-sans text-sm transition-colors">
-            About Wiresavvy →
-          </a>
-        </div>
-      </main>
-    </div>
+            ))}
+          </div>
+        </main>
+      </div>
     </ArticleLayout>
   );
 }
