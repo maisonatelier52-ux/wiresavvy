@@ -77,27 +77,146 @@ export default function Footer() {
             </div>
 
             {/* Social Icons */}
-            <div className="px-4 py-6 flex gap-3">
-              <a href="https://twitter.com" title="Twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-10 h-10 flex items-center justify-center bg-zinc-200 text-zinc-700 rounded hover:bg-[#1DA1F2] hover:text-white transition-colors duration-200">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M22 5.92c-.64.28-1.32.47-2.04.55.73-.44 1.28-1.14 1.54-1.97-.68.4-1.44.7-2.24.86C18.7 4.6 17.7 4 16.56 4c-1.86 0-3.37 1.79-2.95 3.6C10.7 7.3 8.07 6.1 6.15 4.1c-.92 1.58-.28 3.67 1.14 4.72-.56-.02-1.08-.17-1.54-.42v.04c0 1.74 1.23 3.19 2.86 3.52-.5.14-1.02.17-1.56.06.44 1.36 1.72 2.35 3.24 2.38C8.9 18.2 6.9 18.8 4.8 18.6c2 1.28 4.38 2.04 6.94 2.04 8.32 0 12.86-6.9 12.86-12.86v-.59c.88-.62 1.62-1.4 2.22-2.29-.8.36-1.66.6-2.56.71z" />
+            <div className="px-4 py-6 flex flex-wrap gap-3">
+              {/* Substack */}
+              <a
+                href="https://substack.com/@wiresavy"
+                title="Substack"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Substack"
+                className="w-10 h-10 flex items-center justify-center bg-zinc-200 text-zinc-700 rounded hover:bg-[#FF6719] hover:text-white transition-colors duration-200"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M4 3h16v2H4V3zm0 4h16v2H4V7zm0 4h16v10l-8-4-8 4V11z" />
                 </svg>
               </a>
-              <a href="https://facebook.com" title="Facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 flex items-center justify-center bg-zinc-200 text-zinc-700 rounded hover:bg-[#1877F2] hover:text-white transition-colors duration-200">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07c0 4.99 3.66 9.13 8.44 9.95v-7.04H7.9v-2.91h2.54V9.84c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.76-1.61 1.53v1.85h2.74l-.44 2.91h-2.3v7.04C18.34 21.2 22 17.06 22 12.07z" />
+
+              {/* Medium */}
+              <a
+                href="https://medium.com/@wiresavy71"
+                title="Medium"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Medium"
+                className="w-10 h-10 flex items-center justify-center bg-zinc-200 text-zinc-700 rounded hover:bg-black hover:text-white transition-colors duration-200"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M4 6.5c0-.83.67-1.5 1.5-1.5h13c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-13C4.67 19 4 18.33 4 17.5v-11zm2.5 1.2v8.6c0 .39-.31.7-.7.7H5.5v.5h3v-.5h-.3c-.39 0-.7-.31-.7-.7V9.1l3.7 9.4h.5l3.8-9.4v7.2c0 .39-.31.7-.7.7h-.3v.5h4v-.5h-.3c-.39 0-.7-.31-.7-.7V7.7c0-.39.31-.7.7-.7h.3v-.5h-3.3l-3.1 7.8-3.1-7.8H5.5v.5h.3c.39 0 .7.31.7.7z" />
                 </svg>
               </a>
-              <a href="https://instagram.com" title="Instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 flex items-center justify-center bg-zinc-200 text-zinc-700 rounded hover:bg-[#E1306C] hover:text-white transition-colors duration-200">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.5" />
-                  <path d="M16 11.37a4 4 0 1 1-4.63-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M17.5 6.5h.01" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+
+              {/* Reddit */}
+              <a
+                href="https://www.reddit.com/user/Wide_Media2/"
+                title="Reddit"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Reddit"
+                className="w-10 h-10 flex items-center justify-center bg-zinc-200 text-zinc-700 rounded hover:bg-[#FF4500] hover:text-white transition-colors duration-200"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M21.5 12.5c0-1.38-1.12-2.5-2.5-2.5-.68 0-1.29.27-1.74.71-1.43-.98-3.28-1.61-5.32-1.69l.9-3.65 2.53.6a1.75 1.75 0 1 0 .24-.98l-2.9-.69a.5.5 0 0 0-.6.36l-1.02 4.15c-2.09.06-3.99.69-5.45 1.7A2.49 2.49 0 0 0 4.5 10a2.5 2.5 0 0 0-2.5 2.5c0 .93.51 1.74 1.27 2.17-.03.23-.04.46-.04.7 0 3.4 3.93 6.13 8.77 6.13s8.77-2.73 8.77-6.13c0-.24-.01-.47-.04-.7.46-.42.77-1.02.77-1.67zm-14 1.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm7.38 3.74c-1.36 1.36-4.4 1.36-5.76 0a.5.5 0 0 1 .71-.71c1.03 1.03 3.31 1.03 4.34 0a.5.5 0 1 1 .71.71zm-.38-3.74a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z" />
                 </svg>
               </a>
-              <a href="https://youtube.com" title="YouTube" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-10 h-10 flex items-center justify-center bg-zinc-200 text-zinc-700 rounded hover:bg-[#FF0000] hover:text-white transition-colors duration-200">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55A3.016 3.016 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.376.55 9.376.55s7.505 0 9.377-.55a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/wire-savy-843509428/"
+                title="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-10 h-10 flex items-center justify-center bg-zinc-200 text-zinc-700 rounded hover:bg-[#0A66C2] hover:text-white transition-colors duration-200"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M5.2 3.5A2.2 2.2 0 1 1 5.2 7.9a2.2 2.2 0 0 1 0-4.4zM3.3 9h3.8v12H3.3V9zm6.2 0h3.6v1.64h.05c.5-.95 1.72-1.95 3.54-1.95 3.79 0 4.49 2.49 4.49 5.72V21h-3.8v-5.85c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V21H9.5V9z" />
+                </svg>
+              </a>
+
+              {/* X / Twitter */}
+              <a
+                href="https://x.com/wiresavy"
+                title="X"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+                className="w-10 h-10 flex items-center justify-center bg-zinc-200 text-zinc-700 rounded hover:bg-black hover:text-white transition-colors duration-200"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817-5.963 6.817H1.684l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
+                </svg>
+              </a>
+
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/wiresavy/"
+                title="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="w-10 h-10 flex items-center justify-center bg-zinc-200 text-zinc-700 rounded hover:bg-[#E1306C] hover:text-white transition-colors duration-200"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="3"
+                    y="3"
+                    width="18"
+                    height="18"
+                    rx="5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  />
+                  <path
+                    d="M16 11.37a4 4 0 1 1-4.63-4"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M17.5 6.5h.01"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </a>
             </div>
