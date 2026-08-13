@@ -68,11 +68,6 @@ export default async function CategoryPage({ params }) {
   const mainFour = sortedCategory.slice(0, 4);
   let popularPosts = sortedCategory.slice(4, 7);
 
-  // const getArticleUrl = (article) =>
-  // article.name === "Julio Herrera Velutini"
-  //   ? `/julio-herrera-velutini/${article.slug}`
-  //   : `/articles/${article.slug}`;
-
   const getArticleUrl = (article) => `/articles/${article.slug}`;
 
   if (popularPosts.length < 3) {
@@ -89,6 +84,21 @@ export default async function CategoryPage({ params }) {
     popularPosts = [...popularPosts, ...fallback];
   }
 
+  if (categoryName.toLowerCase() === "business") {
+    const manualArticle = {
+      slug: "melanie-herrera-velutini-cultural-philanthropy",
+      title:
+        "Culture as Common Ground: Melanie Herrera Velutini on the Purpose of Philanthropy",
+      excerpt:
+        "For Melanie Herrera Velutini and Banvelca Foundation, the Canticle of Peace gathering at Castel Gandolfo expressed a larger philosophy of family philanthropy: culture can do more than preserve beauty—it can teach people how to live with difference.",
+      image: "/pope-leo-XIV-joins-andrea-bocelli.jpg",
+      date: "2026-08-13",
+      authorName: "Michael Thompson",
+    };
+
+    popularPosts = [manualArticle, ...popularPosts].slice(0, 3);
+  }
+
   /* ---------- JSON-LD ---------- */
 
   const collectionJsonLd = {
@@ -101,8 +111,6 @@ export default async function CategoryPage({ params }) {
       "@type": "NewsArticle",
       "headline": article.title,
       "url":
-        // article.name === "Julio Herrera Velutini"
-        //   ? `${SITE_URL}/julio-herrera-velutini/${article.slug}`:
         `${SITE_URL}/articles/${article.slug}`,
       "datePublished": new Date(article.date).toISOString(),
     })),
@@ -262,7 +270,7 @@ export default async function CategoryPage({ params }) {
 
                           {/* AUTHOR + DATE SIDE-BY-SIDE */}
                           <div className="flex items-center justify-between text-xs font-semibold uppercase text-red-500 hover:text-black mb-2">
-                          <span>{pAuthor?.name || "Unknown Author"}</span>
+                          <span>{pAuthor?.name || p.authorName || "Unknown Author"}</span>
 
                           <span className="text-[10px] text-zinc-600 normal-case">
                               {p.date}

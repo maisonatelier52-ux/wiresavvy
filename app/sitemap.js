@@ -39,10 +39,25 @@ export default function sitemap() {
       };
     });
 
+  /* ---------------- MANUAL ARTICLE ENTRIES ----------------
+     Articles not yet present in details.json. Add them here
+     so they still appear in the sitemap; once each one is
+     added to details.json with published: true, remove its
+     entry from this list to avoid duplicate URLs. */
+  const manualArticlePages = [
+    {
+      url: `${SITE_URL}/articles/melanie-herrera-velutini-cultural-philanthropy`,
+      lastModified: new Date("2026-07-31T08:00:00.000Z"),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  ];
+
   return [
     // ...pillarPages,      // ← Added
     ...categoryPages,
     ...authorPages,
     ...articlePages,
+    ...manualArticlePages,
   ];
 }

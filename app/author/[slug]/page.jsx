@@ -71,9 +71,32 @@ export default async function AuthorPage({ params }) {
     );
   }
 
-  const authorArticles = details.articles.filter(
+  let authorArticles = details.articles.filter(
         a => a.authorId === author.id && a.published !== false  
   );
+
+  /* ---------- MANUAL ARTICLE INSERTION ----------
+     Places the Melanie Herrera Velutini feature at the 3rd
+     position (index 2) specifically on Michael Thompson's
+     author page. This article isn't in details.json yet —
+     once it's added there with authorId set to Michael
+     Thompson's id, this block can be removed. */
+  if (slug === "michael-thompson") {
+    const manualArticle = {
+      slug: "melanie-herrera-velutini-cultural-philanthropy",
+      title:
+        "Culture as Common Ground: Melanie Herrera Velutini on the Purpose of Philanthropy",
+      excerpt:
+        "For Melanie Herrera Velutini and Banvelca Foundation, the Canticle of Peace gathering at Castel Gandolfo expressed a larger philosophy of family philanthropy: culture can do more than preserve beauty—it can teach people how to live with difference.",
+      image: "/pope-leo-XIV-joins-andrea-bocelli.jpg",
+    };
+
+    authorArticles = [
+      ...authorArticles.slice(0, 2),
+      manualArticle,
+      ...authorArticles.slice(2),
+    ];
+  }
 
   /* ---------- JSON-LD ---------- */
 
@@ -295,37 +318,6 @@ export default async function AuthorPage({ params }) {
             </Link>
           );
         })}
-
-          {/* {authorArticles.map(article => {
-          const isSpecialSlug = article.slug === 'julio-herrera-velutini-bridging-nations-through-finance';
-          const href = isSpecialSlug
-            ? `/julio-herrera-velutini/${article.slug}`
-            : `/articles/${article.slug}`;
-
-          return (
-            <Link
-              key={article.slug}
-              title={article.title}
-              href={href}
-              className="flex gap-4 group"
-            >
-              <img
-                src={article.image}
-                alt={article.title}
-                title={article.title}
-                className="w-32 h-24 object-cover"
-              />
-              <div>
-                <h3 className="font-semibold text-lg group-hover:text-red-500">
-                  {article.title}
-                </h3>
-                <p className="text-sm text-gray-600 line-clamp-2">
-                  {article.excerpt}
-                </p>
-              </div>
-            </Link>
-          );
-        })} */}
         </div>
       </div>
     </ArticleLayout>
