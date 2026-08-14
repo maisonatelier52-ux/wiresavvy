@@ -29,7 +29,7 @@ export default function MostViewed() {
   //   ? [forcedArticle, ...sorted.slice(5, 9)].reverse():
    sorted.slice(5, 10);
 
-  const adImage = "/ad-image.jpeg";
+  const adImage = "/wiresavvy_ads.jpg";
 
   const renderArticle = (a, i) => {
     // Determine the URL: use Julio Herrera route if name matches
@@ -86,7 +86,7 @@ export default function MostViewed() {
         {/* COLUMN 3 — AD */}
         <div className="flex justify-center">
           <Link href="http://wiresavvy.com/" title="WireSavvy Home">
-            <div className="w-full max-w-[400px] aspect-[1080/1920] bg-gray-200 border border-gray-400 flex items-center justify-center overflow-hidden">
+            <div className="w-full max-w-[400px] aspect-[5/8] flex items-center justify-center overflow-hidden">
               <img
                 src={adImage}
                 alt="Sponsor Ad"
