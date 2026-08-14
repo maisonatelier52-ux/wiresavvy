@@ -44,12 +44,75 @@ export async function generateMetadata({ params }) {
 export default async function CategoryPage({ params }) {
   const { category } = await params;
   const categoryName = decodeURIComponent(category);
+  const normalizedCategory = categoryName.toLowerCase();
 
+  /*
+   * ---------------------------------------------------------
+   * MANUAL WORLD ARTICLE
+   * ---------------------------------------------------------
+   */
+  const manualWorldArticle = {
+    slug: "melanie-herrera-velutini-cultural-philanthropy",
+    title:
+      "Culture as Common Ground: Melanie Herrera Velutini on the Purpose of Philanthropy",
+    excerpt:
+      "For Melanie Herrera Velutini and Banvelca Foundation, the Canticle of Peace gathering at Castel Gandolfo expressed a larger philosophy of family philanthropy: culture can do more than preserve beauty—it can teach people how to live with difference.",
+    image: "/pope-leo-XIV-joins-andrea-bocelli.jpg",
+    date: "2026-08-13",
+    authorName: "Michael Thompson",
+    category: "World",
+    authorId: null,
+  };
+
+  /*
+   * ---------------------------------------------------------
+   * GET ARTICLES FOR THIS CATEGORY
+   * ---------------------------------------------------------
+   */
   const categoryArticles = details.articles.filter(
-    a => a.category.toLowerCase() === categoryName.toLowerCase()
+    (a) => a.category?.toLowerCase() === normalizedCategory
   );
 
-  if (categoryArticles.length === 0) {
+  /*
+   * ---------------------------------------------------------
+   * WORLD CATEGORY
+   *
+   * If World has no articles, display the manual article.
+   *
+   * If World has existing articles, add the manual article
+   * to the beginning.
+   * ---------------------------------------------------------
+   */
+  let sortedCategory;
+
+  if (normalizedCategory === "world") {
+    sortedCategory = [...categoryArticles].sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
+
+    // Always include the manual World article.
+    sortedCategory = [
+      manualWorldArticle,
+      ...sortedCategory.filter(
+        (article) => article.slug !== manualWorldArticle.slug
+      ),
+    ];
+  } else {
+    /*
+     * For every other category, keep ONLY that category's
+     * articles.
+     */
+    sortedCategory = [...categoryArticles].sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
+  }
+
+  /*
+   * ---------------------------------------------------------
+   * EMPTY CATEGORY CHECK
+   * ---------------------------------------------------------
+   */
+  if (sortedCategory.length === 0) {
     return (
       <ArticleLayout>
         <div className="max-w-4xl mx-auto py-20 text-center">
@@ -61,76 +124,51 @@ export default async function CategoryPage({ params }) {
     );
   }
 
-  const sortedCategory = [...categoryArticles].sort(
-    (a, b) => new Date(b.date) - new Date(a.date)
-  );
-
+  /*
+   * ---------------------------------------------------------
+   * MAIN ARTICLES
+   * ---------------------------------------------------------
+   */
   const mainFour = sortedCategory.slice(0, 4);
-  let popularPosts = sortedCategory.slice(4, 7);
+
+  /*
+   * Popular posts remain within the SAME category.
+   */
+  const popularPosts = sortedCategory.slice(4, 7);
 
   const getArticleUrl = (article) => `/articles/${article.slug}`;
-
-  if (popularPosts.length < 3) {
-    const needed = 3 - popularPosts.length;
-    const fallback = details.articles
-      .filter(
-        a =>
-          a.category.toLowerCase() !== categoryName.toLowerCase() &&
-          !popularPosts.some(p => p.slug === a.slug)
-      )
-      .sort((a, b) => new Date(b.date) - new Date(a.date))
-      .slice(0, needed);
-
-    popularPosts = [...popularPosts, ...fallback];
-  }
-
-  if (categoryName.toLowerCase() === "business") {
-    const manualArticle = {
-      slug: "melanie-herrera-velutini-cultural-philanthropy",
-      title:
-        "Culture as Common Ground: Melanie Herrera Velutini on the Purpose of Philanthropy",
-      excerpt:
-        "For Melanie Herrera Velutini and Banvelca Foundation, the Canticle of Peace gathering at Castel Gandolfo expressed a larger philosophy of family philanthropy: culture can do more than preserve beauty—it can teach people how to live with difference.",
-      image: "/pope-leo-XIV-joins-andrea-bocelli.jpg",
-      date: "2026-08-13",
-      authorName: "Michael Thompson",
-    };
-
-    popularPosts = [manualArticle, ...popularPosts].slice(0, 3);
-  }
 
   /* ---------- JSON-LD ---------- */
 
   const collectionJsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": `${categoryName} News`,
-    "description": `Latest U.S. ${categoryName} news and analysis from Wiresavvy.`,
-    "url": `${SITE_URL}/categories/${categoryName}`,
-    "hasPart": sortedCategory.slice(0, 10).map(article => ({
+    name: `${categoryName} News`,
+    description: `Latest U.S. ${categoryName} news and analysis from Wiresavvy.`,
+    url: `${SITE_URL}/categories/${categoryName}`,
+    hasPart: sortedCategory.slice(0, 10).map((article) => ({
       "@type": "NewsArticle",
-      "headline": article.title,
-      "url":
-        `${SITE_URL}/articles/${article.slug}`,
-      "datePublished": new Date(article.date).toISOString(),
+      headline: article.title,
+      url: `${SITE_URL}/articles/${article.slug}`,
+      datePublished: new Date(article.date).toISOString(),
     })),
   };
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": [
+    itemListElement: [
       {
         "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": SITE_URL,
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
       },
       {
         "@type": "ListItem",
-        "position": 2,
-        "name": categoryName,
-        "item": `${SITE_URL}/categories/${categoryName}`,
+        position: 2,
+        name: categoryName,
+        item: `${SITE_URL}/categories/${categoryName}`,
       },
     ],
   };
@@ -138,35 +176,46 @@ export default async function CategoryPage({ params }) {
   const CATEGORY_DESCRIPTIONS = {
     business:
       "Wiresavvy Business News covers U.S. companies, corporate strategy, leadership, and the forces shaping the modern economy.",
+
     travel:
       "Wiresavvy Travel News reports on airlines, tourism, policy changes, and trends shaping how Americans move and explore.",
+
     lifestyle:
       "Wiresavvy Lifestyle News explores culture, wellness, design, and everyday trends shaping modern American life.",
+
     law:
       "Wiresavvy Law News delivers in-depth coverage of courts, legal battles, government enforcement, and constitutional issues.",
+
     finance:
       "Wiresavvy Finance News tracks markets, banking, economic policy, and risks impacting finance of investors and consumers.",
+
     investigation:
-    "Wiresavvy Investigation News is a dedicated investigation news section featuring original investigation reporting, accountability journalism, and in-depth investigation stories examining power, corruption, and public policy across the United States.",
+      "Wiresavvy Investigation News is a dedicated investigation news section featuring original investigation reporting, accountability journalism, and in-depth investigation stories examining power, corruption, and public policy across the United States.",
+
+    world:
+      "Wiresavvy World News covers major international events, global affairs, culture, diplomacy, and stories shaping the world.",
   };
 
   return (
     <ArticleLayout>
-
+      {/* JSON-LD */}
       <script
         id="category-collection-jsonld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(collectionJsonLd),
+        }}
       />
 
       <script
         id="category-breadcrumb-jsonld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd),
+        }}
       />
-      <div className="max-w-7xl mx-auto text-black">
 
-        {/* PAGE WRAPPER */}
+      <div className="max-w-7xl mx-auto text-black">
         <div className="flex flex-col lg:flex-row gap-10">
 
           {/* LEFT CONTENT */}
@@ -174,8 +223,16 @@ export default async function CategoryPage({ params }) {
 
             {/* BREADCRUMB */}
             <div className="text-sm text-zinc-600 mb-3">
-              <Link href="/" title="WireSavvy Home" className="hover:text-red-500">Home</Link>
+              <Link
+                href="/"
+                title="WireSavvy Home"
+                className="hover:text-red-500"
+              >
+                Home
+              </Link>
+
               <span className="mx-2">›</span>
+
               <span className="uppercase text-red-500 font-semibold">
                 {categoryName}
               </span>
@@ -186,23 +243,26 @@ export default async function CategoryPage({ params }) {
               {categoryName} News — Wiresavvy
             </h1>
 
+            {/* CATEGORY DESCRIPTION */}
             <p className="text-zinc-700 mb-8 max-w-4xl">
-              {CATEGORY_DESCRIPTIONS[categoryName.toLowerCase()] ||
+              {CATEGORY_DESCRIPTIONS[normalizedCategory] ||
                 `Read the latest ${categoryName} news, analysis, and reporting from Wiresavvy.`}
             </p>
 
             {/* MAIN 4 ARTICLES */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
-            {mainFour.map((article, i) => {
-                const author = details.authors.find(a => a.id === article.authorId);
+              {mainFour.map((article, i) => {
+                const author = details.authors.find(
+                  (a) => a.id === article.authorId
+                );
 
                 return (
-                <Link
-                  key={i}
-                  title={article.title}
-                  href={getArticleUrl(article)}
-                  className="group block border border-gray-200 transition shadow-sm hover:shadow-lg overflow-hidden"
-                >
+                  <Link
+                    key={`${article.slug}-${i}`}
+                    title={article.title}
+                    href={getArticleUrl(article)}
+                    className="group block border border-gray-200 transition shadow-sm hover:shadow-lg overflow-hidden"
+                  >
                     {/* IMAGE */}
                     <img
                       src={article.image}
@@ -214,29 +274,33 @@ export default async function CategoryPage({ params }) {
 
                     {/* TITLE */}
                     <h2 className="text-lg font-semibold px-3 group-hover:text-red-500 leading-tight mb-2">
-                    {article.title}
+                      {article.title}
                     </h2>
 
-                    {/* AUTHOR + DATE SIDE BY SIDE */}
+                    {/* AUTHOR + DATE */}
                     <div className="flex items-center justify-between px-3 text-xs font-semibold uppercase text-red-500 hover:text-black">
-                        <span>{author?.name}</span>
-                        <span className="text-[10px] text-zinc-600 normal-case">
-                            {article.date}
-                        </span>
+                      <span>
+                        {author?.name ||
+                          article.authorName ||
+                          "Unknown Author"}
+                      </span>
+
+                      <span className="text-[10px] text-zinc-600 normal-case">
+                        {article.date}
+                      </span>
                     </div>
 
-                    {/* EXCERPT – 3 LINES ONLY */}
+                    {/* EXCERPT */}
                     <p className="px-3 mt-3 mb-4 text-sm text-zinc-700 line-clamp-3">
-                        {article.excerpt}
+                      {article.excerpt}
                     </p>
-
-                </Link>
+                  </Link>
                 );
-            })}
+              })}
             </div>
           </div>
 
-          {/* RIGHT SIDEBAR — POPULAR POSTS */}
+          {/* RIGHT SIDEBAR */}
           <aside className="w-full lg:w-[300px]">
             <div className="border border-gray-200 p-5">
               <h2 className="text-lg font-bold uppercase text-red-500 mb-5">
@@ -245,51 +309,55 @@ export default async function CategoryPage({ params }) {
 
               <ul className="flex flex-col gap-5">
                 {popularPosts.map((p, i) => {
-                  const pAuthor = details.authors.find(a => a.id === p.authorId);
+                  const pAuthor = details.authors.find(
+                    (a) => a.id === p.authorId
+                  );
 
                   return (
-                    <li key={i} className="list-none">
-                        <Link
-                          href={getArticleUrl(p)}
+                    <li key={`${p.slug}-${i}`} className="list-none">
+                      <Link
+                        href={getArticleUrl(p)}
+                        title={p.title}
+                        className="block group"
+                      >
+                        {/* IMAGE */}
+                        <img
+                          src={p.image}
+                          alt={p.title}
                           title={p.title}
-                          className="block group"
-                        >
-                          {/* IMAGE ON TOP */}
-                          <img
-                            src={p.image}
-                            alt={p.title}
-                            title={p.title}
-                            className="w-full h-32 mb-3 object-cover shadow-md"
-                            loading="lazy"
-                          />
+                          className="w-full h-32 mb-3 object-cover shadow-md"
+                          loading="lazy"
+                        />
 
-                          {/* TITLE */}
-                          <p className="text-sm font-semibold group-hover:text-red-500 leading-snug mb-2">
+                        {/* TITLE */}
+                        <p className="text-sm font-semibold group-hover:text-red-500 leading-snug mb-2">
                           {p.title}
-                          </p>
+                        </p>
 
-                          {/* AUTHOR + DATE SIDE-BY-SIDE */}
-                          <div className="flex items-center justify-between text-xs font-semibold uppercase text-red-500 hover:text-black mb-2">
-                          <span>{pAuthor?.name || p.authorName || "Unknown Author"}</span>
+                        {/* AUTHOR + DATE */}
+                        <div className="flex items-center justify-between text-xs font-semibold uppercase text-red-500 hover:text-black mb-2">
+                          <span>
+                            {pAuthor?.name ||
+                              p.authorName ||
+                              "Unknown Author"}
+                          </span>
 
                           <span className="text-[10px] text-zinc-600 normal-case">
-                              {p.date}
+                            {p.date}
                           </span>
-                          </div>
+                        </div>
 
-                          {/* EXCERPT */}
-                          <p className="text-[12px] text-zinc-600 line-clamp-3">
+                        {/* EXCERPT */}
+                        <p className="text-[12px] text-zinc-600 line-clamp-3">
                           {p.excerpt}
-                          </p>
-
-                        </Link>
+                        </p>
+                      </Link>
                     </li>
                   );
                 })}
               </ul>
             </div>
           </aside>
-
         </div>
       </div>
     </ArticleLayout>

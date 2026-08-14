@@ -68,6 +68,7 @@ const coverageAreas = [
   { label: "Politics & Policy", icon: "◇" },
   { label: "Technology", icon: "◎" },
   { label: "Investigation", icon: "◌" },
+  { label: "World", icon: "◍" },
 ];
 
 const pillars = [
@@ -156,6 +157,7 @@ export default function About() {
           "Finance",
           "Politics",
           "Public Policy",
+          "World",
           "Law",
           "Technology",
           "Investigative Journalism"

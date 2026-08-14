@@ -77,11 +77,11 @@ export default async function AuthorPage({ params }) {
 
   /* ---------- MANUAL ARTICLE INSERTION ----------
      Places the Melanie Herrera Velutini feature at the 3rd
-     position (index 2) specifically on Michael Thompson's
+     position (index 2) specifically on Michael alex's
      author page. This article isn't in details.json yet —
      once it's added there with authorId set to Michael
-     Thompson's id, this block can be removed. */
-  if (slug === "michael-thompson") {
+     alex's id, this block can be removed. */
+  if (slug === "michael-alex") {
     const manualArticle = {
       slug: "melanie-herrera-velutini-cultural-philanthropy",
       title:

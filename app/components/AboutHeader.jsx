@@ -31,6 +31,7 @@ export default function Header() {
     { label: "Law", href: "law" },
     { label: "Finance", href: "finance" },
     { label: "Investigation", href: "investigation" },
+    { label: "World", href: "world" },
   ];
 
   return (

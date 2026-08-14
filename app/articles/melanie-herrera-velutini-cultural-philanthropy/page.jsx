@@ -184,7 +184,7 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
       <div className="max-w-6xl mx-auto px-4 md:px-8 pt-10 pb-8 grid lg:grid-cols-[1.15fr_0.85fr] gap-10 items-start">
         <div>
           <span className="inline-block bg-red-500 text-white text-[11px] font-black uppercase tracking-[0.2em] px-3 py-1 mb-5">
-            <Link href="/categories/business">Business</Link>
+            <Link href="/categories/world">World</Link>
           </span>
 
           <h1 className="font-black text-black text-[34px] sm:text-[42px] md:text-[50px] leading-[1.05] tracking-tight">
