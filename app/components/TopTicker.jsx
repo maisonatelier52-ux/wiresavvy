@@ -21,7 +21,7 @@ export default function TopTicker() {
               {latestThree.map((item, i) => (
                 <li key={i} className="list-none flex-shrink-0">
                   <Link
-                    href={`/articles/${item.slug}`}
+                    href={`/${item.category}/${item.slug}`}
                     className="text-sm font-medium text-zinc-700 hover:text-red-500 transition-colors"
                   >
                     {item.title}

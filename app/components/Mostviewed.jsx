@@ -36,7 +36,7 @@ export default function MostViewed() {
     const articleUrl =
       // a.name === "Julio Herrera Velutini"
       //   ? `/julio-herrera-velutini/${a.slug}`:
-        `/articles/${a.slug}`;
+        `/${a.category}/${a.slug}`;
 
     return (
       <Link href={articleUrl} title={a.title} key={i}>

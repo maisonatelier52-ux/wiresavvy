@@ -27,7 +27,7 @@ export default function WeeklyPopular({ articles = [] }) {
   const getArticleUrl = (article) =>
     // fixedArticles.some(fixed => fixed.slug === article.slug)
     //   ? `/julio-herrera-velutini/julio-herrera-velutini-bridging-nations-through-finance`:
-     `/articles/${article.slug}`;
+     `/${article.category}/${article.slug}`;
 
   return (
     <div className="bg-white border border-gray-200 p-4 h-fit">

@@ -46,7 +46,7 @@ export default function RelatedArticles({ articles, category }) {
           const articleUrl =
             // post.name === "Julio Herrera Velutini"
             //   ? `/julio-herrera-velutini/${post.slug}`:
-            `/articles/${post.slug}`;
+            `/${post.category}/${post.slug}`;
 
           return (
             <Link key={i} href={articleUrl} title={post.title}>

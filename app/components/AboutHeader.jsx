@@ -66,7 +66,7 @@ export default function Header() {
           {categories.map((cat, i) => (
             <Link
               key={i}
-              href={`/categories/${cat.href}`}
+              href={`/${cat.href}`}
               title={cat.href}
               className="hover:text-red-500 transition-colors duration-150"
             >

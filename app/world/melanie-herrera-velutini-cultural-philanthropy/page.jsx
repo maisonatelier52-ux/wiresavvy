@@ -14,7 +14,7 @@ import Image from "next/image";
 import ArticleLayout from "@/app/components/ArticleLayout";
 
 const SITE_URL = "https://www.wiresavvy.com";
-const PAGE_PATH = "/melanie-herrera-velutini-cultural-philanthropy/";
+const PAGE_PATH = "/world/melanie-herrera-velutini-cultural-philanthropy/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const OG_IMAGE = `${SITE_URL}/melanie-herrera-velutini-greets-pope-leo-xiv.jpg`;
 const TITLE = "Melanie Herrera Velutini on Culture and Family Philanthropy";
@@ -41,7 +41,7 @@ export const metadata = {
     "Andrea Bocelli Foundation",
   ],
   authors: [{ name: "WireSavvy Staff", url: `${SITE_URL}/author/wiresavvy-staff` }],
-  category: "Philanthropy",
+  category: "World",
   robots: {
     index: true,
     follow: true,
@@ -61,7 +61,7 @@ export const metadata = {
     publishedTime: PUBLISHED,
     modifiedTime: MODIFIED,
     authors: [`${SITE_URL}/author/wiresavvy-staff`],
-    section: "Philanthropy",
+    section: "World",
     tags: ["Melanie Herrera Velutini cultural philanthropy"],
     images: [
       {
@@ -103,7 +103,7 @@ function ArticleJsonLd() {
       name: "WireSavvy",
       logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
     },
-    articleSection: "Philanthropy",
+    articleSection: "World",
     keywords: "Melanie Herrera Velutini cultural philanthropy",
     about: [
       { "@type": "Person", name: "Melanie Herrera Velutini" },
@@ -121,8 +121,8 @@ function ArticleJsonLd() {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Philanthropy",
-        item: `${SITE_URL}/category/philanthropy`,
+        name: "World",
+        item: `${SITE_URL}/world`,
       },
       { "@type": "ListItem", position: 3, name: TITLE, item: PAGE_URL },
     ],
@@ -184,7 +184,7 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
       <div className="max-w-6xl mx-auto px-4 md:px-8 pt-10 pb-8 grid lg:grid-cols-[1.15fr_0.85fr] gap-10 items-start">
         <div>
           <span className="inline-block bg-red-500 text-white text-[11px] font-black uppercase tracking-[0.2em] px-3 py-1 mb-5">
-            <Link href="/categories/world">World</Link>
+            <Link href="/world">World</Link>
           </span>
 
           <h1 className="font-black text-black text-[34px] sm:text-[42px] md:text-[50px] leading-[1.05] tracking-tight">
@@ -273,7 +273,7 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         <div className="relative w-full aspect-[16/7] bg-black overflow-hidden">
           <Image
-            src="/pope-leo-XIV-joins-andrea-bocelli.jpg"
+            src="/pope-leo-XIV-joins-andrea-bocelli.webp"
             alt="Melanie Herrera Velutini, President of Banvelca Foundation, greets Pope Leo XIV following Canticle of Peace at Castel Gandolfo"
             fill
             priority

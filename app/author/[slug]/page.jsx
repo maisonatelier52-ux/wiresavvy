@@ -292,7 +292,7 @@ export default async function AuthorPage({ params }) {
           )}
 
           {authorArticles.map(article => {
-          const href = `/articles/${article.slug}`;
+          const href = `/${article.category}/${article.slug}`;
 
           return (
             <Link

@@ -6,7 +6,7 @@ export default function sitemap() {
   /* ---------------- CATEGORY PAGES ---------------- */
   const categoryPages = [...new Set(details.articles.map(a => a.category))]
     .map(category => ({
-      url: `${SITE_URL}/categories/${encodeURIComponent(
+      url: `${SITE_URL}/${encodeURIComponent(
         category.toLowerCase()
       )}`,
       lastModified: now,
@@ -31,7 +31,7 @@ export default function sitemap() {
         url: 
         // isJulio
         //   ? `${SITE_URL}/julio-herrera-velutini/${article.slug}`:
-         `${SITE_URL}/articles/${article.slug}`,
+         `${SITE_URL}/${article.category}/${article.slug}`,
         lastModified: new Date(article.date),
         changeFrequency: "weekly",
         // priority: isJulio ? 1 : 0.8,
@@ -46,7 +46,7 @@ export default function sitemap() {
      entry from this list to avoid duplicate URLs. */
   const manualArticlePages = [
     {
-      url: `${SITE_URL}/articles/melanie-herrera-velutini-cultural-philanthropy`,
+      url: `${SITE_URL}/world/melanie-herrera-velutini-cultural-philanthropy`,
       lastModified: new Date("2026-07-31T08:00:00.000Z"),
       changeFrequency: "weekly",
       priority: 0.8,

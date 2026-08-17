@@ -15,12 +15,12 @@ export async function generateMetadata({ params }) {
     title: `${formattedCategory} News — Wiresavvy`,
     description: `Read the latest ${formattedCategory.toLowerCase()} news, analysis and investigative stories from across the United States. Updated daily by Wiresavvy reporters.`,
     alternates: {
-      canonical: `${SITE_URL}/categories/${categoryName}`,
+      canonical: `${SITE_URL}/${categoryName}`,
     },
     openGraph: {
       title: `${formattedCategory} News — Wiresavvy`,
       description: `Latest U.S. ${formattedCategory.toLowerCase()} news, reports and analysis.`,
-      url: `${SITE_URL}/categories/${categoryName}`,
+      url: `${SITE_URL}/${categoryName}`,
       type: "website",
       siteName: "Wiresavvy",
       images: [
@@ -136,7 +136,17 @@ export default async function CategoryPage({ params }) {
    */
   const popularPosts = sortedCategory.slice(4, 7);
 
-  const getArticleUrl = (article) => `/articles/${article.slug}`;
+  /*
+   * ---------------------------------------------------------
+   * URL HELPER
+   *
+   * Routes now follow /[category]/[slug]. Each article links
+   * into the category it actually belongs to (falls back to
+   * the current category page's slug if not set).
+   * ---------------------------------------------------------
+   */
+  const getArticleUrl = (article) =>
+    `/${(article.category || normalizedCategory).toLowerCase()}/${article.slug}`;
 
   /* ---------- JSON-LD ---------- */
 
@@ -145,11 +155,11 @@ export default async function CategoryPage({ params }) {
     "@type": "CollectionPage",
     name: `${categoryName} News`,
     description: `Latest U.S. ${categoryName} news and analysis from Wiresavvy.`,
-    url: `${SITE_URL}/categories/${categoryName}`,
+    url: `${SITE_URL}/${categoryName}`,
     hasPart: sortedCategory.slice(0, 10).map((article) => ({
       "@type": "NewsArticle",
       headline: article.title,
-      url: `${SITE_URL}/articles/${article.slug}`,
+      url: `${SITE_URL}${getArticleUrl(article)}`,
       datePublished: new Date(article.date).toISOString(),
     })),
   };
@@ -168,7 +178,7 @@ export default async function CategoryPage({ params }) {
         "@type": "ListItem",
         position: 2,
         name: categoryName,
-        item: `${SITE_URL}/categories/${categoryName}`,
+        item: `${SITE_URL}/${categoryName}`,
       },
     ],
   };
@@ -182,6 +192,9 @@ export default async function CategoryPage({ params }) {
 
     lifestyle:
       "Wiresavvy Lifestyle News explores culture, wellness, design, and everyday trends shaping modern American life.",
+
+    fashion:
+      "Wiresavvy Fashion News covers red carpet moments, designers, style trends, and the personalities shaping fashion today.",
 
     law:
       "Wiresavvy Law News delivers in-depth coverage of courts, legal battles, government enforcement, and constitutional issues.",

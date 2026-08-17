@@ -94,7 +94,7 @@ export default function InsightAnalysis({ articles = [] }) {
             className="snap-start flex-shrink-0 px-2"
             style={{ width: `${100 / visibleCount}%` }}
           >
-            <Link href={`/articles/${a.slug}`} title={a.title}>
+            <Link href={`/${a.category}/${a.slug}`} title={a.title}>
               <article>
                 {a.image && (
                   <img

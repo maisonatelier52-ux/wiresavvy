@@ -9,10 +9,15 @@ import { notFound } from "next/navigation";
 const SITE_URL = "https://www.wiresavvy.com";
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  const article = details.articles.find(a => a.slug === slug);
+  const { category, slug } = await params;
+  const categoryName = decodeURIComponent(category);
+  const article = details.articles.find(
+    (a) =>
+      a.slug === slug &&
+      a.category?.toLowerCase() === categoryName.toLowerCase()
+  );
 
-  // BLOCK JULIO ARTICLES FROM /articles/[slug]
+  // BLOCK JULIO ARTICLES FROM /[category]/[slug]
   // if (article?.name === "Julio Herrera Velutini") {
   //   return {
   //     title: "Page not found | Wiresavvy",
@@ -34,12 +39,12 @@ export async function generateMetadata({ params }) {
     title: `${article.title}`,
     description: article.excerpt,
     alternates: {
-      canonical: `${SITE_URL}/articles/${slug}`,
+      canonical: `${SITE_URL}/${categoryName}/${slug}`,
     },
     openGraph: {
       title: article.title,
       description: article.excerpt,
-      url: `${SITE_URL}/articles/${slug}`,
+      url: `${SITE_URL}/${categoryName}/${slug}`,
       type: "article",
       siteName: "Wiresavvy",
       images: [
@@ -61,10 +66,15 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function ArticlePage({ params }) {
-  const { slug } = await params;
+  const { category, slug } = await params;
+  const categoryName = decodeURIComponent(category);
 
   // FIND ARTICLE
-  const article = details.articles.find(a => a.slug === slug);
+  const article = details.articles.find(
+    (a) =>
+      a.slug === slug &&
+      a.category?.toLowerCase() === categoryName.toLowerCase()
+  );
 
   // 🚫 DO NOT RENDER JULIO ARTICLES HERE
   // if (article?.name === "Julio Herrera Velutini") {
@@ -109,7 +119,7 @@ export default async function ArticlePage({ params }) {
     "@type": "Article",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `${SITE_URL}/articles/${article.slug}`,
+      "@id": `${SITE_URL}/${article.category}/${article.slug}`,
     },
     "headline": article.title,
     "description": article.excerpt,
@@ -149,13 +159,13 @@ export default async function ArticlePage({ params }) {
         "@type": "ListItem",
         "position": 2,
         "name": article.category,
-        "item": `${SITE_URL}/categories/${article.category}`,
+        "item": `${SITE_URL}/${article.category}`,
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": article.title,
-        "item": `${SITE_URL}/articles/${article.slug}`,
+        "item": `${SITE_URL}/${article.category}/${article.slug}`,
       },
     ],
   };
@@ -204,7 +214,7 @@ export default async function ArticlePage({ params }) {
 
             <div className="relative z-10 w-full p-6 md:p-8">
               <Link 
-                href={`/categories/${article.category}`} 
+                href={`/${article.category}`} 
                 title={article.category}
                 className="text-zinc-300 hover:text-white underline underline-offset-4"
               >
@@ -311,7 +321,7 @@ export default async function ArticlePage({ params }) {
 
                 return (
                   <li key={i} className="list-none">
-                    <Link href={`/articles/${p.slug}`} title={p.title} className="flex gap-4 items-start group">
+                    <Link href={`/${p.category}/${p.slug}`} title={p.title} className="flex gap-4 items-start group">
 
                       <img
                         src={p.image}
