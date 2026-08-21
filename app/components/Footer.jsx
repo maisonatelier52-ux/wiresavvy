@@ -267,6 +267,9 @@ export default function Footer() {
           {/* ==== Newsletter ==== */}
           <div>
             <div className="text-xl font-bold mb-4 text-white">Stay Updated</div>
+            <div className="text-sm text-zinc-400 mb-4">
+              Subscribe to our newsletter for the latest updates and insights.
+            </div>
             <form 
               className="flex flex-col space-y-3"
               action="https://formsubmit.co/admin@investment-banking.org"
