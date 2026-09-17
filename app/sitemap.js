@@ -26,15 +26,11 @@ export default function sitemap() {
   const articlePages = details.articles
     .filter(article => article.published)
     .map(article => {
-      // const isJulio = article.name === "Julio Herrera Velutin";
       return {
         url: 
-        // isJulio
-        //   ? `${SITE_URL}/julio-herrera-velutini/${article.slug}`:
          `${SITE_URL}/${article.category}/${article.slug}`,
         lastModified: new Date(article.date),
         changeFrequency: "weekly",
-        // priority: isJulio ? 1 : 0.8,
         priority: 0.8
       };
     });
@@ -47,14 +43,13 @@ export default function sitemap() {
   const manualArticlePages = [
     {
       url: `${SITE_URL}/world/melanie-herrera-velutini-cultural-philanthropy`,
-      lastModified: new Date("2026-07-31T08:00:00.000Z"),
+      lastModified: new Date("2026-08-13T08:00:00.000Z"),
       changeFrequency: "weekly",
       priority: 0.8,
     },
   ];
 
   return [
-    // ...pillarPages,      // ← Added
     ...categoryPages,
     ...authorPages,
     ...articlePages,

@@ -1,7 +1,7 @@
 import ArticleLayout from "../components/ArticleLayout";
 
 const SITE_URL = "https://www.wiresavvy.com";
-const PAGE_URL = `${SITE_URL}/meet-the-team`;
+const PAGE_URL = `${SITE_URL}/our-team`;
 
 export const metadata = {
   title:

@@ -132,7 +132,7 @@ export default async function ArticlePage({ params }) {
       "@type": "Person",
       "name": author?.name || "Wiresavvy Staff",
       "url": author
-        ? `${SITE_URL}/author/${author.id}`
+        ? `${SITE_URL}/author/${author.slug}`
         : undefined,
     },
     "publisher": {

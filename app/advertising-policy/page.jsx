@@ -152,7 +152,7 @@ export default function AdvertisingPolicy() {
         publishingPrinciples: `${SITE_URL}/editorial-policy`,
         ethicsPolicy: `${SITE_URL}/editorial-policy`,
         correctionsPolicy: `${SITE_URL}/corrections-policy`,
-        ownershipFundingInfo: `${SITE_URL}/ownership-funding`,
+        ownershipFundingInfo: `${SITE_URL}/ownership-and-funding`,
       },
       {
         "@type": "ItemList",

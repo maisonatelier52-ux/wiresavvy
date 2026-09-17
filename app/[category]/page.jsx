@@ -1,28 +1,87 @@
 import ArticleLayout from "@/app/components/ArticleLayout";
 import details from "@/data/details.json";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 const SITE_URL = "https://www.wiresavvy.com";
+
+function getCategoryArticles(rawCategoryName) {
+  const normalizedCategory = rawCategoryName.toLowerCase();
+
+  const manualWorldArticle = {
+    slug: "melanie-herrera-velutini-cultural-philanthropy",
+    title:
+      "Culture as Common Ground: Melanie Herrera Velutini on the Purpose of Philanthropy",
+    excerpt:
+      "For Melanie Herrera Velutini and Banvelca Foundation, the Canticle of Peace gathering at Castel Gandolfo expressed a larger philosophy of family philanthropy: culture can do more than preserve beauty—it can teach people how to live with difference.",
+    image: "/pope-leo-XIV-joins-andrea-bocelli.jpg",
+    date: "2026-08-13",
+    authorName: "Michael Thompson",
+    category: "World",
+    authorId: null,
+  };
+
+  const categoryArticles = details.articles.filter(
+    (a) => a.category?.toLowerCase() === normalizedCategory
+  );
+
+  let sortedCategory;
+
+  if (normalizedCategory === "world") {
+    sortedCategory = [...categoryArticles].sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
+    sortedCategory = [
+      manualWorldArticle,
+      ...sortedCategory.filter(
+        (article) => article.slug !== manualWorldArticle.slug
+      ),
+    ];
+  } else {
+    sortedCategory = [...categoryArticles].sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
+  }
+
+  return { normalizedCategory, sortedCategory };
+}
 
 export async function generateMetadata({ params }) {
   const { category } = await params;
   const categoryName = decodeURIComponent(category);
+  const { normalizedCategory, sortedCategory } = getCategoryArticles(categoryName);
 
-  const formattedCategory =
-    categoryName.charAt(0).toUpperCase() + categoryName.slice(1);
+  const formattedCategory = normalizedCategory.charAt(0).toUpperCase() + normalizedCategory.slice(1);
+
+  const canonicalUrl = `${SITE_URL}/${normalizedCategory}`;
+
+  const isEmpty = sortedCategory.length === 0;
 
   return {
     title: `${formattedCategory} News — Wiresavvy`,
     description: `Read the latest ${formattedCategory.toLowerCase()} news, analysis and investigative stories from across the United States. Updated daily by Wiresavvy reporters.`,
+    metadataBase: new URL(SITE_URL),
     alternates: {
-      canonical: `${SITE_URL}/${categoryName}`,
+      canonical: canonicalUrl,
     },
+    robots: isEmpty
+      ? { index: false, follow: true }
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+          },
+        },
     openGraph: {
       title: `${formattedCategory} News — Wiresavvy`,
       description: `Latest U.S. ${formattedCategory.toLowerCase()} news, reports and analysis.`,
-      url: `${SITE_URL}/${categoryName}`,
+      url: canonicalUrl,
       type: "website",
       siteName: "Wiresavvy",
+      locale: "en_US",
       images: [
         {
           url: `${SITE_URL}/wiresavvy.webp`,
@@ -37,6 +96,7 @@ export async function generateMetadata({ params }) {
       title: `${formattedCategory} News — Wiresavvy`,
       description: `Latest U.S. ${formattedCategory.toLowerCase()} news and analysis.`,
       images: [`${SITE_URL}/wiresavvy.webp`],
+      site: "@wiresavvy",
     },
   };
 }
@@ -44,84 +104,26 @@ export async function generateMetadata({ params }) {
 export default async function CategoryPage({ params }) {
   const { category } = await params;
   const categoryName = decodeURIComponent(category);
-  const normalizedCategory = categoryName.toLowerCase();
+  const { normalizedCategory, sortedCategory } =
+    getCategoryArticles(categoryName);
 
-  /*
-   * ---------------------------------------------------------
-   * MANUAL WORLD ARTICLE
-   * ---------------------------------------------------------
-   */
-  const manualWorldArticle = {
-    slug: "melanie-herrera-velutini-cultural-philanthropy",
-    title:
-      "Culture as Common Ground: Melanie Herrera Velutini on the Purpose of Philanthropy",
-    excerpt:
-      "For Melanie Herrera Velutini and Banvelca Foundation, the Canticle of Peace gathering at Castel Gandolfo expressed a larger philosophy of family philanthropy: culture can do more than preserve beauty—it can teach people how to live with difference.",
-    image: "/pope-leo-XIV-joins-andrea-bocelli.jpg",
-    date: "2026-08-13",
-    authorName: "Michael Thompson",
-    category: "World",
-    authorId: null,
-  };
-
-  /*
-   * ---------------------------------------------------------
-   * GET ARTICLES FOR THIS CATEGORY
-   * ---------------------------------------------------------
-   */
-  const categoryArticles = details.articles.filter(
-    (a) => a.category?.toLowerCase() === normalizedCategory
-  );
-
-  /*
-   * ---------------------------------------------------------
-   * WORLD CATEGORY
-   *
-   * If World has no articles, display the manual article.
-   *
-   * If World has existing articles, add the manual article
-   * to the beginning.
-   * ---------------------------------------------------------
-   */
-  let sortedCategory;
-
-  if (normalizedCategory === "world") {
-    sortedCategory = [...categoryArticles].sort(
-      (a, b) => new Date(b.date) - new Date(a.date)
-    );
-
-    // Always include the manual World article.
-    sortedCategory = [
-      manualWorldArticle,
-      ...sortedCategory.filter(
-        (article) => article.slug !== manualWorldArticle.slug
-      ),
-    ];
-  } else {
-    /*
-     * For every other category, keep ONLY that category's
-     * articles.
-     */
-    sortedCategory = [...categoryArticles].sort(
-      (a, b) => new Date(b.date) - new Date(a.date)
-    );
-  }
+  const formattedCategory =
+    normalizedCategory.charAt(0).toUpperCase() + normalizedCategory.slice(1);
 
   /*
    * ---------------------------------------------------------
    * EMPTY CATEGORY CHECK
+   *
+   * Previously this rendered a 200-status "No articles found"
+   * page, which Google could index as thin/soft-404 content.
+   * Genuinely nonexistent categories now 404; if you'd rather
+   * keep a friendly message instead of a hard 404, remove the
+   * notFound() call below and rely on the noindex robots meta
+   * set in generateMetadata instead.
    * ---------------------------------------------------------
    */
   if (sortedCategory.length === 0) {
-    return (
-      <ArticleLayout>
-        <div className="max-w-4xl mx-auto py-20 text-center">
-          <h1 className="text-3xl font-bold text-red-500">
-            No articles found in “{categoryName}”
-          </h1>
-        </div>
-      </ArticleLayout>
-    );
+    notFound();
   }
 
   /*
@@ -130,21 +132,8 @@ export default async function CategoryPage({ params }) {
    * ---------------------------------------------------------
    */
   const mainFour = sortedCategory.slice(0, 4);
-
-  /*
-   * Popular posts remain within the SAME category.
-   */
   const popularPosts = sortedCategory.slice(4, 7);
 
-  /*
-   * ---------------------------------------------------------
-   * URL HELPER
-   *
-   * Routes now follow /[category]/[slug]. Each article links
-   * into the category it actually belongs to (falls back to
-   * the current category page's slug if not set).
-   * ---------------------------------------------------------
-   */
   const getArticleUrl = (article) =>
     `/${(article.category || normalizedCategory).toLowerCase()}/${article.slug}`;
 
@@ -153,14 +142,18 @@ export default async function CategoryPage({ params }) {
   const collectionJsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: `${categoryName} News`,
-    description: `Latest U.S. ${categoryName} news and analysis from Wiresavvy.`,
-    url: `${SITE_URL}/${categoryName}`,
+    name: `${formattedCategory} News`,
+    description: `Latest U.S. ${formattedCategory} news and analysis from Wiresavvy.`,
+    url: `${SITE_URL}/${normalizedCategory}`,
+    numberOfItems: sortedCategory.length,
     hasPart: sortedCategory.slice(0, 10).map((article) => ({
       "@type": "NewsArticle",
       headline: article.title,
       url: `${SITE_URL}${getArticleUrl(article)}`,
       datePublished: new Date(article.date).toISOString(),
+      image: article.image?.startsWith("http")
+        ? article.image
+        : `${SITE_URL}${article.image}`,
     })),
   };
 
@@ -177,8 +170,8 @@ export default async function CategoryPage({ params }) {
       {
         "@type": "ListItem",
         position: 2,
-        name: categoryName,
-        item: `${SITE_URL}/${categoryName}`,
+        name: formattedCategory,
+        item: `${SITE_URL}/${normalizedCategory}`,
       },
     ],
   };
@@ -247,19 +240,19 @@ export default async function CategoryPage({ params }) {
               <span className="mx-2">›</span>
 
               <span className="uppercase text-red-500 font-semibold">
-                {categoryName}
+                {formattedCategory}
               </span>
             </div>
 
             {/* CATEGORY TITLE */}
             <h1 className="text-3xl font-bold uppercase text-red-500 mb-3">
-              {categoryName} News — Wiresavvy
+              {formattedCategory} News — Wiresavvy
             </h1>
 
             {/* CATEGORY DESCRIPTION */}
             <p className="text-zinc-700 mb-8 max-w-4xl">
               {CATEGORY_DESCRIPTIONS[normalizedCategory] ||
-                `Read the latest ${categoryName} news, analysis, and reporting from Wiresavvy.`}
+                `Read the latest ${formattedCategory} news, analysis, and reporting from Wiresavvy.`}
             </p>
 
             {/* MAIN 4 ARTICLES */}

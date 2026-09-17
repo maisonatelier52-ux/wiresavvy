@@ -16,12 +16,20 @@ import ArticleLayout from "@/app/components/ArticleLayout";
 const SITE_URL = "https://www.wiresavvy.com";
 const PAGE_PATH = "/world/melanie-herrera-velutini-cultural-philanthropy/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
-const OG_IMAGE = `${SITE_URL}/melanie-herrera-velutini-greets-pope-leo-xiv.jpg`;
-const TITLE = "Melanie Herrera Velutini on Culture and Family Philanthropy";
-const DESCRIPTION =
-  "Melanie Herrera Velutini explains why Banvelca Foundation supported Canticle of Peace and how cultural philanthropy can create common ground.";
+const OG_IMAGE = `${SITE_URL}/pope-leo-XIV-joins-andrea-bocelli.webp`;
+const TITLE = "Culture as Common Ground: Melanie Herrera Velutini on the Purpose of Philanthropy";
+const DESCRIPTION = "Melanie Herrera Velutini explains why Banvelca Foundation supported Canticle of Peace and how cultural philanthropy can create common ground.";
 const PUBLISHED = "2026-08-13T08:00:00.000Z";
 const MODIFIED = "2026-08-13T08:00:00.000Z";
+const KEYWORDS_LIST = [
+  "Melanie Herrera Velutini cultural philanthropy",
+  "Melanie Herrera Velutini",
+  "Banvelca Foundation",
+  "Herrera Velutini",
+  "Canticle of Peace",
+  "Pope Leo XIV",
+  "Andrea Bocelli Foundation",
+];
 
 // ================= SEO METADATA =================
 export const metadata = {
@@ -31,15 +39,7 @@ export const metadata = {
   alternates: {
     canonical: PAGE_PATH,
   },
-  keywords: [
-    "Melanie Herrera Velutini cultural philanthropy",
-    "Melanie Herrera Velutini",
-    "Banvelca Foundation",
-    "Herrera Velutini",
-    "Canticle of Peace",
-    "Pope Leo XIV",
-    "Andrea Bocelli Foundation",
-  ],
+  keywords: KEYWORDS_LIST,
   authors: [{ name: "WireSavvy Staff", url: `${SITE_URL}/author/wiresavvy-staff` }],
   category: "World",
   robots: {
@@ -78,6 +78,7 @@ export const metadata = {
     description: DESCRIPTION,
     images: [OG_IMAGE],
     site: "@wiresavvy",
+    creator: "@wiresavvy",
   },
 };
 
@@ -86,12 +87,18 @@ function ArticleJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
-    headline:
-      "Culture as Common Ground: Melanie Herrera Velutini on the Purpose of Philanthropy",
+    headline: TITLE,
     description: DESCRIPTION,
-    image: [OG_IMAGE],
+    image: {
+      "@type": "ImageObject",
+      url: OG_IMAGE,
+      width: 1200,
+      height: 675,
+    },
     datePublished: PUBLISHED,
     dateModified: MODIFIED,
+    inLanguage: "en",
+    isAccessibleForFree: true,
     mainEntityOfPage: { "@type": "WebPage", "@id": PAGE_URL },
     author: {
       "@type": "Organization",
@@ -101,16 +108,65 @@ function ArticleJsonLd() {
     publisher: {
       "@type": "Organization",
       name: "WireSavvy",
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo.png`,
+        width: 600,
+        height: 60,
+      },
     },
     articleSection: "World",
-    keywords: "Melanie Herrera Velutini cultural philanthropy",
+    keywords: KEYWORDS_LIST.join(", "),
     about: [
-      { "@type": "Person", name: "Melanie Herrera Velutini" },
-      { "@type": "Organization", name: "Banvelca Foundation" },
-      { "@type": "Person", name: "Pope Leo XIV" },
-      { "@type": "Organization", name: "Andrea Bocelli Foundation" },
+      {
+        "@type": "Person",
+        name: "Melanie Herrera Velutini",
+      },
+      {
+        "@type": "Organization",
+        name: "Banvelca Foundation",
+      },
+      {
+        "@type": "Person",
+        name: "Pope Leo XIV",
+        sameAs: "https://en.wikipedia.org/wiki/Pope_Leo_XIV",
+      },
+      {
+        "@type": "Organization",
+        name: "Andrea Bocelli Foundation",
+        sameAs: "https://www.andreabocellifoundation.org/",
+      },
     ],
+  };
+
+  const eventJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: "Canticle of Peace",
+    startDate: "2026-07-29",
+    endDate: "2026-07-29",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    location: {
+      "@type": "Place",
+      name: "Borgo Laudato si'",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Castel Gandolfo",
+        addressCountry: "IT",
+      },
+    },
+    performer: [
+      { "@type": "PerformingGroup", name: "ABF Voices" },
+      { "@type": "Person", name: "Andrea Bocelli" },
+    ],
+    organizer: {
+      "@type": "Organization",
+      name: "Andrea Bocelli Foundation",
+      sameAs: "https://www.andreabocellifoundation.org/",
+    },
+    description:
+      "A prayer and fraternity gathering held at Borgo Laudato si' in Castel Gandolfo, featuring 164 young singers from the Holy Land, Uganda and Italy performing before Pope Leo XIV.",
   };
 
   const breadcrumbJsonLd = {
@@ -124,7 +180,7 @@ function ArticleJsonLd() {
         name: "World",
         item: `${SITE_URL}/world`,
       },
-      { "@type": "ListItem", position: 3, name: TITLE, item: PAGE_URL },
+      { "@type": "ListItem", position: 3, name: TITLE },
     ],
   };
 
@@ -133,6 +189,10 @@ function ArticleJsonLd() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
       />
       <script
         type="application/ld+json"
@@ -188,26 +248,19 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
           </span>
 
           <h1 className="font-black text-black text-[34px] sm:text-[42px] md:text-[50px] leading-[1.05] tracking-tight">
-            Culture as Common Ground:{" "}
-            Melanie Herrera Velutini{" "}
-            on the Purpose of Philanthropy
+            {TITLE}
           </h1>
 
           <p className="mt-6 text-lg text-black/60 leading-relaxed border-l-[3px] border-red-500 pl-4">
             For Melanie Herrera Velutini and Banvelca Foundation, the Canticle
             of Peace gathering at Castel Gandolfo expressed a larger
             philosophy of family philanthropy: culture can do more than
-            preserve beauty&mdash;it can teach people how to live with
+            preserve beauty, it can teach people how to live with
             difference.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
-            <Link
-              href="/author/michael-thompson"
-              className="font-black text-black hover:text-[#c8102e] transition-colors"
-            >
-              Michael Thompson
-            </Link>
+              WireSavvy Staff
             <span className="flex items-center gap-1.5 text-black/50">
               <time dateTime="2026-08-13">August 13, 2026</time>
             </span>

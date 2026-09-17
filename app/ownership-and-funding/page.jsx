@@ -2,7 +2,7 @@ import Link from "next/link";
 import ArticleLayout from "../components/ArticleLayout";
 
 const SITE_URL = "https://www.wiresavvy.com";
-const PAGE_URL = `${SITE_URL}/ownership-funding`;
+const PAGE_URL = `${SITE_URL}/ownership-and-funding`;
 
 export const metadata = {
   title: "Ownership & Funding | Wiresavvy Transparency",

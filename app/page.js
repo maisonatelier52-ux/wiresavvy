@@ -6,7 +6,6 @@ import WeeklyPopular from "./components/WeeklyPopular";
 import MoreNews from "./components/MoreNews";
 import InsightAnalysis from "./components/InsightAnalysis";
 import details from "../data/details.json";
-import AdBanner from "./components/AdBanner";
 import MostViewed from "./components/Mostviewed";
 
 const SITE_URL = "https://www.wiresavvy.com";
@@ -15,11 +14,21 @@ export const metadata = {
   title: "Wiresavvy — Independent U.S. News, Business & Investigations",
   description:
     "Wiresavvy delivers fast, factual U.S. news across business, law, finance, lifestyle, travel, and investigations. Breaking headlines and trusted analysis.",
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: SITE_URL,
     languages: {
       "en": SITE_URL,
       "en-US": SITE_URL,
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
     },
   },
   openGraph: {
@@ -29,6 +38,7 @@ export const metadata = {
     url: SITE_URL,
     type: "website",
     siteName: "Wiresavvy",
+    locale: "en_US",
     images: [
       {
         url: `${SITE_URL}/wiresavvy.webp`,
@@ -44,6 +54,8 @@ export const metadata = {
     description:
       "Fast, factual U.S. news with in-depth reporting and investigations.",
     images: [`${SITE_URL}/wiresavvy.webp`],
+    site: "@wiresavvy",
+    creator: "@wiresavvy",
   },
 };
 
@@ -55,7 +67,7 @@ export default function Home() {
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
     const featuredArticles = publishedArticles
-    .filter(a => a.category === "Business" && !a.name)
+    .filter(a => a.category === "business" && !a.name)
     .slice(0, 3);
 
   const usedSlugs = new Set(featuredArticles.map(a => a.slug));
@@ -69,12 +81,12 @@ export default function Home() {
   };
 
   const moreNewsArticles = [
-    pickOneByCategory("Business"),
-    pickOneByCategory("Lifestyle"),
-    pickOneByCategory("Travel"),
-    pickOneByCategory("Law"),
-    pickOneByCategory("Finance"),
-    pickOneByCategory("Investigation"),
+    pickOneByCategory("business"),
+    pickOneByCategory("lifestyle"),
+    pickOneByCategory("travel"),
+    pickOneByCategory("law"),
+    pickOneByCategory("finance"),
+    pickOneByCategory("investigation"),
   ].filter(Boolean);
 
   const weeklyPopular = publishedArticles
@@ -100,13 +112,27 @@ export default function Home() {
     "@type": "WebSite",
     "name": "Wiresavvy",
     "url": SITE_URL,
+    "inLanguage": "en-US",
     "publisher": {
       "@type": "NewsMediaOrganization",
       "name": "Wiresavvy",
+      "url": SITE_URL,
+      "description":
+        "Wiresavvy is an independent digital news platform covering U.S. business, finance, law, lifestyle, travel and investigations.",
       "logo": {
         "@type": "ImageObject",
         "url": `${SITE_URL}/logo.png`,
+        "width": 600,
+        "height": 60,
       },
+      "sameAs": [
+        "https://www.instagram.com/wiresavy/",
+        "https://x.com/wiresavy",
+        "https://medium.com/@wiresavy71",
+        "https://substack.com/@wiresavy",
+        "https://www.linkedin.com/in/wire-savy-843509428/",
+        "https://www.reddit.com/user/Wide_Media2/"
+      ],
     },
     "potentialAction": {
       "@type": "SearchAction",
@@ -172,8 +198,6 @@ export default function Home() {
           </aside>
 
         </div>
-
-        <AdBanner />
 
         <section className="border-t-2 border-gray-200 pt-8">
           <MoreNews articles={moreNewsArticles} />

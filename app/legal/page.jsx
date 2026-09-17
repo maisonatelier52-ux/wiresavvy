@@ -61,13 +61,13 @@ export const metadata = {
     "Wiresavvy Policies",
   ],
   alternates: {
-    canonical: "https://www.wiresavvy.com/legal-information",
+    canonical: "https://www.wiresavvy.com/legal",
   },
   openGraph: {
     title: "Legal Information | Wiresavvy",
     description:
       "Learn about Wiresavvy's legal policies, editorial disclaimers, copyright protections, affiliate disclosures, and commitment to transparency.",
-    url: "https://www.wiresavvy.com/legal-information",
+    url: "https://www.wiresavvy.com/legal",
     siteName: "Wiresavvy",
     type: "website",
     images: [
@@ -97,8 +97,8 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://www.wiresavvy.com/legal-information",
-      url: "https://www.wiresavvy.com/legal-information",
+      "@id": "https://www.wiresavvy.com/legal",
+      url: "https://www.wiresavvy.com/legal",
       name: "Legal Information | Wiresavvy",
       description:
         "Legal information governing the use of Wiresavvy, including copyright, editorial disclaimers, affiliate disclosures, and limitation of liability.",
@@ -141,7 +141,7 @@ const jsonLd = {
     },
     {
       "@type": "CreativeWork",
-      "@id": "https://www.wiresavvy.com/legal-information#policy",
+      "@id": "https://www.wiresavvy.com/legal",
       name: "Legal Information",
       description:
         "Wiresavvy's legal information covering content ownership, editorial disclaimers, external links, opinions, affiliate relationships, liability limitations, and policy updates.",
@@ -164,7 +164,7 @@ const jsonLd = {
           "@type": "ListItem",
           position: 2,
           name: "Legal Information",
-          item: "https://www.wiresavvy.com/legal-information"
+          item: "https://www.wiresavvy.com/legal"
         }
       ]
     }
