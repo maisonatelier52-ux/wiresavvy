@@ -14,7 +14,7 @@ import Image from "next/image";
 import ArticleLayout from "@/app/components/ArticleLayout";
 
 const SITE_URL = "https://www.wiresavvy.com";
-const PAGE_PATH = "/world/melanie-herrera-velutini-cultural-philanthropy/";
+const PAGE_PATH = "/world/melanie-herrera-velutini-cultural-philanthropy";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const OG_IMAGE = `${SITE_URL}/pope-leo-XIV-joins-andrea-bocelli.webp`;
 const TITLE = "Culture as Common Ground: Melanie Herrera Velutini on the Purpose of Philanthropy";
