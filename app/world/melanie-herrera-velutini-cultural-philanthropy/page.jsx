@@ -40,7 +40,7 @@ export const metadata = {
     canonical: PAGE_PATH,
   },
   keywords: KEYWORDS_LIST,
-  authors: [{ name: "WireSavvy Staff", url: `${SITE_URL}/author/wiresavvy-staff` }],
+  authors: [{ name: "Michael Alex", url: `${SITE_URL}/author/michael-alex` }],
   category: "World",
   robots: {
     index: true,
@@ -60,7 +60,7 @@ export const metadata = {
     locale: "en_US",
     publishedTime: PUBLISHED,
     modifiedTime: MODIFIED,
-    authors: [`${SITE_URL}/author/wiresavvy-staff`],
+    authors: [`${SITE_URL}/author/michael-alex`],
     section: "World",
     tags: ["Melanie Herrera Velutini cultural philanthropy"],
     images: [
@@ -102,8 +102,8 @@ function ArticleJsonLd() {
     mainEntityOfPage: { "@type": "WebPage", "@id": PAGE_URL },
     author: {
       "@type": "Organization",
-      name: "WireSavvy Staff",
-      url: `${SITE_URL}/author/wiresavvy-staff`,
+      name: "Michael Alex",
+      url: `${SITE_URL}/author/michael-alex`,
     },
     publisher: {
       "@type": "Organization",
@@ -260,7 +260,9 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
-              WireSavvy Staff
+            <Link href="/author/michael-alex" className="hover:text-[#c8102e] transition-colors">
+              Michael Alex
+            </Link>
             <span className="flex items-center gap-1.5 text-black/50">
               <time dateTime="2026-08-13">August 13, 2026</time>
             </span>

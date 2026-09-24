@@ -31,6 +31,7 @@ function getCategoryArticles(rawCategoryName) {
     sortedCategory = [...categoryArticles].sort(
       (a, b) => new Date(b.date) - new Date(a.date)
     );
+
     sortedCategory = [
       manualWorldArticle,
       ...sortedCategory.filter(
@@ -49,9 +50,13 @@ function getCategoryArticles(rawCategoryName) {
 export async function generateMetadata({ params }) {
   const { category } = await params;
   const categoryName = decodeURIComponent(category);
-  const { normalizedCategory, sortedCategory } = getCategoryArticles(categoryName);
 
-  const formattedCategory = normalizedCategory.charAt(0).toUpperCase() + normalizedCategory.slice(1);
+  const { normalizedCategory, sortedCategory } =
+    getCategoryArticles(categoryName);
+
+  const formattedCategory =
+    normalizedCategory.charAt(0).toUpperCase() +
+    normalizedCategory.slice(1);
 
   const canonicalUrl = `${SITE_URL}/${normalizedCategory}`;
 
@@ -104,35 +109,32 @@ export async function generateMetadata({ params }) {
 export default async function CategoryPage({ params }) {
   const { category } = await params;
   const categoryName = decodeURIComponent(category);
+
   const { normalizedCategory, sortedCategory } =
     getCategoryArticles(categoryName);
 
   const formattedCategory =
-    normalizedCategory.charAt(0).toUpperCase() + normalizedCategory.slice(1);
+    normalizedCategory.charAt(0).toUpperCase() +
+    normalizedCategory.slice(1);
 
-  /*
-   * ---------------------------------------------------------
-   * EMPTY CATEGORY CHECK
-   *
-   * Previously this rendered a 200-status "No articles found"
-   * page, which Google could index as thin/soft-404 content.
-   * Genuinely nonexistent categories now 404; if you'd rather
-   * keep a friendly message instead of a hard 404, remove the
-   * notFound() call below and rely on the noindex robots meta
-   * set in generateMetadata instead.
-   * ---------------------------------------------------------
-   */
   if (sortedCategory.length === 0) {
     notFound();
   }
 
   /*
    * ---------------------------------------------------------
-   * MAIN ARTICLES
+   * ARTICLE SECTIONS
    * ---------------------------------------------------------
    */
+
+  // First 4 articles = main articles
   const mainFour = sortedCategory.slice(0, 4);
+
+  // Next 3 articles = popular posts
   const popularPosts = sortedCategory.slice(4, 7);
+
+  // Everything after the first 7 = remaining news
+  const remainingArticles = sortedCategory.slice(7);
 
   const getArticleUrl = (article) =>
     `/${(article.category || normalizedCategory).toLowerCase()}/${article.slug}`;
@@ -365,6 +367,71 @@ export default async function CategoryPage({ params }) {
             </div>
           </aside>
         </div>
+
+        {/* REMAINING NEWS — 4 COLUMN GRID */}
+        {remainingArticles.length > 0 && (
+          <section className="mt-12 border-t border-gray-200 pt-8">
+            {/* SECTION TITLE */}
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold uppercase text-red-500">
+                More {formattedCategory} News
+              </h2>
+            </div>
+
+            {/* 4 COLUMN NEWS GRID */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-6">
+              {remainingArticles.map((article, i) => {
+                const author = details.authors.find(
+                  (a) => a.id === article.authorId
+                );
+
+                return (
+                  <Link
+                    key={`${article.slug}-${i}`}
+                    href={getArticleUrl(article)}
+                    title={article.title}
+                    className="group block border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition"
+                  >
+                    {/* IMAGE */}
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      title={article.title}
+                      className="w-full h-40 object-cover"
+                      loading="lazy"
+                    />
+
+                    {/* CONTENT */}
+                    <div className="p-4">
+                      {/* TITLE */}
+                      <h3 className="text-base font-semibold leading-tight group-hover:text-red-500 transition mb-3">
+                        {article.title}
+                      </h3>
+
+                      {/* AUTHOR + DATE */}
+                      <div className="flex items-center justify-between gap-2 text-xs font-semibold uppercase text-red-500 mb-3">
+                        <span className="truncate">
+                          {author?.name ||
+                            article.authorName ||
+                            "Unknown Author"}
+                        </span>
+
+                        <span className="text-[10px] text-zinc-600 normal-case whitespace-nowrap">
+                          {article.date}
+                        </span>
+                      </div>
+
+                      {/* EXCERPT */}
+                      <p className="text-sm text-zinc-600 line-clamp-3">
+                        {article.excerpt}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+        )}
       </div>
     </ArticleLayout>
   );

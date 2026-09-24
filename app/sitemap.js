@@ -35,11 +35,7 @@ export default function sitemap() {
       };
     });
 
-  /* ---------------- MANUAL ARTICLE ENTRIES ----------------
-     Articles not yet present in details.json. Add them here
-     so they still appear in the sitemap; once each one is
-     added to details.json with published: true, remove its
-     entry from this list to avoid duplicate URLs. */
+  /* ---------------- MANUAL ARTICLE ENTRIES ---------------- */
   const manualArticlePages = [
     {
       url: `${SITE_URL}/world/melanie-herrera-velutini-cultural-philanthropy`,
