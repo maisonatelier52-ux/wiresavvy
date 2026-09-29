@@ -341,7 +341,14 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
         </div>
         <p className="mt-2 text-[12px] text-black/45 leading-snug">
           Melanie Herrera Velutini, President of Banvelca Foundation, greets
-          Pope Leo XIV following Canticle of Peace at Castel Gandolfo. &middot;{" "}
+          Pope Leo XIV following Canticle of Peace at{" "}
+          <Link
+            href="https://www.wiresavvy.com/world/holy-see-vatican-city-castel-gandolfo-gathering"
+            className="underline hover:text-[#c8102e]"
+          >
+            Castel Gandolfo
+          </Link>
+          . &middot;{" "}
           <span className="text-black/35">Photo supplied by Banvelca Foundation.</span>
         </p>
       </div>
@@ -386,15 +393,48 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
           </p>
 
           <p>
-            That was the idea at the centre of <em>Canticle of Peace</em>,
-            the prayer and fraternity gathering held at Borgo Laudato
-            si&rsquo; in Castel Gandolfo on July 29, 2026.
+            That was the idea at the centre of{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/canticle-of-peace-july-2026-castel-gandolfo"
+              className="underline hover:text-[#c8102e]"
+            >
+              <em>Canticle of Peace</em>
+            </Link>
+            , the prayer and fraternity gathering held at{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/borgo-laudato-si-venue-and-purpose"
+              className="underline hover:text-[#c8102e]"
+            >
+              Borgo Laudato si&rsquo;
+            </Link>{" "}
+            in{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/castel-gandolfo-canticle-of-peace-gathering"
+              className="underline hover:text-[#c8102e]"
+            >
+              Castel Gandolfo
+            </Link>{" "}
+            on July 29, 2026.
           </p>
 
           <p>
-            Before Pope Leo XIV, 164 children and young people from the Holy
+            Before{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/pope-leo-xiv-young-singers-canticle-of-peace"
+              className="underline hover:text-[#c8102e]"
+            >
+              Pope Leo XIV
+            </Link>
+            , 164 children and young people from the Holy
             Land, Uganda and Italy sang with Andrea Bocelli. The members of
-            the ABF Voices choir came from different languages, cultures and
+            the{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/abf-voices-choir-young-singers-canticle-of-peace"
+              className="underline hover:text-[#c8102e]"
+            >
+              ABF Voices choir
+            </Link>{" "}
+            came from different languages, cultures and
             social circumstances.
           </p>
 
@@ -406,8 +446,21 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
           </p>
 
           <p>
-            Banvelca Foundation and the Herrera Velutini family supported the
-            initiative. For Melanie Herrera Velutini, President of Banvelca
+            <Link
+              href="https://www.wiresavvy.com/world/banvelca-foundation-herrera-velutini-cultural-giving"
+              className="underline hover:text-[#c8102e]"
+            >
+              Banvelca Foundation
+            </Link>
+            and the Herrera Velutini family supported the
+            initiative. For{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/melanie-herrera-velutini-banvelca-foundation-canticle-of-peace"
+              className="underline hover:text-[#c8102e]"
+            >
+              Melanie Herrera Velutini
+            </Link>
+            , President of Banvelca
             Foundation, the reason was inseparable from the gathering&rsquo;s
             central image: young people whose lives had been shaped by
             profoundly different circumstances learning to stand together.
@@ -469,9 +522,28 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
 
           <p>
             They rehearsed and participated in educational and cultural
-            activities. They performed with Andrea Bocelli at the Teatro del
-            Silenzio and appeared before Italian President Sergio Mattarella
-            at the Quirinale.
+            activities. They performed with Andrea Bocelli at the{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/teatro-del-silenzio-abf-voices-journey"
+              className="underline hover:text-[#c8102e]"
+            >
+              Teatro del Silenzio
+            </Link>{" "}
+            and appeared before Italian President{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/sergio-mattarella-abf-voices-visit-quirinale"
+              className="underline hover:text-[#c8102e]"
+            >
+              Sergio Mattarella
+            </Link>{" "}
+            at the{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/quirinale-presidential-setting-youth-choir"
+              className="underline hover:text-[#c8102e]"
+            >
+              Quirinale
+            </Link>
+            .
           </p>
 
           <p>
@@ -557,7 +629,14 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
           </p>
 
           <p>
-            The Andrea Bocelli Foundation describes its Voices Of programme as
+            The{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/andrea-bocelli-foundation-education-through-music-local-partnerships"
+              className="underline hover:text-[#c8102e]"
+            >
+              Andrea Bocelli Foundation
+            </Link>{" "}
+            describes its Voices Of programme as
             an educational journey using music to cultivate creativity,
             intercultural dialogue, inclusion and positive leadership. First
             piloted in Haiti in 2016, it has developed youth choirs in
@@ -610,9 +689,15 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
           </p>
 
           <p>
-            Banvelca Foundation&rsquo;s mission encompasses cultural
-            sponsorship, heritage preservation and international philanthropy
-            on behalf of the Herrera Velutini family. Its support for{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/banvelca-foundation-herrera-velutini-cultural-giving"
+              className="underline hover:text-[#c8102e]"
+            >
+              Banvelca Foundation&rsquo;s
+            </Link>{" "}
+            mission encompasses cultural sponsorship, heritage preservation
+            and international philanthropy on behalf of the Herrera Velutini
+            family. Its support for{" "}
             <em>Canticle of Peace</em> can be understood within that
             framework: not simply as attendance at a papal gathering, but as
             alignment with a programme in which culture became a vehicle for
@@ -684,8 +769,15 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
           </div>
 
           <p>
-            At the conclusion of the gathering, Melanie Herrera Velutini and
-            Julio Herrera Velutini greeted Pope Leo XIV.
+            At the conclusion of the gathering,{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/melanie-julio-herrera-velutini-meet-pope-leo-xiv"
+              className="underline hover:text-[#c8102e]"
+            >
+              Melanie Herrera Velutini and Julio Herrera Velutini greeted
+              Pope Leo XIV
+            </Link>
+            .
           </p>
 
           <p>
@@ -734,8 +826,42 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
           </p>
 
           <p>
-            It will be found in what the young singers carry back to
-            Bethlehem, Jerusalem, Nabikabala, Naples and Camerino.
+            It will be found in what the young singers carry back to{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/bethlehem-home-community-abf-voices-program"
+              className="underline hover:text-[#c8102e]"
+            >
+              Bethlehem
+            </Link>
+            ,{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/jerusalem-local-choir-work-city-many-traditions"
+              className="underline hover:text-[#c8102e]"
+            >
+              Jerusalem
+            </Link>
+            ,{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/nabikabala-ugandan-village-abf-voices-choir"
+              className="underline hover:text-[#c8102e]"
+            >
+              Nabikabala
+            </Link>
+            ,{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/naples-rione-sanita-choir-2026-global-gathering"
+              className="underline hover:text-[#c8102e]"
+            >
+              Naples
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="https://www.wiresavvy.com/world/camerino-music-education-central-italy-earthquakes"
+              className="underline hover:text-[#c8102e]"
+            >
+              Camerino
+            </Link>
+            .
           </p>
 
           <p>
