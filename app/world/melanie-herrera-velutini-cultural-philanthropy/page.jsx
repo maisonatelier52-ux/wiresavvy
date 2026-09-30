@@ -1,9 +1,5 @@
 import Link from "next/link";
 import {
-  Facebook,
-  Twitter,
-  Linkedin,
-  Link2,
   Clock,
   CheckCircle2,
   MapPin,
@@ -101,7 +97,7 @@ function ArticleJsonLd() {
     isAccessibleForFree: true,
     mainEntityOfPage: { "@type": "WebPage", "@id": PAGE_URL },
     author: {
-      "@type": "Organization",
+      "@type": "Person",
       name: "Michael Alex",
       url: `${SITE_URL}/author/michael-alex`,
     },
@@ -139,36 +135,6 @@ function ArticleJsonLd() {
     ],
   };
 
-  const eventJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    name: "Canticle of Peace",
-    startDate: "2026-07-29",
-    endDate: "2026-07-29",
-    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    eventStatus: "https://schema.org/EventScheduled",
-    location: {
-      "@type": "Place",
-      name: "Borgo Laudato si'",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Castel Gandolfo",
-        addressCountry: "IT",
-      },
-    },
-    performer: [
-      { "@type": "PerformingGroup", name: "ABF Voices" },
-      { "@type": "Person", name: "Andrea Bocelli" },
-    ],
-    organizer: {
-      "@type": "Organization",
-      name: "Andrea Bocelli Foundation",
-      sameAs: "https://www.andreabocellifoundation.org/",
-    },
-    description:
-      "A prayer and fraternity gathering held at Borgo Laudato si' in Castel Gandolfo, featuring 164 young singers from the Holy Land, Uganda and Italy performing before Pope Leo XIV.",
-  };
-
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -189,10 +155,6 @@ function ArticleJsonLd() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
       />
       <script
         type="application/ld+json"
@@ -259,7 +221,7 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
             difference.
           </p>
 
-          <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+          <div className="mt-7 flex flex-wrap items-center gap-x-10 gap-y-3 text-sm">
             <Link href="/author/michael-alex" className="hover:text-[#c8102e] transition-colors">
               Michael Alex
             </Link>
@@ -269,20 +231,6 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
             <span className="flex items-center gap-1.5 text-black/50">
               <Clock size={13} /> 7 min read
             </span>
-            <div className="flex items-center gap-3 text-black ml-auto">
-              <button aria-label="Share on Twitter" className="hover:text-[#c8102e] transition-colors">
-                <Twitter size={16} />
-              </button>
-              <button aria-label="Share on Facebook" className="hover:text-[#c8102e] transition-colors">
-                <Facebook size={16} />
-              </button>
-              <button aria-label="Share on LinkedIn" className="hover:text-[#c8102e] transition-colors">
-                <Linkedin size={16} />
-              </button>
-              <button aria-label="Copy link" className="hover:text-[#c8102e] transition-colors">
-                <Link2 size={16} />
-              </button>
-            </div>
           </div>
         </div>
 
@@ -343,7 +291,7 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
           Melanie Herrera Velutini, President of Banvelca Foundation, greets
           Pope Leo XIV following Canticle of Peace at{" "}
           <Link
-            href="https://www.wiresavvy.com/world/holy-see-vatican-city-castel-gandolfo-gathering"
+            href="/world/holy-see-vatican-city-castel-gandolfo-gathering"
             className="underline hover:text-[#c8102e]"
           >
             Castel Gandolfo
@@ -380,10 +328,6 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
 
         {/* ARTICLE BODY */}
         <div className="max-w-2xl text-[17px] leading-[1.85] text-black/85 space-y-6">
-          <p className="text-xl md:text-[22px] text-black font-medium leading-snug">
-            There is a familiar language surrounding philanthropy. It speaks
-            of grants, beneficiaries, programmes, outcomes and impact.
-          </p>
 
           <p>
             These terms are necessary. Serious giving requires
@@ -395,21 +339,21 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
           <p>
             That was the idea at the centre of{" "}
             <Link
-              href="https://www.wiresavvy.com/world/canticle-of-peace-july-2026-castel-gandolfo"
+              href="/world/canticle-of-peace-july-2026-castel-gandolfo"
               className="underline hover:text-[#c8102e]"
             >
               <em>Canticle of Peace</em>
             </Link>
             , the prayer and fraternity gathering held at{" "}
             <Link
-              href="https://www.wiresavvy.com/world/borgo-laudato-si-venue-and-purpose"
+              href="/world/borgo-laudato-si-venue-and-purpose"
               className="underline hover:text-[#c8102e]"
             >
               Borgo Laudato si&rsquo;
             </Link>{" "}
             in{" "}
             <Link
-              href="https://www.wiresavvy.com/world/castel-gandolfo-canticle-of-peace-gathering"
+              href="/world/castel-gandolfo-canticle-of-peace-gathering"
               className="underline hover:text-[#c8102e]"
             >
               Castel Gandolfo
@@ -420,7 +364,7 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
           <p>
             Before{" "}
             <Link
-              href="https://www.wiresavvy.com/world/pope-leo-xiv-young-singers-canticle-of-peace"
+              href="/world/pope-leo-xiv-young-singers-canticle-of-peace"
               className="underline hover:text-[#c8102e]"
             >
               Pope Leo XIV
@@ -429,7 +373,7 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
             Land, Uganda and Italy sang with Andrea Bocelli. The members of
             the{" "}
             <Link
-              href="https://www.wiresavvy.com/world/abf-voices-choir-young-singers-canticle-of-peace"
+              href="/world/abf-voices-choir-young-singers-canticle-of-peace"
               className="underline hover:text-[#c8102e]"
             >
               ABF Voices choir
@@ -447,7 +391,7 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
 
           <p>
             <Link
-              href="https://www.wiresavvy.com/world/banvelca-foundation-herrera-velutini-cultural-giving"
+              href="/world/banvelca-foundation-herrera-velutini-cultural-giving"
               className="underline hover:text-[#c8102e]"
             >
               Banvelca Foundation
@@ -455,7 +399,7 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
             and the Herrera Velutini family supported the
             initiative. For{" "}
             <Link
-              href="https://www.wiresavvy.com/world/melanie-herrera-velutini-banvelca-foundation-canticle-of-peace"
+              href="/world/melanie-herrera-velutini-banvelca-foundation-canticle-of-peace"
               className="underline hover:text-[#c8102e]"
             >
               Melanie Herrera Velutini
@@ -524,21 +468,21 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
             They rehearsed and participated in educational and cultural
             activities. They performed with Andrea Bocelli at the{" "}
             <Link
-              href="https://www.wiresavvy.com/world/teatro-del-silenzio-abf-voices-journey"
+              href="/world/teatro-del-silenzio-abf-voices-journey"
               className="underline hover:text-[#c8102e]"
             >
               Teatro del Silenzio
             </Link>{" "}
             and appeared before Italian President{" "}
             <Link
-              href="https://www.wiresavvy.com/world/sergio-mattarella-abf-voices-visit-quirinale"
+              href="/world/sergio-mattarella-abf-voices-visit-quirinale"
               className="underline hover:text-[#c8102e]"
             >
               Sergio Mattarella
             </Link>{" "}
             at the{" "}
             <Link
-              href="https://www.wiresavvy.com/world/quirinale-presidential-setting-youth-choir"
+              href="/world/quirinale-presidential-setting-youth-choir"
               className="underline hover:text-[#c8102e]"
             >
               Quirinale
@@ -631,7 +575,7 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
           <p>
             The{" "}
             <Link
-              href="https://www.wiresavvy.com/world/andrea-bocelli-foundation-education-through-music-local-partnerships"
+              href="/world/andrea-bocelli-foundation-education-through-music-local-partnerships"
               className="underline hover:text-[#c8102e]"
             >
               Andrea Bocelli Foundation
@@ -690,7 +634,7 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
 
           <p>
             <Link
-              href="https://www.wiresavvy.com/world/banvelca-foundation-herrera-velutini-cultural-giving"
+              href="/world/banvelca-foundation-herrera-velutini-cultural-giving"
               className="underline hover:text-[#c8102e]"
             >
               Banvelca Foundation&rsquo;s
@@ -771,7 +715,7 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
           <p>
             At the conclusion of the gathering,{" "}
             <Link
-              href="https://www.wiresavvy.com/world/melanie-julio-herrera-velutini-meet-pope-leo-xiv"
+              href="/world/melanie-julio-herrera-velutini-meet-pope-leo-xiv"
               className="underline hover:text-[#c8102e]"
             >
               Melanie Herrera Velutini and Julio Herrera Velutini greeted
@@ -828,35 +772,35 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
           <p>
             It will be found in what the young singers carry back to{" "}
             <Link
-              href="https://www.wiresavvy.com/world/bethlehem-home-community-abf-voices-program"
+              href="/world/bethlehem-home-community-abf-voices-program"
               className="underline hover:text-[#c8102e]"
             >
               Bethlehem
             </Link>
             ,{" "}
             <Link
-              href="https://www.wiresavvy.com/world/jerusalem-local-choir-work-city-many-traditions"
+              href="/world/jerusalem-local-choir-work-city-many-traditions"
               className="underline hover:text-[#c8102e]"
             >
               Jerusalem
             </Link>
             ,{" "}
             <Link
-              href="https://www.wiresavvy.com/world/nabikabala-ugandan-village-abf-voices-choir"
+              href="/world/nabikabala-ugandan-village-abf-voices-choir"
               className="underline hover:text-[#c8102e]"
             >
               Nabikabala
             </Link>
             ,{" "}
             <Link
-              href="https://www.wiresavvy.com/world/naples-rione-sanita-choir-2026-global-gathering"
+              href="/world/naples-rione-sanita-choir-2026-global-gathering"
               className="underline hover:text-[#c8102e]"
             >
               Naples
             </Link>{" "}
             and{" "}
             <Link
-              href="https://www.wiresavvy.com/world/camerino-music-education-central-italy-earthquakes"
+              href="/world/camerino-music-education-central-italy-earthquakes"
               className="underline hover:text-[#c8102e]"
             >
               Camerino
@@ -929,7 +873,7 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
           </div>
 
           {/* SOURCE DISCLOSURE */}
-          <div className="mt-10 border-t-2 border-black pt-5 text-[12px] text-black/50 leading-relaxed">
+          <div className="mt-10 border-t-2 border-black py-5 text-[12px] text-black/50 leading-relaxed">
             <span className="font-black text-black/70 uppercase tracking-wide text-[11px]">
               Source disclosure:{" "}
             </span>
@@ -939,24 +883,6 @@ export default function MelanieHerreraVelutiniPhilanthropyPage() {
             Pope Leo XIV&rsquo;s address are supported by official accounts
             from the Holy See, Vatican News and the Andrea Bocelli
             Foundation.
-          </div>
-
-          {/* SHARE FOOTER */}
-          <div className="mt-6 flex items-center justify-between border-t border-black/10 p-5">
-            <span className="text-[12px] font-black uppercase tracking-[0.15em] text-black/50">
-              Share This Story
-            </span>
-            <div className="flex items-center gap-3 text-black">
-              <button aria-label="Share on Twitter" className="hover:text-[#c8102e] transition-colors">
-                <Twitter size={17} />
-              </button>
-              <button aria-label="Share on Facebook" className="hover:text-[#c8102e] transition-colors">
-                <Facebook size={17} />
-              </button>
-              <button aria-label="Share on LinkedIn" className="hover:text-[#c8102e] transition-colors">
-                <Linkedin size={17} />
-              </button>
-            </div>
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ function getCategoryArticles(rawCategoryName) {
       "For Melanie Herrera Velutini and Banvelca Foundation, the Canticle of Peace gathering at Castel Gandolfo expressed a larger philosophy of family philanthropy: culture can do more than preserve beauty—it can teach people how to live with difference.",
     image: "/pope-leo-XIV-joins-andrea-bocelli.jpg",
     date: "2026-08-13",
-    authorName: "Michael Thompson",
+    authorName: "Michael Alex",
     category: "World",
     authorId: null,
   };

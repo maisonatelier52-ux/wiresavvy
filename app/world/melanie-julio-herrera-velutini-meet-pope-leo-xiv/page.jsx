@@ -1,9 +1,5 @@
 import Link from "next/link";
 import {
-  Facebook,
-  Twitter,
-  Linkedin,
-  Link2,
   Clock,
   CheckCircle2,
   MapPin,
@@ -379,36 +375,6 @@ export default function JulioMelanieHerreraVelutiniPopePage() {
               <Clock size={13} />
               8 min read
             </span>
-
-            <div className="flex items-center gap-3 text-black ml-auto">
-              <button
-                aria-label="Share on Twitter"
-                className="hover:text-[#c8102e] transition-colors"
-              >
-                <Twitter size={16} />
-              </button>
-
-              <button
-                aria-label="Share on Facebook"
-                className="hover:text-[#c8102e] transition-colors"
-              >
-                <Facebook size={16} />
-              </button>
-
-              <button
-                aria-label="Share on LinkedIn"
-                className="hover:text-[#c8102e] transition-colors"
-              >
-                <Linkedin size={16} />
-              </button>
-
-              <button
-                aria-label="Copy link"
-                className="hover:text-[#c8102e] transition-colors"
-              >
-                <Link2 size={16} />
-              </button>
-            </div>
           </div>
         </div>
 
