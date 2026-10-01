@@ -14,7 +14,6 @@ export default function Header() {
     long: "",
   });
 
-  // Sticky navbar
   useEffect(() => {
     const handleScroll = () => {
       setSticky(window.scrollY > 100);
@@ -24,7 +23,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Live Date + Time (Responsive formats)
   useEffect(() => {
     const updateDateTime = () => {
       const now = new Date();
@@ -51,7 +49,7 @@ export default function Header() {
     };
 
     updateDateTime();
-    const interval = setInterval(updateDateTime, 60000); // update every minute
+    const interval = setInterval(updateDateTime, 60000);
     return () => clearInterval(interval);
   }, []);
 

@@ -61,7 +61,6 @@ export default async function ArticlePage({ params }) {
   const { category, slug } = await params;
   const categoryName = decodeURIComponent(category);
 
-  // FIND ARTICLE
   const article = details.articles.find(
     (a) =>
       a.slug === slug &&

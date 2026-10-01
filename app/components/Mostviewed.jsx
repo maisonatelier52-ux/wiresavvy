@@ -4,45 +4,19 @@ import Link from "next/link";
 import details from "../../data/details.json";
 
 export default function MostViewed() {
-
-  // 👇 SET THE SLUG YOU WANT IN COLUMN 2
-  // const forcedSlug = "julio-herrera-velutini-bridging-nations-through-finance";
-
-  // Find the forced article
-  // const forcedArticle = details.articles.find(
-  //   (a) => a.slug === forcedSlug
-  // );
-
-  // Remove forced article from main list
   const filteredArticles = details.articles;
-
-  // Take remaining articles
-  // const sorted = [...filteredArticles].slice(0, 9);
   const sorted = [...filteredArticles].slice(0, 10);
-
-  // Column split
   const col1 = sorted.slice(0, 5);
-
-  // Column 2: forced article first, then remaining
-  const col2 = 
-  // forcedArticle
-  //   ? [forcedArticle, ...sorted.slice(5, 9)].reverse():
-   sorted.slice(5, 10);
+  const col2 = sorted.slice(5, 10);
 
   const adImage = "/wiresavvy_ads.jpg";
 
   const renderArticle = (a, i) => {
-    // Determine the URL: use Julio Herrera route if name matches
-    const articleUrl =
-      // a.name === "Julio Herrera Velutini"
-      //   ? `/julio-herrera-velutini/${a.slug}`:
-        `/${a.category}/${a.slug}`;
+    const articleUrl = `/${a.category}/${a.slug}`;
 
     return (
       <Link href={articleUrl} title={a.title} key={i}>
         <div className="flex group">
-
-          {/* IMAGE */}
           <div className="w-[110px] h-[80px] flex-shrink-0 bg-gray-100 flex items-center justify-center overflow-hidden">
             {a.image ? (
               <img
@@ -59,7 +33,6 @@ export default function MostViewed() {
           <h2 className="text-base font-semibold text-black hover:text-red-500 transition-colors px-2">
             {a.title}
           </h2>
-
         </div>
       </Link>
     );

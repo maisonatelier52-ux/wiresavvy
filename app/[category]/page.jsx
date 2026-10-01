@@ -121,25 +121,14 @@ export default async function CategoryPage({ params }) {
     notFound();
   }
 
-  /*
-   * ---------------------------------------------------------
-   * ARTICLE SECTIONS
-   * ---------------------------------------------------------
-   */
-
-  // First 4 articles = main articles
   const mainFour = sortedCategory.slice(0, 4);
-
-  // Next 3 articles = popular posts
   const popularPosts = sortedCategory.slice(4, 7);
-
-  // Everything after the first 7 = remaining news
   const remainingArticles = sortedCategory.slice(7);
 
   const getArticleUrl = (article) =>
     `/${(article.category || normalizedCategory).toLowerCase()}/${article.slug}`;
 
-  /* ---------- JSON-LD ---------- */
+  /* JSON-LD */
 
   const collectionJsonLd = {
     "@context": "https://schema.org",

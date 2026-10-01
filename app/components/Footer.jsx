@@ -24,7 +24,6 @@ const standards = [
 export default function Footer() {
 
   useEffect(() => {
-    // Set FormSubmit redirect URL dynamically
     const currentUrl = window.location.href.split('?')[0];
     const redirectUrl = currentUrl + '?success=true';
     const successInput = document.getElementById('formsubmit-success-url');
@@ -32,14 +31,12 @@ export default function Footer() {
       successInput.value = redirectUrl;
     }
 
-    // Check for success parameter in URL
     const params = new URLSearchParams(window.location.search);
     
     if (params.get("success") === "true") {
       const popup = document.getElementById("newsletter-popup");
       if (!popup) return;
 
-      // Show popup with animation
       popup.style.display = 'block';
       
       setTimeout(() => {
@@ -47,7 +44,6 @@ export default function Footer() {
         popup.style.transform = 'translateX(-50%) translateY(0)';
       }, 10);
 
-      // Hide popup after 3 seconds
       setTimeout(() => {
         popup.style.opacity = '0';
         popup.style.transform = 'translateX(-50%) translateY(-20px)';
@@ -56,7 +52,6 @@ export default function Footer() {
         }, 300);
       }, 3000);
 
-      // Clean URL without refreshing page
       window.history.replaceState({}, document.title, window.location.pathname);
     }
   }, []);
@@ -64,11 +59,7 @@ export default function Footer() {
   return (
     <footer className="bg-zinc-900 text-zinc-200 pt-20 pb-15">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-
-        {/* ===== Upper Footer: columns ===== */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-10">
-
-          {/* ==== About / Brand + Social ==== */}
           <div>
             <h3 className="text-3xl font-bold pb-8 text-white">Wiresavvy</h3>
 

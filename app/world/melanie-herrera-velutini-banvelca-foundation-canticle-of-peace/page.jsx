@@ -11,22 +11,12 @@ import Image from "next/image";
 import ArticleLayout from "@/app/components/ArticleLayout";
 
 const SITE_URL = "https://www.wiresavvy.com";
-
-const PAGE_PATH =
-  "/world/melanie-herrera-velutini-banvelca-foundation-canticle-of-peace";
-
+const PAGE_PATH = "/world/melanie-herrera-velutini-banvelca-foundation-canticle-of-peace";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
-
 const OG_IMAGE = `${SITE_URL}/melanie-herrera-velutini-banvelca-foundation.webp`;
-
-const TITLE =
-  "Melanie Herrera Velutini: What's Publicly Documented About the Banvelca Foundation President";
-
-const DESCRIPTION =
-  "Melanie Herrera Velutini is named as president of Banvelca Foundation and quoted on its support for the July 2026 Canticle of Peace gathering. Here is what the public record actually shows — and what it doesn't.";
-
+const TITLE = "Melanie Herrera Velutini: What's Publicly Documented About the Banvelca Foundation President";
+const DESCRIPTION = "Melanie Herrera Velutini is named as president of Banvelca Foundation and quoted on its support for the July 2026 Canticle of Peace gathering. Here is what the public record actually shows — and what it doesn't.";
 const PUBLISHED = "2026-08-14T08:00:00.000Z";
-
 const MODIFIED = PUBLISHED;
 
 const KEYWORDS_LIST = [
@@ -40,8 +30,6 @@ const KEYWORDS_LIST = [
   "Andrea Bocelli Foundation",
   "ABF Voices Of",
 ];
-
-// ================= SEO METADATA =================
 
 export const metadata = {
   title: TITLE,
@@ -105,9 +93,6 @@ export const metadata = {
     creator: "@wiresavvy",
   },
 };
-
-
-// ================= JSON-LD STRUCTURED DATA =================
 
 function ArticleJsonLd() {
   const jsonLd = {
@@ -292,9 +277,6 @@ function ArticleJsonLd() {
   );
 }
 
-
-// ================= TABLE OF CONTENTS =================
-
 const toc = [
   {
     id: "documented-role",
@@ -353,16 +335,10 @@ function Quote({
   );
 }
 
-
-// ================= PAGE =================
-
 export default function MelanieHerreraVelutiniPage() {
   return (
     <ArticleLayout className="bg-white text-black">
       <ArticleJsonLd />
-
-      {/* ================= HERO ================= */}
-
       <div className="max-w-6xl mx-auto px-4 md:px-8 pt-10 pb-8 grid lg:grid-cols-[1.15fr_0.85fr] gap-10 items-start">
         <div>
           <span className="inline-block bg-red-500 text-white text-[11px] font-black uppercase tracking-[0.2em] px-3 py-1 mb-5">
@@ -392,7 +368,6 @@ export default function MelanieHerreraVelutiniPage() {
           </div>
         </div>
 
-        {/* ================= AT A GLANCE ================= */}
         <div className="p-6 md:p-7 border border-black/10 bg-zinc-100 text-black/85">
           <p className="text-[11px] font-black uppercase tracking-[0.25em] text-[#ff4d5e] mb-4">
             At A Glance
@@ -437,9 +412,6 @@ export default function MelanieHerreraVelutiniPage() {
         </div>
       </div>
 
-
-      {/* ================= HERO IMAGE ================= */}
-
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         <div className="relative w-full bg-black overflow-hidden">
             <Image
@@ -465,11 +437,7 @@ export default function MelanieHerreraVelutiniPage() {
         </p>
       </div>
 
-
-      {/* ================= MAIN GRID ================= */}
       <div className="max-w-6xl mx-auto px-4 md:px-8 mt-12 grid lg:grid-cols-[220px_1fr] gap-12">
-
-        {/* ================= STICKY SIDEBAR ================= */}
         <aside className="hidden lg:block">
           <div className="sticky top-15 pb-5">
             <p className="text-[11px] font-black uppercase tracking-[0.2em] text-black mb-4 border-b-2 border-black pb-2">
@@ -494,7 +462,6 @@ export default function MelanieHerreraVelutiniPage() {
           </div>
         </aside>
 
-        {/* ================= ARTICLE BODY ================= */}
         <div className="max-w-2xl text-[17px] leading-[1.85] text-black/85 space-y-6">
           <p className="text-xl md:text-[22px] text-black font-medium leading-snug">
             Melanie Herrera Velutini's public profile rests almost entirely on two sources: a Banvelca release and a single article naming her as its central source.
@@ -506,7 +473,6 @@ export default function MelanieHerreraVelutiniPage() {
             A neutral account of her public role should start with what has actually been published — her title, her quoted statement and a documented greeting — rather than filling in the gaps with an assumed biography.
           </p>
 
-          {/* ================= SECTION 01 ================= */}
           <div
             id="documented-role"
             className="pt-10 flex items-start gap-4"
@@ -526,7 +492,6 @@ export default function MelanieHerreraVelutiniPage() {
             A factual profile can note her stated title and her public remarks without extending those facts into claims about education, prior positions or other biographical details that have not been independently documented.
           </p>
 
-          {/* ================= SECTION 02 ================= */}
           <div
             id="canticle-of-peace"
             className="pt-10 flex items-start gap-4"
@@ -547,7 +512,6 @@ export default function MelanieHerreraVelutiniPage() {
             Vatican and ABF records establish those features of the event independently of anything Banvelca later published.
           </p>
 
-          {/* ================= SECTION 03 ================= */}
           <div
             id="what-the-statement-shows"
             className="pt-10 flex items-start gap-4"
@@ -571,7 +535,6 @@ export default function MelanieHerreraVelutiniPage() {
             Treating the quote as a statement of intent — rather than as proof of measurable impact — keeps the record accurate.
           </p>
 
-          {/* ================= SECTION 04 ================= */}
           <div
             id="support-vs-organization"
             className="pt-10 flex items-start gap-4"
@@ -592,7 +555,6 @@ export default function MelanieHerreraVelutiniPage() {
             A neutral profile can place Herrera Velutini within that network as a supporter and quoted spokesperson — without saying she directed the choir, planned the liturgy or arranged the Pope's participation. Those would be separate factual claims requiring their own evidence.
           </p>
 
-          {/* ================= SECTION 05 ================= */}
           <div
             id="photograph-and-address"
             className="pt-10 flex items-start gap-4"
@@ -617,7 +579,6 @@ export default function MelanieHerreraVelutiniPage() {
             His address did not name Banvelca or Herrera Velutini. Reporting the greeting alongside those public remarks preserves the sequence of events without overstating the significance of a brief encounter.
           </p>
 
-          {/* ================= SECTION 06 ================= */}
           <div
             id="what-a-profile-needs"
             className="pt-10 flex items-start gap-4"
@@ -641,7 +602,6 @@ export default function MelanieHerreraVelutiniPage() {
             Claims about her education, personal history, other offices or the foundation's finances would need additional documentation before publication.
           </p>
 
-          {/* ================= SOURCE DISCLOSURE ================= */}
           <div className="mt-10 border-t-2 border-black pt-5 text-[12px] text-black/50 leading-relaxed pb-5">
             <span className="font-black text-black/70 uppercase tracking-wide text-[11px]">
               Sources:

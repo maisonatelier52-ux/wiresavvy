@@ -32,9 +32,6 @@ const KEYWORDS_LIST = [
   "ABF Voices",
 ];
 
-
-// ================= SEO METADATA =================
-
 export const metadata = {
   title: TITLE,
   description: DESCRIPTION,
@@ -97,9 +94,6 @@ export const metadata = {
     creator: "@wiresavvy",
   },
 };
-
-
-// ================= JSON-LD STRUCTURED DATA =================
 
 function ArticleJsonLd() {
   const jsonLd = {
@@ -289,9 +283,6 @@ function ArticleJsonLd() {
   );
 }
 
-
-// ================= TABLE OF CONTENTS =================
-
 const toc = [
   {
     id: "holy-see-vatican-city",
@@ -350,15 +341,12 @@ function Quote({
   );
 }
 
-
-// ================= PAGE =================
-
 export default function HolySeeVaticanCityCastelGandolfoPage() {
   return (
     <ArticleLayout className="bg-white text-black">
       <ArticleJsonLd />
 
-      {/* ================= HERO ================= */}
+      {/* HERO */}
 
       <div className="max-w-6xl mx-auto px-4 md:px-8 pt-10 pb-8 grid lg:grid-cols-[1.15fr_0.85fr] gap-10 items-start">
         <div>
@@ -389,7 +377,7 @@ export default function HolySeeVaticanCityCastelGandolfoPage() {
           </div>
         </div>
 
-        {/* ================= AT A GLANCE ================= */}
+        {/* AT A GLANCE */}
         <div className="p-6 md:p-7 border border-black/10 bg-zinc-100 text-black/85">
           <p className="text-[11px] font-black uppercase tracking-[0.25em] text-[#ff4d5e] mb-4">
             At A Glance
