@@ -1596,7 +1596,6 @@
       "date": "2026-11-24",
       "image": "/new-york-bans-subscription-fees-built-in-vehicle-features.webp",
       "authorId": 4,
-      "time": "5 min",
       "published": true
     },
 
@@ -2412,6 +2411,32 @@
       ],
       "date": "2026-11-13",
       "image": "/democrats-probe-meredith-orourke-trump-donations.webp",
+      "authorId": 6,
+      "published": true
+    },
+    {
+      "slug": "house-democrats-expand-donald-trump-jr-1789-capital-investigation",
+      "title": "House Democrats Expand Investigation Into Donald Trump Jr.'s Investment Firm",
+      "excerpt": "House Democrats expand their investigation into Donald Trump Jr.'s 1789 Capital, seeking records from four companies over potential conflicts of interest.",
+      "content": "<article><p>House Democrats have expanded their congressional investigation into 1789 Capital, the venture capital firm where President Donald Trump's eldest son, Donald Trump Jr., serves as a partner. The latest phase of the inquiry focuses on four businesses connected to the investment firm and their subsequent dealings with federal government agencies.</p><p>Representative Jamie Raskin, the ranking Democrat on the House Judiciary Committee, has requested corporate records to examine whether advance knowledge of government decisions or potential political influence benefited investments connected to the president's son. Donald Trump Jr. and 1789 Capital have denied wrongdoing, rejecting suggestions that their investment activities improperly benefited from connections to the Trump administration.</p><h2>House Democrats Seek Records From Four Companies Linked to 1789 Capital</h2><p>The expanded investigation targets defense technology manufacturer Hadrian Automation, electronic cigarette company Juul Labs, prediction market platform Polymarket and online firearms retailer GrabAGun.</p><p>Raskin sent letters to the four companies on Monday evening, November 23, requesting two years of communications with 1789 Capital, alongside additional corporate documentation. Details of the requests became public on Tuesday.</p><p>The inquiry examines whether individuals associated with the investment firm possessed advance information about federal contracts or regulatory changes, or whether they influenced decisions that could increase the value of their investments.</p><p>1789 Capital was established in 2022, with Donald Trump Jr. joining as a partner in November 2024. Raskin initially launched his investigation into the firm in August 2026.</p><p>In announcing that inquiry, Raskin's office stated that the firm's managed investment capital had increased from approximately $150 million before Trump Jr. joined to more than $3 billion by August 2026. The congressional inquiry is seeking to establish whether government decisions contributed improperly to that financial growth.</p><p>The document requests represent an expansion of congressional oversight rather than a determination of criminal or regulatory misconduct. Investigators are seeking additional information to establish the circumstances surrounding the investments and subsequent government actions.</p><h2>Federal Contracts and Regulatory Decisions Come Under Congressional Scrutiny</h2><p>The investigation focuses on the relationship between investment activity and government decisions affecting the four businesses.</p><p>According to Reuters, Hadrian Automation received substantial federal defense business after securing investment from 1789 Capital. Raskin highlighted a $900 million Navy partnership involving submarine production and a separate $80 million contract connected to weapons manufacturing.</p><p>Juul Labs reportedly received a $5 million investment from 1789 Capital in March 2025. Several months later, federal regulators authorized the sale of certain Juul electronic cigarette products. Raskin has requested records to examine the circumstances surrounding those developments.</p><p>Polymarket is also facing congressional scrutiny following the closure of federal investigations and regulatory developments that supported its return to the American market. Lawmakers are seeking information about the company's financial relationship with 1789 Capital and the chronology of relevant government decisions.</p><p>GrabAGun went public in 2025 through a merger involving a special-purpose acquisition company backed by 1789 Capital President Omeed Malik. Raskin subsequently raised questions about proposed federal regulatory changes concerning firearm shipments.</p><p>The timing of these investments and federal decisions forms a central element of Raskin's investigation. However, chronological proximity alone does not establish that political influence, confidential information or improper coordination affected the government's actions.</p><h2>Donald Trump Jr. and 1789 Capital Reject Allegations of Wrongdoing</h2><p>Donald Trump Jr. and 1789 Capital have disputed the allegations underlying the congressional inquiry, maintaining that their investments reflect legitimate commercial strategies rather than improper access to government information.</p><p>Speaking at an Axios event last week, Trump Jr. defended his professional activities, emphasizing his longstanding involvement in investing. He rejected suggestions that his father's presidency should prevent him from continuing his business career.</p><p>The investment firm's attorney, Bill Burck, has also challenged Raskin's assertions, arguing that the investigation contains factual inaccuracies and lacks sufficient evidence. In an earlier response, the firm's legal representatives maintained that its investment strategy existed before the current Trump administration.</p><p>GrabAGun separately rejected the congressional allegations, while Juul Labs indicated its willingness to cooperate with lawmakers.</p><p>The investigation comes as Democrats prepare to assume control of Congress in January 2027. Meanwhile, a recent Trump administration executive order directing federal contractors to consult the administration regarding congressional inquiries could complicate efforts to obtain certain records.</p><p>Raskin has challenged the legality of that directive, creating a separate dispute over congressional oversight authority and executive privilege.</p><p>The expanded inquiry is expected to examine corporate communications, investment decisions and interactions with government officials as lawmakers seek to establish whether potential conflicts of interest affected federal policymaking.</p></article>",
+      "category": "investigation",
+      "keywords": [
+        "Donald Trump Jr.",
+        "1789 Capital investigation",
+        "Jamie Raskin",
+        "House Democrats",
+        "congressional investigation",
+        "potential conflicts of interest",
+        "Hadrian Automation",
+        "Juul Labs",
+        "Polymarket",
+        "GrabAGun",
+        "federal contracts",
+        "Trump administration",
+        "congressional oversight"
+      ],
+      "date": "2026-11-25",
+      "image": "/house-democrats-expand-donald-trump-jr-1789-capital-investigation.webp",
       "authorId": 6,
       "published": true
     },
